@@ -3,331 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ISTQB CTAL-TA - Capturas de Tela do Sistema</title>
+    <title>ISTQB CTAL-TA - Galeria do Sistema</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            color-scheme: light;
+            --bg: #f6f8fb;
+            --card: #ffffff;
+            --line: #e5e7eb;
+            --text: #111827;
+            --muted: #4b5563;
+            --brand: #2563eb;
+            --brand-strong: #1d4ed8;
         }
+
+        * { box-sizing: border-box; }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
-            padding: 20px;
+            margin: 0;
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
         }
 
-        .container {
-            max-width: 1200px;
+        .wrap {
+            max-width: 1120px;
             margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 24px 16px 40px;
         }
 
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 20px;
-        }
-
-        h1 {
-            color: #667eea;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        .section {
-            margin-bottom: 50px;
-        }
-
-        .section-title {
-            color: #764ba2;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            padding-left: 10px;
-            border-left: 4px solid #667eea;
-        }
-
-        .screenshot-item {
-            margin-bottom: 40px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .screenshot-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .screenshot-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            cursor: pointer;
-        }
-
-        .screenshot-caption {
-            padding: 15px 20px;
-            background: white;
-        }
-
-        .screenshot-caption h3 {
-            color: #333;
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-        }
-
-        .screenshot-caption p {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.5;
+        .topbar {
+            margin-bottom: 16px;
         }
 
         .back-link {
             display: inline-block;
-            margin-bottom: 30px;
-            padding: 10px 20px;
-            background: #667eea;
-            color: white;
             text-decoration: none;
-            border-radius: 6px;
-            transition: background 0.3s ease;
+            color: var(--brand);
+            font-weight: 600;
         }
 
-        .back-link:hover {
-            background: #764ba2;
+        .hero {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 18px 20px;
+            margin-bottom: 16px;
         }
 
-        /* Modal para visualizar imagem em tamanho maior */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            overflow: auto;
+        h1 {
+            margin: 0 0 8px;
+            font-size: 1.7rem;
         }
 
-        .modal-content {
-            margin: auto;
+        .subtitle {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 14px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .card button {
             display: block;
-            max-width: 90%;
-            max-height: 90%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            width: 100%;
+            border: 0;
+            padding: 0;
+            background: transparent;
+            cursor: zoom-in;
+        }
+
+        .card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .cap {
+            padding: 11px 12px 12px;
+        }
+
+        .cap h2 {
+            margin: 0 0 5px;
+            font-size: 1rem;
+        }
+
+        .cap p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.92rem;
+            line-height: 1.45;
+        }
+
+        .footer {
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.84);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            z-index: 999;
+        }
+
+        .modal.open { display: flex; }
+
+        .modal img {
+            max-width: min(1200px, 100%);
+            max-height: 92vh;
+            border-radius: 10px;
+            box-shadow: 0 16px 40px rgba(0,0,0,.45);
         }
 
         .close {
-            position: absolute;
-            top: 20px;
-            right: 35px;
-            color: white;
-            font-size: 40px;
-            font-weight: bold;
+            position: fixed;
+            top: 14px;
+            right: 16px;
+            border: 0;
+            background: transparent;
+            color: #fff;
+            font-size: 2rem;
             cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .close:hover {
-            color: #bbb;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 2px solid #e0e0e0;
-            color: #666;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .section-title {
-                font-size: 1.4rem;
-            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="README.md" class="back-link">← Voltar para o README</a>
-
-        <header>
-            <h1>ISTQB CTAL-TA</h1>
-            <p class="subtitle">Capturas de Tela do Sistema</p>
-        </header>
-
-        <!-- Dashboard -->
-        <div class="section">
-            <h2 class="section-title">Dashboard</h2>
-            
-            <div class="screenshot-item">
-                <img src="prints/001.jpg" alt="Dashboard Principal" onclick="openModal(this.src)">
-                <div class="screenshot-caption">
-                    <h3>Dashboard Principal</h3>
-                    <p>Visão geral do sistema com estatísticas de progresso, acesso rápido às funcionalidades principais e resumo do desempenho nos estudos.</p>
-                </div>
-            </div>
+    <main class="wrap">
+        <div class="topbar">
+            <a href="https://github.com/lucasteixeirati/ISTQB-CTAL-TA" class="back-link">← Repositório no GitHub</a>
         </div>
 
-        <!-- Simulados -->
-        <div class="section">
-            <h2 class="section-title">Simulados</h2>
-            
-            <div class="screenshot-item">
-                <img src="prints/002.jpg" alt="Lista de Simulados" onclick="openModal(this.src)">
-                <div class="screenshot-caption">
-                    <h3>Seleção de Simulados</h3>
-                    <p>Lista de simulados disponíveis organizados por capítulo do syllabus ISTQB CTAL-TA, com opção de simulado completo.</p>
-                </div>
-            </div>
+        <section class="hero">
+            <h1>ISTQB CTAL-TA • Galeria de Capturas</h1>
+            <p class="subtitle">Página otimizada para GitHub Pages. Clique em qualquer imagem para ampliar.</p>
+        </section>
 
-            <div class="screenshot-item">
-                <img src="prints/003.jpg" alt="Simulado em Andamento" onclick="openModal(this.src)">
-                <div class="screenshot-caption">
-                    <h3>Resolução de Questões</h3>
-                    <p>Interface limpa e intuitiva para resolver questões durante o simulado, com navegação entre perguntas e marcação de respostas.</p>
-                </div>
-            </div>
+        <section class="grid" aria-label="Galeria de imagens">
+            <article class="card"><button data-src="prints/001.jpg"><img loading="lazy" src="prints/001.jpg" alt="Dashboard principal"></button><div class="cap"><h2>Dashboard</h2><p>Visão geral de progresso e atalhos principais.</p></div></article>
+            <article class="card"><button data-src="prints/002.jpg"><img loading="lazy" src="prints/002.jpg" alt="Lista de simulados"></button><div class="cap"><h2>Simulados</h2><p>Lista por capítulo e opção de simulado completo.</p></div></article>
+            <article class="card"><button data-src="prints/003.jpg"><img loading="lazy" src="prints/003.jpg" alt="Simulado em execução"></button><div class="cap"><h2>Simulado em andamento</h2><p>Resolução de questões com fluxo interativo.</p></div></article>
+            <article class="card"><button data-src="prints/004.jpg"><img loading="lazy" src="prints/004.jpg" alt="Resultado do simulado"></button><div class="cap"><h2>Resultado</h2><p>Feedback de desempenho e acertos.</p></div></article>
+            <article class="card"><button data-src="prints/005.jpg"><img loading="lazy" src="prints/005.jpg" alt="Decks de flashcards"></button><div class="cap"><h2>Flashcards</h2><p>Decks organizados para revisão rápida.</p></div></article>
+            <article class="card"><button data-src="prints/006.jpg"><img loading="lazy" src="prints/006.jpg" alt="Estudo com flashcards"></button><div class="cap"><h2>Estudo ativo</h2><p>Interação frente/verso para memorização.</p></div></article>
+            <article class="card"><button data-src="prints/007.jpg"><img loading="lazy" src="prints/007.jpg" alt="Biblioteca e upload"></button><div class="cap"><h2>Biblioteca</h2><p>Materiais anexados e uploads do usuário.</p></div></article>
+            <article class="card"><button data-src="prints/08.jpg"><img loading="lazy" src="prints/08.jpg" alt="Configuração de geração IA"></button><div class="cap"><h2>Geração com IA</h2><p>Configuração de provider e parâmetros.</p></div></article>
+            <article class="card"><button data-src="prints/009.jpg"><img loading="lazy" src="prints/009.jpg" alt="Jobs assíncronos"></button><div class="cap"><h2>Jobs assíncronos</h2><p>Acompanhamento do status de gerações.</p></div></article>
+            <article class="card"><button data-src="prints/010.jpg"><img loading="lazy" src="prints/010.jpg" alt="Revisão de questões"></button><div class="cap"><h2>Revisão de questões</h2><p>Edição e validação antes de salvar.</p></div></article>
+            <article class="card"><button data-src="prints/011.jpg"><img loading="lazy" src="prints/011.jpg" alt="Plano de estudos"></button><div class="cap"><h2>Plano de estudos</h2><p>Organização do cronograma de aprendizagem.</p></div></article>
+        </section>
 
-            <div class="screenshot-item">
-                <img src="prints/004.jpg" alt="Resultado do Simulado" onclick="openModal(this.src)">
-                <div class="screenshot-caption">
-                    <h3>Resultados e Feedback</h3>
-                    <p>Análise detalhada do desempenho com pontuação, respostas corretas/incorretas e estatísticas por capítulo.</p>
-                </div>
-            </div>
-        </div>
+        <p class="footer">ISTQB CTAL-TA · Capturas oficiais da versão atual.</p>
+    </main>
 
-        <!-- Flashcards -->
-        <div class="section">
-            <h2 class="section-title">Flashcards</h2>
-            
-            <div class="screenshot-item">
-                <img src="prints/005.jpg" alt="Decks de Flashcards" onclick="openModal(this.src)">
-                <div class="screenshot-caption">
-                    <h3>Biblioteca de Decks</h3>
-                    <p>Organização dos flashcards por capítulos do syllabus, facilitando revisões focadas em tópicos específicos.</p>
-                </div>
-            </div>
-
-            <div class="screenshot-item">
-                <img src="prints/006.jpg" alt="Estudo com Flashcards" onclick="openModal(this.src)">
-                <div class="screenshot-caption">
-                    <h3>Interface de Estudo</h3>
-                    <p>Sistema interativo de flashcards para memorização ativa, com visualização de frente/verso dos cartões.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Gerenciamento de Arquivos -->
-        <div class="section">
-            <h2 class="section-title">Gerenciamento de Arquivos</h2>
-            
-            <div class="screenshot-item">
-                <img src="prints/007.jpg" alt="Upload e Biblioteca" onclick="openModal(this.src)">
-                <div class="screenshot-caption">
-                    <h3>Biblioteca de Materiais</h3>
-                    <p>Upload de arquivos PDF/TXT e visualização da biblioteca completa de materiais de estudo, com distinção entre anexos e uploads.</p>
-                </div>
-            </div>
-
-            <div class="screenshot-item">
-                <img src="prints/08.jpg" alt="Modal de Geração" onclick="openModal(this.src)">
-                <div class="screenshot-caption">
-                    <h3>Configuração de Geração</h3>
-                    <p>Modal para configurar a geração de questões com IA, permitindo escolher número de questões, estratégia de LLM e capítulo do syllabus.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Gerações Assíncronas -->
-        <div class="section">
-            <h2 class="section-title">Gerações com IA</h2>
-            
-            <div class="screenshot-item">
-                <img src="prints/009.jpg" alt="Jobs de Geração" onclick="openModal(this.src)">
-                <div class="screenshot-caption">
-                    <h3>Acompanhamento de Jobs</h3>
-                    <p>Lista de jobs de geração de questões com IA, mostrando status (processando, concluído, erro) e progresso em tempo real.</p>
-                </div>
-            </div>
-
-            <div class="screenshot-item">
-                <img src="prints/010.jpg" alt="Revisão de Questões" onclick="openModal(this.src)">
-                <div class="screenshot-caption">
-                    <h3>Revisão e Edição</h3>
-                    <p>Interface completa para revisar, editar e validar questões geradas pela IA antes de salvá-las no banco de questões.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Plano de Estudos -->
-        <div class="section">
-            <h2 class="section-title">Plano de Estudos</h2>
-            
-            <div class="screenshot-item">
-                <img src="prints/011.jpg" alt="Plano de Estudos" onclick="openModal(this.src)">
-                <div class="screenshot-caption">
-                    <h3>Cronograma de Estudos</h3>
-                    <p>Organização e acompanhamento do plano de estudos com marcos, objetivos e progresso por tópico.</p>
-                </div>
-            </div>
-        </div>
-
-        <footer>
-            <p><strong>ISTQB CTAL-TA - Sistema de Estudos</strong></p>
-            <p>Sistema completo para preparação e certificação com simulados, flashcards e geração de questões com IA</p>
-        </footer>
-    </div>
-
-    <!-- Modal para visualização ampliada -->
-    <div id="imageModal" class="modal" onclick="closeModal()">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage">
+    <div class="modal" id="modal" aria-hidden="true">
+        <button class="close" id="close" aria-label="Fechar">×</button>
+        <img id="modal-img" alt="Imagem ampliada">
     </div>
 
     <script>
-        function openModal(src) {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
-            modal.style.display = 'block';
-            modalImg.src = src;
-        }
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-img');
+        const closeBtn = document.getElementById('close');
+
+        document.querySelectorAll('.card button').forEach((button) => {
+            button.addEventListener('click', () => {
+                modal.classList.add('open');
+                modal.setAttribute('aria-hidden', 'false');
+                modalImg.src = button.dataset.src;
+                modalImg.alt = button.querySelector('img')?.alt || 'Imagem ampliada';
+            });
+        });
 
         function closeModal() {
-            document.getElementById('imageModal').style.display = 'none';
+            modal.classList.remove('open');
+            modal.setAttribute('aria-hidden', 'true');
+            modalImg.src = '';
         }
 
-        // Fechar modal com ESC
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) closeModal();
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') closeModal();
         });
     </script>
 </body>

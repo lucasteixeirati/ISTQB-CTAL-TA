@@ -1,113 +1,92 @@
 # ISTQB CTAL-TA - Sistema de Estudos
 
-Sistema para preparação e revisão para a certificação **ISTQB CTAL-TA**, com interface web (Flask) incluindo:
-- simulados
-- flashcards
+Aplicação web em Flask para preparação da certificação **ISTQB CTAL-TA**, com:
+- simulados por capítulo e completo
+- flashcards por deck
 - dashboard de progresso
-- upload de PDF/TXT e geração de questões (IA)
-- pipeline de **gerações assíncronas** (jobs) com worker
+- upload de PDF/TXT
+- geração de questões com IA
+- pipeline de **gerações assíncronas** (jobs + worker)
 
-> Este repositório **não inclui materiais anexados** (pasta `uploads/`). Ao baixar, o usuário pode fazer upload dos próprios PDFs/TXTs pela interface.
+> Este repositório **não inclui materiais anexados** da pasta `uploads/`.
 
-## Estrutura do Projeto
-- **Flashcards:** pasta `flashcards/` (decks em Markdown)
-- **Simulados:** pasta `simulados/` (por capítulo)
-- **Resumos:** pasta `resumos/`
-- **Frontend:** `templates/` e `static/`
-- **Backend:** `app.py` (Flask) + `app/routes/*` + `app/services/*`
+## Instalação rápida
 
-## Instalação
-
-1. Clone/baixe o projeto e acesse a pasta:
-   ```bash
-   cd c:\Projetos\ISTQB-CTAL-TA
-   ```
+1. Clone o projeto e entre na pasta.
 2. Instale as dependências:
    ```bash
    pip install -r requirements.txt
    ```
+3. (Opcional) Crie o arquivo `.env` a partir de `.env.example`.
+4. Execute:
+   ```bash
+   python app.py
+   ```
+5. Acesse: http://localhost:5000
 
-## Configuração (.env)
+## Estrutura do projeto
 
-- Use o arquivo `.env.example` como base.
-- Crie um `.env` local (não versionado) e ajuste as variáveis conforme necessário.
+- **Frontend:** `templates/` e `static/`
+- **Backend:** `app.py`, `app/routes/` e `app/services/`
+- **Flashcards:** `flashcards/`
+- **Simulados:** `simulados/`
+- **Resumos:** `resumos/`
 
-Exemplo (PowerShell):
-```powershell
-copy .env.example .env
-```
+## Principais funcionalidades
 
-## Execução (Web)
+- Simulados interativos por capítulo ou completo
+- Flashcards digitais para revisão rápida
+- Dashboard com estatísticas de desempenho
+- Upload de PDF/TXT e geração de questões com IA
+- Revisão/edição e salvamento de questões no banco
 
-Inicie a aplicação:
-```bash
-python app.py
-```
-Acesse:
-- http://localhost:5000
+## Capturas de tela
 
-> Observação: o worker de gerações assíncronas **não inicia por padrão**. Veja a seção **Worker de gerações (jobs)**.
-
-## Principais Funcionalidades
-- Simulados interativos por capítulo ou completos
-- Flashcards digitais para revisão rápida (com filtro por capítulo)
-- Dashboard de progresso e estatísticas
-- Upload de PDF/TXT e geração de questões
-- Revisão/edição e salvamento no `banco_questoes.json`
-
-## 📸 Capturas de Tela
-
-**[Ver fotos do sistema em funcionamento →](screenshots.html)**
+**[Ver fotos do sistema em funcionamento](https://lucasteixeirati.github.io/ISTQB-CTAL-TA/screenshots.html)**
 
 ## Endpoints (resumo)
 
-- Upload/arquivos:
-  - `GET /arquivos` (página)
+- **Upload/arquivos**
+  - `GET /arquivos`
   - `GET /api/arquivos`
   - `POST /api/upload`
   - `DELETE /api/deletar-arquivo/<arquivo_id>`
 
-- Geração (síncrona a partir de arquivo):
+- **Geração síncrona por arquivo**
   - `POST /api/gerar-questoes/<arquivo_id>`
 
-- Salvar questões (valida e persiste em `banco_questoes.json`):
+- **Salvar questões no banco**
   - `POST /api/arquivos/salvar-questoes/<arquivo_id>`
-  - A API aceita tanto `alternativas: [..4]` quanto `opcoes: {A,B,C,D}` e normaliza ao salvar.
+  - Aceita `alternativas: [..4]` ou `opcoes: {A,B,C,D}`
 
-- Gerações (assíncrono via jobs):
-  - `POST /api/geracoes` (cria job)
-  - `GET /api/geracoes` (lista)
-  - `GET /api/geracoes/<job_id>` (detalhes)
-  - `POST /api/geracoes/<job_id>/salvar` (salvar questões do job no banco)
+- **Gerações assíncronas (jobs)**
+  - `POST /api/geracoes`
+  - `GET /api/geracoes`
+  - `GET /api/geracoes/<job_id>`
+  - `POST /api/geracoes/<job_id>/salvar`
 
-- Simulado:
+- **Simulado**
   - `POST /api/iniciar-simulado`
   - `POST /api/finalizar-simulado`
 
-- Flashcards:
-  - `GET /flashcards` (página)
+- **Flashcards**
+  - `GET /flashcards`
   - `GET /api/flashcards`
   - `GET /api/flashcards/decks`
 
-- Dashboard:
-  - `GET /dashboard` (página)
+- **Dashboard**
+  - `GET /dashboard`
   - `GET /api/estatisticas`
 
 ## Worker de gerações (jobs)
 
-A aplicação suporta geração assíncrona baseada em jobs persistidos em `geracoes_questoes.json`.
+Para habilitar o worker assíncrono, defina a variável antes de iniciar o Flask:
 
-### Como habilitar
-Defina a variável abaixo **antes de iniciar o Flask**:
-- `ENABLE_GERACOES_WORKER=1`
-
-Exemplo (PowerShell):
 ```powershell
 $env:ENABLE_GERACOES_WORKER="1"; python app.py
 ```
 
-> Em `FLASK_DEBUG=1` o worker evita iniciar no processo duplicado do reloader.
-
+> Em `FLASK_DEBUG=1`, o worker evita iniciar no processo duplicado do reloader.
 
 ## Licença
 
