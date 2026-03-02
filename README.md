@@ -55,6 +55,10 @@ Acesse:
 - Upload de PDF/TXT e geração de questões
 - Revisão/edição e salvamento no `banco_questoes.json`
 
+## 📸 Capturas de Tela
+
+**[Ver fotos do sistema em funcionamento →](screenshots.html)**
+
 ## Endpoints (resumo)
 
 - Upload/arquivos:
@@ -104,11 +108,6 @@ $env:ENABLE_GERACOES_WORKER="1"; python app.py
 
 > Em `FLASK_DEBUG=1` o worker evita iniciar no processo duplicado do reloader.
 
-## Publicação e arquivos ignorados
-
-- A pasta `uploads/` é **ignorada** pelo `.gitignore` (arquivos anexados pelo usuário).
-- O arquivo `.env` também é ignorado.
-- Os JSONs de estado do app (ex.: `geracoes_questoes.json`, `banco_questoes.json`) **podem ser versionados** se você quiser manter um estado inicial no repositório.
 
 ## Licença
 

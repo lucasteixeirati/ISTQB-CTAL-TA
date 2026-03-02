@@ -29,6 +29,7 @@ uploads/
 # Generated outputs
 simulado_completo_*.md
 simulados/saida_*
+plano_de_estudo.md
 out/
 
 # Cache / build artifacts

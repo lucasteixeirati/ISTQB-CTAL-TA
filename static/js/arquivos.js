@@ -199,7 +199,7 @@ async function confirmarGerar() {
     const capitulo_id = capSelect?.value || 'importados';
     const capitulo_nome = capSelect?.selectedOptions?.[0]?.getAttribute('data-label') || capSelect?.selectedOptions?.[0]?.textContent || 'Importados / Outros';
 
-    mostrarLoadingGeracao(true);
+    setLoadingGeracao(true);
 
     fetch('/api/geracoes', {
         method: 'POST',
@@ -219,14 +219,14 @@ async function confirmarGerar() {
         }
 
         fecharModal();
-        mostrarLoadingGeracao(false);
+        setLoadingGeracao(false);
 
         // Redireciona para a tela de Gerações para acompanhar o job
         window.location.href = '/geracoes';
     })
     .catch(err => {
         console.error(err);
-        mostrarLoadingGeracao(false);
+        setLoadingGeracao(false);
         alert(err?.message || 'Erro ao iniciar geração');
     });
 }
@@ -313,11 +313,16 @@ async function salvarQuestoesGeradas() {
         return;
     }
 
+    // Mantém o capítulo selecionado no modal de geração (se existir) ao salvar.
+    const capSelect = document.getElementById('syllabus-capitulo');
+    const capitulo_id = capSelect?.value || 'importados';
+    const capitulo_nome = capSelect?.selectedOptions?.[0]?.getAttribute('data-label') || capSelect?.selectedOptions?.[0]?.textContent || 'Importados / Outros';
+
     try {
         const response = await fetch(`/api/arquivos/salvar-questoes/${arquivoSelecionado}`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({questoes})
+            body: JSON.stringify({ questoes, capitulo_id, capitulo_nome })
         });
         const data = await response.json();
         if (data.success) {

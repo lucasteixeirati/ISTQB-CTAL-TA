@@ -15,7 +15,10 @@
 
         <div class="upload-section">
             <h2>Anexar Novo Arquivo</h2>
-            <p class="help-text">Envie arquivos TXT ou PDF para gerar questões automaticamente</p>
+            <p class="help-text">
+                Envie arquivos TXT ou PDF para que se tornem <strong>ANEXOS</strong>.
+                Apenas ANEXOS podem ser usados para <strong>gerar questões com IA</strong>.
+            </p>
             
             <div class="upload-area" id="upload-area">
                 <input type="file" id="file-input" accept=".txt,.pdf" style="display: none;">
@@ -32,7 +35,9 @@
             <h2>Biblioteca (pasta uploads)</h2>
             <p class="help-text">
                 Esta seção lista automaticamente tudo que estiver em <code>uploads/</code>.
-                PDFs podem ser abertos/visualizados, áudios e vídeos podem ser reproduzidos no navegador (quando suportado).
+                Arquivos marcados como <strong>ANEXO</strong> podem ser usados para gerar questões.
+                Arquivos marcados como <strong>UPLOADS</strong> são apenas materiais de estudo
+                (visualização, áudio, vídeo) e <strong>não geram questões diretamente</strong>.
             </p>
 
             <div class="materiais-filtros">
@@ -57,7 +62,12 @@
         </div>
 
         <div class="arquivos-lista">
-            <h2>Biblioteca (lista única)</h2>
+            <h2>Biblioteca (anexos + uploads)</h2>
+            <p class="help-text" style="margin-top: 4px;">
+                <strong>Legenda:</strong>
+                <span style="font-weight:bold;">ANEXO</span> = arquivo gerenciado pelo sistema, pode gerar questões.
+                <span style="font-weight:bold; margin-left: 12px;">UPLOADS</span> = arquivo físico na pasta, uso apenas como material.
+            </p>
             <div id="lista-biblioteca">
                 <p class="empty-state">Carregando...</p>
             </div>
