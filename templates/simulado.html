@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulado - ISTQB CTAL-TA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="simulado-container">
+        <header class="simulado-header">
+            <a href="/" class="btn-voltar">← Voltar</a>
+            <div class="timer" id="timer">00:00</div>
+            <div class="progresso">
+                <span id="questao-atual">0</span> / <span id="total-questoes">0</span>
+            </div>
+        </header>
+
+        <div id="config-simulado" class="config-panel">
+            <h2>Configurar Simulado</h2>
+
+            <div class="form-group">
+                <label for="simulado-capitulo">Capítulo do syllabus:</label>
+                <select id="simulado-capitulo" class="select-llm">
+                    <option value="todos" data-label="Todos">Todos</option>
+                    <option value="cap1" data-label="Cap 1 - Risk-based Testing">Cap 1 - Risk-based Testing</option>
+                    <option value="cap2" data-label="Cap 2 - Test Techniques">Cap 2 - Test Techniques</option>
+                    <option value="cap3" data-label="Cap 3 - Quality Characteristics">Cap 3 - Quality Characteristics</option>
+                    <option value="cap4" data-label="Cap 4 - Reviews">Cap 4 - Reviews</option>
+                    <option value="cap5" data-label="Cap 5 - Test Tools">Cap 5 - Test Tools</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Número de questões:</label>
+                <input type="number" id="num-questoes" value="40" min="5" max="100">
+            </div>
+            <button onclick="iniciarSimulado()" class="btn-primary">Iniciar Simulado</button>
+        </div>
+
+        <div id="simulado-content" style="display: none;">
+            <div class="questao-card">
+                <div class="questao-header">
+                    <span class="k-level" id="k-level"></span>
+                    <span class="questao-numero">Questão <span id="num-questao"></span></span>
+                </div>
+                
+                <div class="questao-texto" id="questao-texto"></div>
+                
+                <div class="opcoes" id="opcoes"></div>
+                
+                <div class="navegacao">
+                    <button onclick="voltarQuestao()" id="btn-voltar" class="btn-secondary">← Anterior</button>
+                    <button onclick="avancarQuestao()" id="btn-avancar" class="btn-primary">Próxima →</button>
+                    <button onclick="finalizarSimulado()" id="btn-finalizar" class="btn-success" style="display: none;">Concluir Simulado</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="resultado" style="display: none;">
+            <div class="resultado-card">
+                <h2 id="resultado-titulo"></h2>
+                <div class="resultado-stats">
+                    <div class="stat">
+                        <span class="stat-label">Acertos</span>
+                        <span class="stat-value" id="acertos"></span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Percentual</span>
+                        <span class="stat-value" id="percentual"></span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Status</span>
+                        <span class="stat-value" id="status"></span>
+                    </div>
+                </div>
+                
+                <div id="revisao-questoes"></div>
+                
+                <div class="acoes">
+                    <a href="/simulado" class="btn-primary">Novo Simulado</a>
+                    <a href="/dashboard" class="btn-secondary">Ver Dashboard</a>
+                    <a href="/" class="btn-secondary">Voltar ao Início</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/simulado.js') }}"></script>
+</body>
+</html>

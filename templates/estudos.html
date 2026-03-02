@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiais de Estudo - ISTQB CTAL-TA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="dark-body">
+    <div class="container">
+        <header class="page-header">
+            <a href="/" class="btn-voltar">← Voltar</a>
+            <h1>Materiais de Estudo</h1>
+        </header>
+
+        <section class="upload-section" style="margin-bottom: 24px;">
+            <h2>Biblioteca (pasta uploads)</h2>
+            <p class="help-text">
+                Esta página lista automaticamente tudo que estiver em <code>uploads/</code>.
+                PDFs podem ser abertos/visualizados, áudios e vídeos podem ser reproduzidos no navegador (quando suportado).
+            </p>
+
+            <div class="materiais-filtros">
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label for="filtro-tipo">Tipo:</label>
+                    <select id="filtro-tipo">
+                        <option value="todos">Todos</option>
+                        <option value="pdf">PDF</option>
+                        <option value="audio">Áudio</option>
+                        <option value="video">Vídeo</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label for="filtro-busca">Buscar no nome:</label>
+                    <input id="filtro-busca" type="text" placeholder="ex.: syllabus, MAPAMENTAL, .pdf">
+                </div>
+
+                <button class="btn-primary" onclick="carregarMateriais()">Atualizar</button>
+            </div>
+        </section>
+
+        <section class="arquivos-lista">
+            <h2>Materiais encontrados</h2>
+            <div id="lista-materiais">
+                <p class="empty-state">Carregando...</p>
+            </div>
+        </section>
+    </div>
+
+    <div id="modal-preview" class="modal" style="display: none;">
+        <div class="modal-content modal-revisao" style="position: relative;">
+            <header class="modal-header">
+                <h3 id="modal-preview-titulo">Preview</h3>
+                <button type="button" class="btn-secondary btn-fechar-modal" onclick="fecharPreview()">Fechar</button>
+            </header>
+            <div class="modal-body-scroll" id="modal-preview-body"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/estudos.js') }}"></script>
+</body>
+</html>

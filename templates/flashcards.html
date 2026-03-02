@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards - ISTQB CTAL-TA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <a href="/" class="btn-voltar">← Voltar</a>
+            <h1>Flashcards Interativos</h1>
+        </header>
+
+        <div id="config-flashcards" class="config-panel">
+            <h2>Escolha o Deck</h2>
+
+            <div style="margin: 10px 0 18px 0;">
+                <label for="flashcards-capitulo" style="display:block; margin-bottom: 6px;">Capítulo do syllabus:</label>
+                <select id="flashcards-capitulo" class="select-llm" style="max-width: 420px;">
+                    <option value="todos" data-label="Todos">Todos</option>
+                    <option value="cap1" data-label="Cap 1 - Risk-based Testing">Cap 1 - Risk-based Testing</option>
+                    <option value="cap2" data-label="Cap 2 - Test Techniques">Cap 2 - Test Techniques</option>
+                    <option value="cap3" data-label="Cap 3 - Quality Characteristics">Cap 3 - Quality Characteristics</option>
+                    <option value="cap4" data-label="Cap 4 - Reviews">Cap 4 - Reviews</option>
+                    <option value="cap5" data-label="Cap 5 - Test Tools">Cap 5 - Test Tools</option>
+                </select>
+                <p class="help-text" style="font-size: 0.85rem; margin-top: 6px;">Filtra os decks/flashcards pelo capítulo.</p>
+            </div>
+
+            <div id="lista-decks" class="decks-grid"></div>
+            <button onclick="iniciarTodos()" class="btn-primary" style="margin-top: 20px;">
+                Estudar Todos (<span id="total-flashcards-label">-</span> cards)
+            </button>
+        </div>
+
+        <div id="flashcard-content" style="display: none;">
+            <div class="flashcard-header">
+                <div class="progresso-flash">
+                    <span id="card-atual">0</span> / <span id="total-cards">0</span>
+                </div>
+                <div class="deck-nome" id="deck-atual"></div>
+            </div>
+
+            <div class="flashcard-container">
+                <div class="flashcard" id="flashcard" onclick="virarCard()">
+                    <div class="flashcard-front">
+                        <div class="card-label">Pergunta</div>
+                        <div class="card-content" id="pergunta"></div>
+                        <div class="card-hint">Clique para ver a resposta</div>
+                    </div>
+                    <div class="flashcard-back">
+                        <div class="card-label">Resposta</div>
+                        <div class="card-content" id="resposta"></div>
+                        <div class="card-hint">Clique para voltar</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="avaliacao">
+                <h3>Como você avaliaria seu conhecimento?</h3>
+                <div class="avaliacao-btns">
+                    <button onclick="avaliar('dificil')" class="btn-danger">😰 Difícil</button>
+                    <button onclick="avaliar('medio')" class="btn-secondary">🤔 Médio</button>
+                    <button onclick="avaliar('facil')" class="btn-success">😊 Fácil</button>
+                </div>
+            </div>
+
+            <div class="navegacao-flash">
+                <button onclick="voltarCard()" id="btn-voltar-card" class="btn-secondary">← Anterior</button>
+                <button onclick="proximoCard()" id="btn-proximo-card" class="btn-primary">Próximo →</button>
+                <button onclick="finalizarFlashcards()" id="btn-finalizar-flash" class="btn-success" style="display: none;">Concluir Revisão</button>
+            </div>
+        </div>
+
+        <div id="resultado-flash" style="display: none;">
+            <div class="resultado-card">
+                <h2>🎉 Revisão Concluída!</h2>
+                <div class="resultado-stats">
+                    <div class="stat">
+                        <span class="stat-label">Cards Revisados</span>
+                        <span class="stat-value" id="total-revisados">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Fáceis</span>
+                        <span class="stat-value" id="total-faceis">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Médios</span>
+                        <span class="stat-value" id="total-medios">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Difíceis</span>
+                        <span class="stat-value" id="total-dificeis">0</span>
+                    </div>
+                </div>
+
+                <div class="recomendacao">
+                    <h4>📚 Recomendação</h4>
+                    <p id="recomendacao-texto"></p>
+                </div>
+
+                <div class="acoes">
+                    <a href="/flashcards" class="btn-primary">Nova Revisão</a>
+                    <a href="/dashboard" class="btn-secondary">Ver Dashboard</a>
+                    <a href="/" class="btn-secondary">Voltar ao Início</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/flashcards.js') }}"></script>
+</body>
+</html>

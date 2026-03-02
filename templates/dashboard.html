@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ISTQB CTAL-TA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <a href="/" class="btn-voltar">← Voltar</a>
+            <h1>Dashboard de Progresso</h1>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">📝</div>
+                <div class="stat-info">
+                    <span class="stat-label">Total de Simulados</span>
+                    <span class="stat-value" id="total-simulados">0</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-info">
+                    <span class="stat-label">Média Geral</span>
+                    <span class="stat-value" id="media-geral">0%</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-info">
+                    <span class="stat-label">Status</span>
+                    <span class="stat-value" id="status-geral">-</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <h2>Evolução</h2>
+            <div id="grafico-evolucao" class="grafico"></div>
+        </div>
+
+        <div class="historico-section">
+            <h2>Histórico de Simulados</h2>
+            <div id="tabela-historico"></div>
+        </div>
+
+        <div class="recomendacoes-section">
+            <h2>Recomendações</h2>
+            <div id="recomendacoes"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

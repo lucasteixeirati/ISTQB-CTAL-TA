@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerações de Simulados - ISTQB CTAL-TA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="dark-body">
+    <div class="container">
+        <header class="page-header geracoes-header">
+            <a href="/" class="btn-voltar">← Voltar</a>
+            <div class="titulo-bloco">
+                <h1>Gerações de Simulados</h1>
+                <p class="help-text">Acompanhe o status das gerações de questões iniciadas a partir dos arquivos anexados.</p>
+            </div>
+        </header>
+
+        <section class="geracoes-resumo-cards">
+            <div class="geracao-resumo-card" id="card-total">
+                <span class="resumo-label">Total de jobs</span>
+                <span class="resumo-valor" id="total-jobs">0</span>
+            </div>
+            <div class="geracao-resumo-card" id="card-processando">
+                <span class="resumo-label">Em processamento</span>
+                <span class="resumo-valor" id="total-processando">0</span>
+            </div>
+            <div class="geracao-resumo-card" id="card-concluidos">
+                <span class="resumo-label">Concluídos</span>
+                <span class="resumo-valor" id="total-concluidos">0</span>
+            </div>
+        </section>
+
+        <section id="lista-geracoes" class="lista-geracoes">
+            <p class="empty-state">Nenhuma geração iniciada ainda. Inicie uma geração na página "Meus Arquivos".</p>
+        </section>
+    </div>
+
+    <div id="modal-geracao-detalhe" class="modal" style="display:none;">
+        <div class="modal-content modal-revisao">
+            <header class="modal-header">
+                <h3 id="titulo-modal-job">Questões Geradas</h3>
+                <button type="button" class="btn-secondary btn-fechar-modal" onclick="fecharModalJob()">Fechar</button>
+            </header>
+            <div class="modal-body-scroll" id="scroll-questoes-job">
+                <form id="form-questoes-geradas-job">
+                    <div id="questoes-geradas-job-lista"></div>
+                </form>
+            </div>
+            <footer class="modal-footer">
+                <button type="button" onclick="salvarQuestoesJob()" class="btn-primary">Salvar Questões na Base</button>
+                <button type="button" onclick="fecharModalJob()" class="btn-secondary">Voltar</button>
+            </footer>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/geracoes.js') }}"></script>
+</body>
+</html>

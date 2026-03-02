@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Arquivos - ISTQB CTAL-TA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="pagina-arquivos">
+    <div class="container">
+        <header class="page-header">
+            <a href="/" class="btn-voltar">← Voltar</a>
+            <h1>Meus Arquivos</h1>
+        </header>
+
+        <div class="upload-section">
+            <h2>Anexar Novo Arquivo</h2>
+            <p class="help-text">Envie arquivos TXT ou PDF para gerar questões automaticamente</p>
+            
+            <div class="upload-area" id="upload-area">
+                <input type="file" id="file-input" accept=".txt,.pdf" style="display: none;">
+                <div class="upload-icon">📤</div>
+                <p>Clique ou arraste arquivos aqui</p>
+                <p class="file-types">TXT ou PDF (máx 16MB)</p>
+            </div>
+            
+            <button onclick="document.getElementById('file-input').click()" class="btn-primary">Selecionar Arquivo</button>
+        </div>
+
+        <!-- NOVO: Biblioteca (materiais em uploads/) -->
+        <div class="upload-section" style="margin-top: 30px;">
+            <h2>Biblioteca (pasta uploads)</h2>
+            <p class="help-text">
+                Esta seção lista automaticamente tudo que estiver em <code>uploads/</code>.
+                PDFs podem ser abertos/visualizados, áudios e vídeos podem ser reproduzidos no navegador (quando suportado).
+            </p>
+
+            <div class="materiais-filtros">
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label for="filtro-tipo">Tipo:</label>
+                    <select id="filtro-tipo">
+                        <option value="todos">Todos</option>
+                        <option value="pdf">PDF</option>
+                        <option value="audio">Áudio</option>
+                        <option value="video">Vídeo</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label for="filtro-busca">Buscar no nome:</label>
+                    <input id="filtro-busca" type="text" placeholder="ex.: syllabus, MAPAMENTAL, .pdf">
+                </div>
+
+                <button class="btn-primary" type="button" onclick="renderizarListaUnica()">Atualizar</button>
+            </div>
+        </div>
+
+        <div class="arquivos-lista">
+            <h2>Biblioteca (lista única)</h2>
+            <div id="lista-biblioteca">
+                <p class="empty-state">Carregando...</p>
+            </div>
+        </div>
+
+        <!-- Mantido (para compatibilidade com arquivos.js). A lista única é #lista-biblioteca -->
+        <div id="lista-arquivos" style="display:none;"></div>
+    </div>
+
+    <!-- Modal Gerar Questões -->
+    <div id="modal-gerar" class="modal" style="display: none;">
+        <div class="modal-content" style="position: relative;">
+            <h3>Gerar Questões</h3>
+            <p>Quantas questões deseja gerar?</p>
+            <input type="number" id="num-questoes-gerar" value="5" min="1" max="20">
+
+            <label for="llm-provider" style="margin-top: 12px; display:block;">Estratégia de geração (LLM):</label>
+            <select id="llm-provider" class="select-llm">
+                <option value="auto">Carregando opções...</option>
+            </select>
+
+            <label for="syllabus-capitulo" style="margin-top: 12px; display:block;">Capítulo do syllabus:</label>
+            <select id="syllabus-capitulo" class="select-llm">
+                <option value="importados" data-label="Importados / Outros">Importados / Outros</option>
+                <option value="cap1" data-label="Cap 1 - Risk-based Testing">Cap 1 - Risk-based Testing</option>
+                <option value="cap2" data-label="Cap 2 - Test Techniques">Cap 2 - Test Techniques</option>
+                <option value="cap3" data-label="Cap 3 - Quality Characteristics">Cap 3 - Quality Characteristics</option>
+                <option value="cap4" data-label="Cap 4 - Reviews">Cap 4 - Reviews</option>
+                <option value="cap5" data-label="Cap 5 - Test Tools">Cap 5 - Test Tools</option>
+            </select>
+            <p class="help-text" style="font-size: 0.85rem; margin-top: 6px;">
+                O capítulo será salvo junto ao job e usado como destino ao salvar as questões na base.
+            </p>
+
+            <p class="help-text" style="font-size: 0.85rem; margin-top: 4px;">
+                A escolha da LLM afeta como as questões serão geradas. Use "Automático" para o comportamento padrão
+                (Ollama → HuggingFace) ou escolha uma opção específica para testes controlados.
+            </p>
+            
+            <!-- Overlay de carregamento -->
+            <div id="loading-geracao" class="loading-overlay" style="display:none;">
+                <div class="loading-box">
+                    <div class="spinner"></div>
+                    <div class="loading-text">Gerando questões... (isso pode levar alguns segundos)</div>
+                    <div class="loading-subtext">Aguarde, não feche esta janela.</div>
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button id="btn-gerar" onclick="confirmarGerar()" class="btn-primary">Gerar</button>
+                <button id="btn-cancelar-gerar" onclick="fecharModal()" class="btn-secondary">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Revisar Questões Geradas -->
+    <div id="modal-revisao-questoes" class="modal" style="display: none;">
+        <div class="modal-content modal-revisao">
+            <h3>Revisar Questões Geradas</h3>
+
+            <!-- DEBUG: mostra o JSON retornado (ou erros) -->
+            <details id="debug-llm-details" class="debug-details" style="display:none;">
+                <summary>Debug: retorno da IA (JSON)</summary>
+                <pre id="debug-llm-json" class="debug-pre"></pre>
+            </details>
+
+            <form id="form-questoes-geradas">
+                <div id="questoes-geradas-lista"></div>
+                <div class="modal-actions">
+                    <button type="button" onclick="salvarQuestoesGeradas()" class="btn-primary">Salvar Questões</button>
+                    <button type="button" onclick="fecharModalRevisao()" class="btn-secondary">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Deletar -->
+    <div id="modal-deletar" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Confirmar Exclusão</h3>
+            <p>Tem certeza que deseja deletar este arquivo?</p>
+            <p class="warning">Esta ação não pode ser desfeita.</p>
+            <div class="modal-actions">
+                <button onclick="confirmarDeletar()" class="btn-danger">Deletar</button>
+                <button onclick="fecharModal()" class="btn-secondary">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOVO: Modal Preview de Material -->
+    <div id="modal-preview" class="modal" style="display: none;">
+        <div class="modal-content modal-revisao" style="position: relative;">
+            <header class="modal-header">
+                <h3 id="modal-preview-titulo">Preview</h3>
+                <button type="button" class="btn-secondary btn-fechar-modal" onclick="fecharPreview()">Fechar</button>
+            </header>
+            <div class="modal-body-scroll" id="modal-preview-body"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/arquivos.js') }}"></script>
+    <!-- NOVO: JS da biblioteca de materiais (reaproveita /api/materiais) -->
+    <script src="{{ url_for('static', filename='js/estudos.js') }}"></script>
+    <!-- NOVO: JS unificador (anexos + uploads em uma lista) -->
+    <script src="{{ url_for('static', filename='js/biblioteca.js') }}"></script>
+</body>
+</html>

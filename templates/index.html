@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISTQB CTAL-TA - Sistema de Estudos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="dark-body">
+    <div class="container">
+        <header class="hero">
+            <h1>ISTQB CTAL-TA</h1>
+            <p class="subtitle">Sistema completo de estudos para prova avançada TA</p>
+        </header>
+
+        <nav class="main-nav">
+            <a href="/simulado" class="nav-card simulado">
+                <div class="icon">📝</div>
+                <h2>Simulados</h2>
+                <p>Modo exame por capítulo ou completo</p>
+            </a>
+
+            <a href="/arquivos" class="nav-card arquivos">
+                <div class="icon">📁</div>
+                <h2>Arquivos & LLM</h2>
+                <p>Upload e geração de questões</p>
+            </a>
+
+            <a href="/dashboard" class="nav-card dashboard">
+                <div class="icon">📊</div>
+                <h2>Dashboard</h2>
+                <p>Estatísticas e progresso</p>
+            </a>
+
+            <a href="/flashcards" class="nav-card revisao">
+                <div class="icon">🎯</div>
+                <h2>Flashcards</h2>
+                <p>Revisão rápida por tema</p>
+            </a>
+
+            <a href="/geracoes" class="nav-card geracoes">
+                <div class="icon">⚙️</div>
+                <h2>Gerações</h2>
+                <p>Acompanhar jobs de geração de questões</p>
+            </a>
+        </nav>
+
+        <footer>
+            <p>Conteúdo consolidado • Utilize capítulos e simulados frequentes para fixar melhor.</p>
+        </footer>
+    </div>
+</body>
+</html>

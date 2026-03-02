@@ -1,0 +1,61 @@
+{
+  "AVISO": "Este arquivo foi consolidado. Utilize apenas progresso_simulados.json para tracking de progresso.",
+  "flashcards": {},
+  "quiz_historico": [],
+  "simulados": [
+    {
+      "data": "2026-02-27 10:21:41",
+      "capitulo": "web_completo",
+      "total_questoes": 1,
+      "acertos": 0,
+      "percentual": 0.0,
+      "tempo_minutos": 0,
+      "aprovado": false
+    },
+    {
+      "data": "2026-02-27 10:22:10",
+      "capitulo": "web_completo",
+      "total_questoes": 1,
+      "acertos": 1,
+      "percentual": 100.0,
+      "tempo_minutos": 0,
+      "aprovado": true
+    },
+    {
+      "data": "2026-02-27 11:52:28",
+      "capitulo": "web_completo",
+      "total_questoes": 3,
+      "acertos": 3,
+      "percentual": 100.0,
+      "tempo_minutos": 1,
+      "aprovado": true
+    },
+    {
+      "data": "2026-02-27 20:02:55",
+      "capitulo": "web_completo",
+      "total_questoes": 10,
+      "acertos": 8,
+      "percentual": 80.0,
+      "tempo_minutos": 2,
+      "aprovado": true
+    },
+    {
+      "data": "2026-03-02 13:41:46",
+      "capitulo": "web_completo",
+      "total_questoes": 5,
+      "acertos": 5,
+      "percentual": 100.0,
+      "tempo_minutos": 1,
+      "aprovado": true
+    },
+    {
+      "data": "2026-03-02 16:48:50",
+      "capitulo": "web_completo",
+      "total_questoes": 5,
+      "acertos": 4,
+      "percentual": 80.0,
+      "tempo_minutos": 1,
+      "aprovado": true
+    }
+  ]
+}

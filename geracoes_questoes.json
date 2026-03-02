@@ -1,0 +1,876 @@
+{
+  "jobs": [
+    {
+      "id": "20260302_120503_1",
+      "arquivo_id": 3,
+      "arquivo_nome": "syllabus_ctfl-at_1.0br.pdf",
+      "provider": "auto",
+      "num_questoes": 5,
+      "status": "concluido",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 12:05:03",
+      "atualizado_em": "2026-03-02 12:07:48",
+      "questoes": []
+    },
+    {
+      "id": "20260302_120532_2",
+      "arquivo_id": 3,
+      "arquivo_nome": "syllabus_ctfl-at_1.0br.pdf",
+      "provider": "hf_mistral",
+      "num_questoes": 5,
+      "status": "erro",
+      "erro_msg": "410 Client Error: Gone for url: https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2",
+      "criado_em": "2026-03-02 12:05:32",
+      "atualizado_em": "2026-03-02 12:06:51",
+      "questoes": []
+    },
+    {
+      "id": "20260302_120543_3",
+      "arquivo_id": 3,
+      "arquivo_nome": "syllabus_ctfl-at_1.0br.pdf",
+      "provider": "hf_zephyr",
+      "num_questoes": 5,
+      "status": "erro",
+      "erro_msg": "410 Client Error: Gone for url: https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta",
+      "criado_em": "2026-03-02 12:05:43",
+      "atualizado_em": "2026-03-02 12:06:58",
+      "questoes": []
+    },
+    {
+      "id": "20260302_120555_4",
+      "arquivo_id": 3,
+      "arquivo_nome": "syllabus_ctfl-at_1.0br.pdf",
+      "provider": "hf_qwen",
+      "num_questoes": 2,
+      "status": "erro",
+      "erro_msg": "410 Client Error: Gone for url: https://api-inference.huggingface.co/models/Qwen/Qwen2.5-7B-Instruct",
+      "criado_em": "2026-03-02 12:05:55",
+      "atualizado_em": "2026-03-02 12:07:04",
+      "questoes": []
+    },
+    {
+      "id": "20260302_120606_5",
+      "arquivo_id": 3,
+      "arquivo_nome": "syllabus_ctfl-at_1.0br.pdf",
+      "provider": "openai_pro",
+      "num_questoes": 2,
+      "status": "concluido_salvo",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 12:06:06",
+      "atualizado_em": "2026-03-02 15:33:46",
+      "questoes": [
+        {
+          "id": 12071501,
+          "k_level": "K2",
+          "pergunta": "Quem foi o presidente do Grupo de Trabalho do Foundation Level Extension Agile Tester do ISTQB?",
+          "opcoes": {
+            "A": "Rex Black",
+            "B": "Bertrand Cornanguer",
+            "C": "Gerry Coleman",
+            "D": "Alon Linetzki"
+          },
+          "resposta": "A",
+          "justificativa": "O texto informa que Rex Black foi o presidente do Grupo de Trabalho do Foundation Level Extension Agile Tester.",
+          "fonte": "llm"
+        },
+        {
+          "id": 12071502,
+          "k_level": "K2",
+          "pergunta": "Qual das opções abaixo NÃO é mencionada como uma seção do índice do Syllabus CTFL-AT v1.0?",
+          "opcoes": {
+            "A": "Direitos Autorais",
+            "B": "Histórico da Revisão",
+            "C": "Princípios de Engenharia de Requisitos",
+            "D": "Agradecimentos"
+          },
+          "resposta": "C",
+          "justificativa": "O índice apresentado no texto não menciona 'Princípios de Engenharia de Requisitos', enquanto as demais opções aparecem no índice.",
+          "fonte": "llm"
+        }
+      ]
+    },
+    {
+      "id": "20260302_130838_6",
+      "arquivo_id": 5,
+      "arquivo_nome": "MAPAMENTAL_CTFL-AT_Capitulo1.pdf",
+      "provider": "hf_mistral",
+      "num_questoes": 2,
+      "status": "erro",
+      "erro_msg": "410 Client Error: Gone for url: https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2",
+      "criado_em": "2026-03-02 13:08:38",
+      "atualizado_em": "2026-03-02 13:08:39",
+      "questoes": []
+    },
+    {
+      "id": "20260302_130853_7",
+      "arquivo_id": 5,
+      "arquivo_nome": "MAPAMENTAL_CTFL-AT_Capitulo1.pdf",
+      "provider": "hf_phi3",
+      "num_questoes": 2,
+      "status": "erro",
+      "erro_msg": "410 Client Error: Gone for url: https://api-inference.huggingface.co/models/microsoft/Phi-3-mini-4k-instruct",
+      "criado_em": "2026-03-02 13:08:53",
+      "atualizado_em": "2026-03-02 13:08:55",
+      "questoes": []
+    },
+    {
+      "id": "20260302_130904_8",
+      "arquivo_id": 5,
+      "arquivo_nome": "MAPAMENTAL_CTFL-AT_Capitulo1.pdf",
+      "provider": "hf_zephyr",
+      "num_questoes": 2,
+      "status": "erro",
+      "erro_msg": "410 Client Error: Gone for url: https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta",
+      "criado_em": "2026-03-02 13:09:04",
+      "atualizado_em": "2026-03-02 13:09:05",
+      "questoes": []
+    },
+    {
+      "id": "20260302_130914_9",
+      "arquivo_id": 5,
+      "arquivo_nome": "MAPAMENTAL_CTFL-AT_Capitulo1.pdf",
+      "provider": "hf_qwen",
+      "num_questoes": 2,
+      "status": "erro",
+      "erro_msg": "410 Client Error: Gone for url: https://api-inference.huggingface.co/models/Qwen/Qwen2.5-7B-Instruct",
+      "criado_em": "2026-03-02 13:09:14",
+      "atualizado_em": "2026-03-02 13:09:15",
+      "questoes": []
+    },
+    {
+      "id": "20260302_130927_10",
+      "arquivo_id": 5,
+      "arquivo_nome": "MAPAMENTAL_CTFL-AT_Capitulo1.pdf",
+      "provider": "openai_pro",
+      "num_questoes": 2,
+      "status": "erro",
+      "erro_msg": "OpenAI não retornou lista JSON de questões.",
+      "criado_em": "2026-03-02 13:09:27",
+      "atualizado_em": "2026-03-02 13:09:32",
+      "questoes": []
+    },
+    {
+      "id": "20260302_131043_11",
+      "arquivo_id": 5,
+      "arquivo_nome": "MAPAMENTAL_CTFL-AT_Capitulo1.pdf",
+      "provider": "auto",
+      "num_questoes": 2,
+      "status": "erro",
+      "erro_msg": "Falha ao gerar questões via HuggingFace. Último erro: Modelo indisponível (410 Gone): https://api-inference.huggingface.co/models/Qwen/Qwen2.5-7B-Instruct",
+      "criado_em": "2026-03-02 13:10:43",
+      "atualizado_em": "2026-03-02 13:12:20",
+      "questoes": []
+    },
+    {
+      "id": "20260302_131057_12",
+      "arquivo_id": 5,
+      "arquivo_nome": "MAPAMENTAL_CTFL-AT_Capitulo1.pdf",
+      "provider": "gpt-4.1-mini",
+      "num_questoes": 3,
+      "status": "erro",
+      "erro_msg": "OpenAI não retornou lista JSON de questões.",
+      "criado_em": "2026-03-02 13:10:57",
+      "atualizado_em": "2026-03-02 13:12:24",
+      "questoes": []
+    },
+    {
+      "id": "20260302_132347_13",
+      "arquivo_id": 4,
+      "arquivo_nome": "syllabus_ctal-tae_2.0br.pdf",
+      "provider": "ollama",
+      "num_questoes": 3,
+      "status": "concluido",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 13:23:47",
+      "atualizado_em": "2026-03-02 13:26:28",
+      "questoes": []
+    },
+    {
+      "id": "20260302_132406_14",
+      "arquivo_id": 4,
+      "arquivo_nome": "syllabus_ctal-tae_2.0br.pdf",
+      "provider": "hf_qwen",
+      "num_questoes": 3,
+      "status": "erro",
+      "erro_msg": "410 Client Error: Gone for url: https://api-inference.huggingface.co/models/Qwen/Qwen2.5-7B-Instruct",
+      "criado_em": "2026-03-02 13:24:06",
+      "atualizado_em": "2026-03-02 13:25:34",
+      "questoes": []
+    },
+    {
+      "id": "20260302_132417_15",
+      "arquivo_id": 4,
+      "arquivo_nome": "syllabus_ctal-tae_2.0br.pdf",
+      "provider": "gpt-4.1-mini",
+      "num_questoes": 3,
+      "status": "concluido_salvo",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 13:24:17",
+      "atualizado_em": "2026-03-02 15:33:33",
+      "questoes": [
+        {
+          "id": 13255001,
+          "k_level": "K2",
+          "pergunta": "Qual é o objetivo principal do syllabus CTAL-TAE 2.0 do ISTQB?",
+          "opcoes": {
+            "A": "Fornecer um guia para a certificação de testadores iniciantes em automação.",
+            "B": "Estabelecer diretrizes para a engenharia de automação de testes em nível avançado.",
+            "C": "Apresentar técnicas básicas de teste manual para iniciantes.",
+            "D": "Descrever as ferramentas específicas para automação de testes."
+          },
+          "resposta": "B",
+          "justificativa": "O syllabus CTAL-TAE 2.0 é voltado para o nível avançado de Test Automation Engineering, fornecendo diretrizes e conhecimentos para profissionais que atuam na automação de testes.",
+          "fonte": "llm"
+        },
+        {
+          "id": 13255002,
+          "k_level": "K2",
+          "pergunta": "Segundo o texto, qual é uma condição para que um Provedor de Treinamento Credenciado utilize o syllabus como base para um curso?",
+          "opcoes": {
+            "A": "O curso pode ser anunciado antes do credenciamento oficial dos materiais.",
+            "B": "Os autores e o ISTQB® devem ser reconhecidos como fonte e proprietários dos direitos autorais.",
+            "C": "Não é necessário citar a fonte do syllabus no curso.",
+            "D": "O uso do syllabus é permitido para fins comerciais sem restrições."
+          },
+          "resposta": "B",
+          "justificativa": "O texto especifica que o uso do syllabus por provedores credenciados deve reconhecer os autores e o ISTQB® como fonte e detentores dos direitos autorais, além de respeitar o credenciamento oficial.",
+          "fonte": "llm"
+        },
+        {
+          "id": 13255003,
+          "k_level": "K2",
+          "pergunta": "Qual é a data de liberação da versão GA do CTAL-TAE v2.0 conforme o histórico de revisões?",
+          "opcoes": {
+            "A": "21/10/2016",
+            "B": "03/05/2024",
+            "C": "14/06/2024",
+            "D": "29/07/2024"
+          },
+          "resposta": "B",
+          "justificativa": "O histórico de revisões indica que a versão GA do CTAL-TAE v2.0 foi liberada em 03/05/2024.",
+          "fonte": "llm"
+        }
+      ]
+    },
+    {
+      "id": "20260302_133039_16",
+      "arquivo_id": 2,
+      "arquivo_nome": "CaminhoparaCTFL-ATSlides.pdf",
+      "provider": "ollama",
+      "num_questoes": 2,
+      "status": "concluido",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 13:30:39",
+      "atualizado_em": "2026-03-02 13:32:46",
+      "questoes": [
+        {
+          "id": 13324601,
+          "k_level": "K2",
+          "pergunta": "O que o Manifesto Ágil enfatiza como mais valioso em relação ao software?",
+          "opcoes": {
+            "A": "Documentação detalhada",
+            "B": "Equipes grandes e hierárquicas",
+            "C": "Interações individuais sem colaboração",
+            "D": "Software funcionando"
+          },
+          "resposta": "D",
+          "justificativa": "O Manifesto Ágil argumenta que o valor está em 'Indivíduos e interações sobre processos e ferramentas', mas enfatiza mais a colaboração com clientes para desenvolvimento ágil, onde o software funcionando é muito mais útil do que documentação detalhada.",
+          "fonte": "llm"
+        },
+        {
+          "id": 13324602,
+          "k_level": "K2",
+          "pergunta": "De acordo com o Manifesto Ágil, qual aspecto tem menos valor?",
+          "opcoes": {
+            "A": "Documentação abrangente",
+            "B": "Interações individuais sem colaboração",
+            "C": "Equipes grandes e hierárquicas",
+            "D": "Software funcionando"
+          },
+          "resposta": "B",
+          "justificativa": "'Indivíduos e interações sobre processos e ferramentas' têm mais valor, enquanto 'Equipes grandes e hierárquicas' são menos enfatizadas no Manifesto Ágil.",
+          "fonte": "llm"
+        }
+      ]
+    },
+    {
+      "id": "20260302_133053_17",
+      "arquivo_id": 2,
+      "arquivo_nome": "CaminhoparaCTFL-ATSlides.pdf",
+      "provider": "hf_mistral",
+      "num_questoes": 2,
+      "status": "erro",
+      "erro_msg": "410 Client Error: Gone for url: https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2",
+      "criado_em": "2026-03-02 13:30:53",
+      "atualizado_em": "2026-03-02 13:32:25",
+      "questoes": []
+    },
+    {
+      "id": "20260302_133105_18",
+      "arquivo_id": 2,
+      "arquivo_nome": "CaminhoparaCTFL-ATSlides.pdf",
+      "provider": "hf_zephyr",
+      "num_questoes": 2,
+      "status": "erro",
+      "erro_msg": "410 Client Error: Gone for url: https://api-inference.huggingface.co/models/HuggingFaceH4/zephyr-7b-beta",
+      "criado_em": "2026-03-02 13:31:05",
+      "atualizado_em": "2026-03-02 13:32:33",
+      "questoes": []
+    },
+    {
+      "id": "20260302_133116_19",
+      "arquivo_id": 2,
+      "arquivo_nome": "CaminhoparaCTFL-ATSlides.pdf",
+      "provider": "openai_pro",
+      "num_questoes": 2,
+      "status": "concluido_salvo",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 13:31:16",
+      "atualizado_em": "2026-03-02 14:29:26",
+      "questoes": [
+        {
+          "id": 13324901,
+          "k_level": "K2",
+          "pergunta": "Qual dos seguintes valores do Manifesto Ágil enfatiza a importância da colaboração contínua entre as pessoas da equipe de desenvolvimento?",
+          "opcoes": {
+            "A": "Indivíduos e interações sobre processos e ferramentas.",
+            "B": "Software funcionando sobre documentação mais abrangente.",
+            "C": "Colaboração com o cliente sobre negociação de contratos.",
+            "D": "Resposta às mudanças sobre o seguimento de um plano."
+          },
+          "resposta": "A",
+          "justificativa": "O valor 'Indivíduos e interações sobre processos e ferramentas' destaca que a comunicação e colaboração entre as pessoas da equipe são mais importantes para o sucesso do projeto do que a dependência de ferramentas ou processos.",
+          "fonte": "llm"
+        },
+        {
+          "id": 13324902,
+          "k_level": "K2",
+          "pergunta": "No contexto do desenvolvimento ágil, qual é um dos principais benefícios da abordagem de equipe inteira?",
+          "opcoes": {
+            "A": "Permite que apenas desenvolvedores tomem decisões técnicas.",
+            "B": "Garante que todos os stakeholders relevantes participem ativamente do projeto.",
+            "C": "Reduz a necessidade de feedback frequente do cliente.",
+            "D": "Foca exclusivamente na documentação detalhada do produto."
+          },
+          "resposta": "B",
+          "justificativa": "A abordagem de equipe inteira no ágil envolve todos com conhecimento e habilidades necessárias, incluindo representantes do cliente e stakeholders de negócios, garantindo participação ativa e decisões mais assertivas para o sucesso do projeto.",
+          "fonte": "llm"
+        }
+      ]
+    },
+    {
+      "id": "20260302_142223_20",
+      "arquivo_id": 3,
+      "arquivo_nome": "syllabus_ctfl-at_1.0br.pdf",
+      "provider": "auto",
+      "num_questoes": 3,
+      "status": "concluido",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 14:22:23",
+      "atualizado_em": "2026-03-02 15:17:26",
+      "questoes": []
+    },
+    {
+      "id": "20260302_142242_21",
+      "arquivo_id": 3,
+      "arquivo_nome": "syllabus_ctfl-at_1.0br.pdf",
+      "provider": "gpt-4.1-mini",
+      "num_questoes": 3,
+      "status": "concluido",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 14:22:42",
+      "atualizado_em": "2026-03-02 15:15:58",
+      "questoes": [
+        {
+          "id": 15155801,
+          "k_level": "K2",
+          "pergunta": "Qual é o principal objetivo do Manifesto Ágil no desenvolvimento de software?",
+          "opcoes": {
+            "A": "A) Priorizar processos e ferramentas sobre indivíduos e interações",
+            "B": "B) Valorizar a documentação extensiva em detrimento do software funcional",
+            "C": "C) Promover a colaboração, resposta rápida a mudanças e entrega contínua de valor",
+            "D": "D) Seguir rigorosamente planos fixos e evitar mudanças durante o projeto"
+          },
+          "resposta": "C",
+          "justificativa": "O Manifesto Ágil enfatiza a colaboração entre equipes, a adaptação rápida às mudanças e a entrega contínua de valor ao cliente, diferentemente de abordagens tradicionais que priorizam processos rígidos e documentação extensiva.",
+          "fonte": "llm"
+        },
+        {
+          "id": 15155802,
+          "k_level": "K2",
+          "pergunta": "Qual prática ágil envolve a revisão periódica do processo e das práticas da equipe para melhoria contínua?",
+          "opcoes": {
+            "A": "A) Integração Contínua",
+            "B": "B) Retrospectivas",
+            "C": "C) Planejamento da Iteração",
+            "D": "D) Criação colaborativa da História do Usuário"
+          },
+          "resposta": "B",
+          "justificativa": "As retrospectivas são reuniões regulares onde a equipe reflete sobre o que funcionou bem e o que pode ser melhorado, promovendo a melhoria contínua do processo ágil.",
+          "fonte": "llm"
+        },
+        {
+          "id": 15155803,
+          "k_level": "K2",
+          "pergunta": "Qual é a característica principal da abordagem 'Equipe Inteira' no desenvolvimento ágil?",
+          "opcoes": {
+            "A": "A) Divisão rígida das responsabilidades entre desenvolvedores e testadores",
+            "B": "B) Colaboração contínua e integrada entre todos os membros da equipe, incluindo testadores e desenvolvedores",
+            "C": "C) Testes realizados apenas após o término do desenvolvimento",
+            "D": "D) Testadores trabalhando isoladamente para garantir a qualidade"
+          },
+          "resposta": "B",
+          "justificativa": "A abordagem de 'Equipe Inteira' promove a colaboração contínua entre todos os membros da equipe, eliminando silos e integrando atividades de desenvolvimento e teste para melhorar a qualidade e agilidade.",
+          "fonte": "llm"
+        }
+      ]
+    },
+    {
+      "id": "20260302_142257_22",
+      "arquivo_id": 5,
+      "arquivo_nome": "MAPAMENTAL_CTFL-AT_Capitulo1.pdf",
+      "provider": "ollama",
+      "num_questoes": 3,
+      "status": "concluido",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 14:22:57",
+      "atualizado_em": "2026-03-02 15:19:17",
+      "questoes": []
+    },
+    {
+      "id": "20260302_144438_23",
+      "arquivo_id": 2,
+      "arquivo_nome": "CaminhoparaCTFL-ATSlides.pdf",
+      "provider": "ollama",
+      "num_questoes": 5,
+      "status": "concluido",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 14:44:38",
+      "atualizado_em": "2026-03-02 15:22:31",
+      "questoes": []
+    },
+    {
+      "id": "20260302_144516_24",
+      "arquivo_id": 2,
+      "arquivo_nome": "CaminhoparaCTFL-ATSlides.pdf",
+      "provider": "hf_zephyr",
+      "num_questoes": 5,
+      "status": "concluido",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 14:45:16",
+      "atualizado_em": "2026-03-02 15:21:05",
+      "questoes": []
+    },
+    {
+      "id": "20260302_144528_25",
+      "arquivo_id": 2,
+      "arquivo_nome": "CaminhoparaCTFL-ATSlides.pdf",
+      "provider": "openai_pro",
+      "num_questoes": 5,
+      "status": "concluido_salvo",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 14:45:28",
+      "atualizado_em": "2026-03-02 15:32:54",
+      "questoes": [
+        {
+          "id": 15212301,
+          "k_level": "K2",
+          "pergunta": "Qual dos seguintes valores é enfatizado pelo Manifesto Ágil como tendo maior valor em relação ao seu oposto?",
+          "opcoes": {
+            "A": "Processos e ferramentas sobre indivíduos e interações",
+            "B": "Documentação abrangente sobre software funcionando",
+            "C": "Negociação de contratos sobre colaboração com o cliente",
+            "D": "Indivíduos e interações sobre processos e ferramentas"
+          },
+          "resposta": "D",
+          "justificativa": "O Manifesto Ágil valoriza mais indivíduos e interações do que processos e ferramentas, conforme destacado no texto.",
+          "fonte": "llm"
+        },
+        {
+          "id": 15212302,
+          "k_level": "K2",
+          "pergunta": "Qual é uma das principais vantagens da abordagem de equipe inteira em projetos ágeis?",
+          "opcoes": {
+            "A": "Permite que apenas desenvolvedores tomem decisões técnicas",
+            "B": "Reduz a comunicação entre os membros da equipe",
+            "C": "Garante que todos com conhecimento necessário estejam envolvidos no sucesso do projeto",
+            "D": "Aumenta a dependência de ferramentas automatizadas"
+          },
+          "resposta": "C",
+          "justificativa": "A abordagem de equipe inteira garante que todos com o conhecimento e habilidades necessários estejam envolvidos, aumentando as chances de sucesso do projeto.",
+          "fonte": "llm"
+        },
+        {
+          "id": 15212303,
+          "k_level": "K2",
+          "pergunta": "Por que o feedback inicial e frequente é importante no desenvolvimento ágil de software?",
+          "opcoes": {
+            "A": "Para garantir que a documentação esteja sempre atualizada",
+            "B": "Para remover defeitos antecipadamente e melhorar a qualidade do produto",
+            "C": "Para evitar mudanças de requisitos durante o projeto",
+            "D": "Para permitir que apenas o gerente de projeto tome decisões"
+          },
+          "resposta": "B",
+          "justificativa": "O feedback inicial e frequente permite a remoção antecipada de defeitos e contribui para o desenvolvimento de um produto de maior qualidade.",
+          "fonte": "llm"
+        },
+        {
+          "id": 15212304,
+          "k_level": "K2",
+          "pergunta": "Segundo os princípios ágeis, qual é a principal medida de progresso em um projeto?",
+          "opcoes": {
+            "A": "Quantidade de documentação produzida",
+            "B": "Software funcionando",
+            "C": "Número de reuniões realizadas",
+            "D": "Tempo gasto em planejamento"
+          },
+          "resposta": "B",
+          "justificativa": "De acordo com o Manifesto Ágil, software funcionando é a principal medida de progresso.",
+          "fonte": "llm"
+        },
+        {
+          "id": 15212305,
+          "k_level": "K2",
+          "pergunta": "Como o Manifesto Ágil sugere lidar com mudanças de requisitos durante o desenvolvimento?",
+          "opcoes": {
+            "A": "Evitar mudanças para manter o plano original",
+            "B": "Aceitar mudanças apenas no início do projeto",
+            "C": "Aceitar mudanças de requisitos mesmo no final do desenvolvimento",
+            "D": "Permitir mudanças apenas após aprovação formal do cliente"
+          },
+          "resposta": "C",
+          "justificativa": "O Manifesto Ágil recomenda aceitar mudanças de requisitos mesmo no final do desenvolvimento, pois processos ágeis se adaptam para proporcionar vantagens competitivas ao cliente.",
+          "fonte": "llm"
+        }
+      ]
+    },
+    {
+      "id": "20260302_150107_26",
+      "arquivo_id": 3,
+      "arquivo_nome": "syllabus_ctfl-at_1.0br.pdf",
+      "provider": "hf_mistral",
+      "num_questoes": 2,
+      "status": "concluido",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 15:01:07",
+      "atualizado_em": "2026-03-02 15:21:31",
+      "questoes": []
+    },
+    {
+      "id": "20260302_150126_27",
+      "arquivo_id": 3,
+      "arquivo_nome": "syllabus_ctfl-at_1.0br.pdf",
+      "provider": "ollama",
+      "num_questoes": 2,
+      "status": "concluido_salvo",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 15:01:26",
+      "atualizado_em": "2026-03-02 15:32:38",
+      "questoes": [
+        {
+          "id": 15251301,
+          "k_level": "K2",
+          "pergunta": "Qual ferramenta pode ser usada para automatizar testes de cauda?",
+          "opcoes": {
+            "A": "Selenium WebDriver.",
+            "B": "Pingdom ou UptimeRobot.",
+            "C": "JUnit.",
+            "D": "TestRigor"
+          },
+          "resposta": "C",
+          "justificativa": "Para o teste de cauda, que se concentra em resultados finais e específicos da aplicação, a JUnit é uma escolha adequada para automatizar esses casos de teste.",
+          "fonte": "llm"
+        }
+      ]
+    },
+    {
+      "id": "20260302_151022_28",
+      "arquivo_id": 1,
+      "arquivo_nome": "CTAL-TA_Sample_Questions_4.0.pdf",
+      "provider": "ollama",
+      "num_questoes": 5,
+      "status": "erro",
+      "erro_msg": "Ollama timeout após 90s",
+      "criado_em": "2026-03-02 15:10:22",
+      "atualizado_em": "2026-03-02 15:24:49",
+      "questoes": []
+    },
+    {
+      "id": "20260302_151031_29",
+      "arquivo_id": 1,
+      "arquivo_nome": "CTAL-TA_Sample_Questions_4.0.pdf",
+      "provider": "gpt-4.1-mini",
+      "num_questoes": 5,
+      "status": "concluido_salvo",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 15:10:31",
+      "atualizado_em": "2026-03-02 15:32:26",
+      "questoes": [
+        {
+          "id": 15250401,
+          "k_level": "K2",
+          "pergunta": "Em quais modelos de desenvolvimento o teste de regressão é mais importante?",
+          "opcoes": {
+            "A": "Sequencial e incremental",
+            "B": "Sequencial e iterativo",
+            "C": "Incremental e iterativo",
+            "D": "É igualmente importante em todos os modelos"
+          },
+          "resposta": "B",
+          "justificativa": "O teste de regressão é especialmente importante em modelos sequenciais e iterativos, pois mudanças em fases anteriores podem impactar as fases seguintes, exigindo revalidação.",
+          "fonte": "llm"
+        },
+        {
+          "id": 15250402,
+          "k_level": "K2",
+          "pergunta": "Durante qual atividade um analista de teste define os casos de teste de baixo nível?",
+          "opcoes": {
+            "A": "Análise de teste",
+            "B": "Design de teste",
+            "C": "Implementação de teste",
+            "D": "Execução de teste"
+          },
+          "resposta": "B",
+          "justificativa": "A definição dos casos de teste de baixo nível ocorre durante a atividade de design de teste, onde os testes são detalhados para implementação.",
+          "fonte": "llm"
+        },
+        {
+          "id": 15250403,
+          "k_level": "K2",
+          "pergunta": "Qual é o significado do critério de qualidade 'Necessidade' para casos de teste?",
+          "opcoes": {
+            "A": "O caso de teste cobre condições de fronteira",
+            "B": "O caso de teste cobre condições negativas",
+            "C": "O caso de teste cobre algo que precisa ser testado",
+            "D": "O caso de teste é necessário como pré-requisito para outro caso"
+          },
+          "resposta": "C",
+          "justificativa": "O critério 'Necessidade' assegura que o caso de teste cobre aspectos que realmente necessitam ser testados, evitando testes redundantes.",
+          "fonte": "llm"
+        },
+        {
+          "id": 15250404,
+          "k_level": "K2",
+          "pergunta": "Qual tipo de ferramenta é usada para gerenciar a matriz de rastreabilidade?",
+          "opcoes": {
+            "A": "Gerenciamento de defeitos",
+            "B": "Gerenciamento de testes",
+            "C": "Gerenciamento de dados de teste",
+            "D": "Gerenciamento de configuração"
+          },
+          "resposta": "B",
+          "justificativa": "Ferramentas de gerenciamento de testes são usadas para criar e manter a matriz de rastreabilidade, vinculando requisitos a casos de teste.",
+          "fonte": "llm"
+        },
+        {
+          "id": 15250405,
+          "k_level": "K2",
+          "pergunta": "Considerando um modelo iterativo e uma matriz de rastreabilidade com riscos de regressão, qual a ordem recomendada para execução dos casos de teste para mitigar riscos?",
+          "opcoes": {
+            "A": "1, 2, 3, 4, 5",
+            "B": "1, 3, 4 e 2, 5 se houver tempo",
+            "C": "5, 4, 3, 1 e não executar 2",
+            "D": "1, 5, 4, 3 e 2 se houver tempo"
+          },
+          "resposta": "B",
+          "justificativa": "A ordem prioriza casos com maior risco de regressão e dependências, executando primeiro os testes críticos e deixando os menos críticos para depois.",
+          "fonte": "llm"
+        }
+      ]
+    },
+    {
+      "id": "20260302_151455_30",
+      "arquivo_id": 3,
+      "arquivo_nome": "syllabus_ctfl-at_1.0br.pdf",
+      "provider": "auto",
+      "num_questoes": 3,
+      "status": "concluido",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 15:14:55",
+      "atualizado_em": "2026-03-02 15:28:21",
+      "questoes": []
+    },
+    {
+      "id": "20260302_151503_31",
+      "arquivo_id": 3,
+      "arquivo_nome": "syllabus_ctfl-at_1.0br.pdf",
+      "provider": "gpt-4.1-mini",
+      "num_questoes": 3,
+      "status": "concluido_salvo",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 15:15:03",
+      "atualizado_em": "2026-03-02 15:32:12",
+      "questoes": [
+        {
+          "id": 15270901,
+          "k_level": "K2",
+          "pergunta": "Qual é o principal objetivo do Manifesto Ágil no desenvolvimento de software?",
+          "opcoes": {
+            "A": "Aumentar a documentação detalhada para garantir qualidade",
+            "B": "Promover a colaboração e a entrega frequente de software funcional",
+            "C": "Focar exclusivamente na automação de testes",
+            "D": "Estabelecer processos rígidos para evitar mudanças"
+          },
+          "resposta": "B",
+          "justificativa": "O Manifesto Ágil enfatiza a colaboração entre equipes e a entrega frequente de software funcional para responder rapidamente às mudanças.",
+          "fonte": "llm"
+        },
+        {
+          "id": 15270902,
+          "k_level": "K2",
+          "pergunta": "Qual prática ágil enfatiza a criação colaborativa da História do Usuário?",
+          "opcoes": {
+            "A": "Integração Contínua",
+            "B": "Retrospectivas",
+            "C": "Criação colaborativa da História do Usuário",
+            "D": "Planejamento da Iteração"
+          },
+          "resposta": "C",
+          "justificativa": "A criação colaborativa da História do Usuário é uma prática ágil que envolve a equipe e stakeholders para definir requisitos claros e compartilhados.",
+          "fonte": "llm"
+        },
+        {
+          "id": 15270903,
+          "k_level": "K2",
+          "pergunta": "Qual é uma diferença fundamental entre teste em abordagens tradicionais e ágil?",
+          "opcoes": {
+            "A": "Testes são realizados apenas no final do projeto em ágil",
+            "B": "Testes e desenvolvimento são atividades separadas em ágil",
+            "C": "Testes são integrados continuamente ao desenvolvimento em ágil",
+            "D": "Não há níveis de teste definidos em ágil"
+          },
+          "resposta": "C",
+          "justificativa": "No desenvolvimento ágil, os testes são integrados continuamente ao processo de desenvolvimento para fornecer feedback rápido e melhorar a qualidade.",
+          "fonte": "llm"
+        }
+      ]
+    },
+    {
+      "id": "20260302_151943_32",
+      "arquivo_id": 4,
+      "arquivo_nome": "syllabus_ctal-tae_2.0br.pdf",
+      "provider": "hf_zephyr",
+      "num_questoes": 3,
+      "status": "concluido",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 15:19:43",
+      "atualizado_em": "2026-03-02 15:27:17",
+      "questoes": []
+    },
+    {
+      "id": "20260302_151959_33",
+      "arquivo_id": 4,
+      "arquivo_nome": "syllabus_ctal-tae_2.0br.pdf",
+      "provider": "auto",
+      "num_questoes": 3,
+      "status": "concluido",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 15:19:59",
+      "atualizado_em": "2026-03-02 15:31:13",
+      "questoes": []
+    },
+    {
+      "id": "20260302_152928_34",
+      "arquivo_id": 3,
+      "arquivo_nome": "syllabus_ctfl-at_1.0br.pdf",
+      "provider": "hf_phi3",
+      "num_questoes": 3,
+      "status": "concluido",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 15:29:28",
+      "atualizado_em": "2026-03-02 15:29:35",
+      "questoes": []
+    },
+    {
+      "id": "20260302_154426_35",
+      "arquivo_id": 6,
+      "arquivo_nome": "MAPAMENTAL_CTFL-AT_Capitulo2.pdf",
+      "provider": "hf_qwen",
+      "num_questoes": 3,
+      "status": "concluido",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 15:44:26",
+      "atualizado_em": "2026-03-02 15:44:27",
+      "questoes": []
+    },
+    {
+      "id": "20260302_154447_36",
+      "arquivo_id": 6,
+      "arquivo_nome": "MAPAMENTAL_CTFL-AT_Capitulo2.pdf",
+      "provider": "ollama",
+      "num_questoes": 3,
+      "status": "concluido",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 15:44:47",
+      "atualizado_em": "2026-03-02 15:47:13",
+      "questoes": []
+    },
+    {
+      "id": "20260302_154502_37",
+      "arquivo_id": 7,
+      "arquivo_nome": "MAPAMENTAL_CTFL-AT_Capitulo3.pdf",
+      "provider": "hf_mistral",
+      "num_questoes": 3,
+      "status": "concluido",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 15:45:02",
+      "atualizado_em": "2026-03-02 15:46:28",
+      "questoes": []
+    },
+    {
+      "id": "20260302_154512_38",
+      "arquivo_id": 7,
+      "arquivo_nome": "MAPAMENTAL_CTFL-AT_Capitulo3.pdf",
+      "provider": "gpt-4.1-mini",
+      "num_questoes": 3,
+      "status": "concluido_salvo",
+      "erro_msg": null,
+      "criado_em": "2026-03-02 15:45:12",
+      "atualizado_em": "2026-03-02 16:08:06",
+      "questoes": [
+        {
+          "id": 15464001,
+          "k_level": "K2",
+          "pergunta": "Qual é a sequência correta do processo no Test Driven Development (TDD)?",
+          "opcoes": {
+            "A": "Executar o teste, criar o código, escrever o teste, melhorar o código",
+            "B": "Criar um teste automatizado, executar o teste que falha, escrever o código até passar o teste, melhorar o código",
+            "C": "Escrever o código, criar o teste, executar o teste, melhorar o código",
+            "D": "Executar o teste, melhorar o código, criar o teste, escrever o código"
+          },
+          "resposta": "B",
+          "justificativa": "No TDD, o processo começa com a criação de um teste automatizado para uma pequena parte do código, executa-se esse teste que inicialmente falhará, escreve-se o código até que o teste passe, e depois melhora-se o código garantindo que o teste continue passando.",
+          "fonte": "llm"
+        },
+        {
+          "id": 15464002,
+          "k_level": "K2",
+          "pergunta": "Qual das seguintes afirmações melhor descreve o papel do Acceptance Test Driven Development (ATDD) em projetos ágeis?",
+          "opcoes": {
+            "A": "Foca em testes unitários automatizados para garantir a qualidade do código",
+            "B": "Define critérios e testes de aceite durante a criação das histórias para garantir o comportamento esperado da funcionalidade",
+            "C": "Utiliza o padrão Gherkin para escrever testes baseados no comportamento esperado",
+            "D": "Realiza testes manuais de sistema para validar a interface do usuário"
+          },
+          "resposta": "B",
+          "justificativa": "O ATDD define critérios e testes de aceite durante a criação das histórias, envolvendo stakeholders para garantir que o componente de software se comporte conforme esperado, criando testes reutilizáveis para regressão e validação rápida.",
+          "fonte": "llm"
+        },
+        {
+          "id": 15464003,
+          "k_level": "K2",
+          "pergunta": "Na pirâmide de teste em projetos ágeis, qual é a característica correta da distribuição dos testes?",
+          "opcoes": {
+            "A": "Maior quantidade de testes no nível de sistema e aceitação, diminuindo nos níveis inferiores",
+            "B": "Quantidade igual de testes em todos os níveis para garantir cobertura uniforme",
+            "C": "Maior quantidade de testes no nível mais baixo (unidade), diminuindo conforme sobe para níveis superiores",
+            "D": "Testes manuais predominam em todos os níveis para garantir qualidade"
+          },
+          "resposta": "C",
+          "justificativa": "A pirâmide de teste enfatiza a maior quantidade de testes no nível mais baixo (unidade), com a quantidade de testes diminuindo conforme sobe para níveis superiores como integração, sistema e aceitação, visando eliminar defeitos o mais cedo possível.",
+          "fonte": "llm"
+        }
+      ]
+    }
+  ]
+}

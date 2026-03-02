@@ -1,0 +1,324 @@
+{
+  "cap1_risk": [],
+  "cap2_techniques": [],
+  "cap3_quality": [],
+  "cap4_reviews": [],
+  "importados": [
+    {
+      "pergunta": "Qual é o foco principal do Manifesto Ágil para Desenvolvimento de Software?",
+      "alternativas": [
+        "Indivíduos e interações sobre processos e ferramentas",
+        "Software funcionando em detrimento da documentação",
+        "Colaboração com a equipe interna sem envolver o cliente",
+        "Resposta às mudanças por meio de negociações contratuais"
+      ],
+      "resposta": "A"
+    },
+    {
+      "pergunta": "O que representa um valor maior, segundo o Manifesto Ágil?",
+      "alternativas": [
+        "Indivíduos e interações sobre processos e ferramentas",
+        "Software funcionando em detrimento da documentação",
+        "Colaboração com a equipe interna sem envolver o cliente",
+        "Resposta às mudanças por meio de negociações contratuais"
+      ],
+      "resposta": "A"
+    },
+    {
+      "pergunta": "Quem foi o presidente do Grupo de Trabalho do Foundation Level Extension Agile Tester do ISTQB?",
+      "alternativas": [
+        "Rex Black",
+        "Bertrand Cornanguer",
+        "Gerry Coleman",
+        "Alon Linetzki"
+      ],
+      "resposta": "A"
+    },
+    {
+      "pergunta": "Qual das opções abaixo NÃO é mencionada como uma seção do índice do Syllabus CTFL-AT v1.0?",
+      "alternativas": [
+        "Direitos Autorais",
+        "Histórico da Revisão",
+        "Princípios de Engenharia de Requisitos",
+        "Agradecimentos"
+      ],
+      "resposta": "C"
+    },
+    {
+      "pergunta": "Qual dos seguintes valores do Manifesto Ágil enfatiza a importância da colaboração contínua entre as pessoas da equipe de desenvolvimento?",
+      "alternativas": [
+        "Indivíduos e interações sobre processos e ferramentas.",
+        "Software funcionando sobre documentação mais abrangente.",
+        "Colaboração com o cliente sobre negociação de contratos.",
+        "Resposta às mudanças sobre o seguimento de um plano."
+      ],
+      "resposta": "A"
+    },
+    {
+      "pergunta": "No contexto do desenvolvimento ágil, qual é um dos principais benefícios da abordagem de equipe inteira?",
+      "alternativas": [
+        "Permite que apenas desenvolvedores tomem decisões técnicas.",
+        "Garante que todos os stakeholders relevantes participem ativamente do projeto.",
+        "Reduz a necessidade de feedback frequente do cliente.",
+        "Foca exclusivamente na documentação detalhada do produto."
+      ],
+      "resposta": "B"
+    },
+    {
+      "pergunta": "Qual é o principal objetivo do Manifesto Ágil no desenvolvimento de software?",
+      "alternativas": [
+        "Aumentar a documentação detalhada para garantir qualidade",
+        "Promover a colaboração e a entrega frequente de software funcional",
+        "Focar exclusivamente na automação de testes",
+        "Estabelecer processos rígidos para evitar mudanças"
+      ],
+      "resposta": "B"
+    },
+    {
+      "pergunta": "Qual prática ágil enfatiza a criação colaborativa da História do Usuário?",
+      "alternativas": [
+        "Integração Contínua",
+        "Retrospectivas",
+        "Criação colaborativa da História do Usuário",
+        "Planejamento da Iteração"
+      ],
+      "resposta": "C"
+    },
+    {
+      "pergunta": "Qual é uma diferença fundamental entre teste em abordagens tradicionais e ágil?",
+      "alternativas": [
+        "Testes são realizados apenas no final do projeto em ágil",
+        "Testes e desenvolvimento são atividades separadas em ágil",
+        "Testes são integrados continuamente ao desenvolvimento em ágil",
+        "Não há níveis de teste definidos em ágil"
+      ],
+      "resposta": "C"
+    },
+    {
+      "pergunta": "Em quais modelos de desenvolvimento o teste de regressão é mais importante?",
+      "alternativas": [
+        "Sequencial e incremental",
+        "Sequencial e iterativo",
+        "Incremental e iterativo",
+        "É igualmente importante em todos os modelos"
+      ],
+      "resposta": "B"
+    },
+    {
+      "pergunta": "Durante qual atividade um analista de teste define os casos de teste de baixo nível?",
+      "alternativas": [
+        "Análise de teste",
+        "Design de teste",
+        "Implementação de teste",
+        "Execução de teste"
+      ],
+      "resposta": "B"
+    },
+    {
+      "pergunta": "Qual é o significado do critério de qualidade 'Necessidade' para casos de teste?",
+      "alternativas": [
+        "O caso de teste cobre condições de fronteira",
+        "O caso de teste cobre condições negativas",
+        "O caso de teste cobre algo que precisa ser testado",
+        "O caso de teste é necessário como pré-requisito para outro caso"
+      ],
+      "resposta": "C"
+    },
+    {
+      "pergunta": "Qual tipo de ferramenta é usada para gerenciar a matriz de rastreabilidade?",
+      "alternativas": [
+        "Gerenciamento de defeitos",
+        "Gerenciamento de testes",
+        "Gerenciamento de dados de teste",
+        "Gerenciamento de configuração"
+      ],
+      "resposta": "B"
+    },
+    {
+      "pergunta": "Considerando um modelo iterativo e uma matriz de rastreabilidade com riscos de regressão, qual a ordem recomendada para execução dos casos de teste para mitigar riscos?",
+      "alternativas": [
+        "1, 2, 3, 4, 5",
+        "1, 3, 4 e 2, 5 se houver tempo",
+        "5, 4, 3, 1 e não executar 2",
+        "1, 5, 4, 3 e 2 se houver tempo"
+      ],
+      "resposta": "B"
+    },
+    {
+      "pergunta": "Qual ferramenta pode ser usada para automatizar testes de cauda?",
+      "alternativas": [
+        "Selenium WebDriver.",
+        "Pingdom ou UptimeRobot.",
+        "JUnit.",
+        "TestRigor"
+      ],
+      "resposta": "C"
+    },
+    {
+      "pergunta": "Qual dos seguintes valores é enfatizado pelo Manifesto Ágil como tendo maior valor em relação ao seu oposto?",
+      "alternativas": [
+        "Processos e ferramentas sobre indivíduos e interações",
+        "Documentação abrangente sobre software funcionando",
+        "Negociação de contratos sobre colaboração com o cliente",
+        "Indivíduos e interações sobre processos e ferramentas"
+      ],
+      "resposta": "D"
+    },
+    {
+      "pergunta": "Qual é uma das principais vantagens da abordagem de equipe inteira em projetos ágeis?",
+      "alternativas": [
+        "Permite que apenas desenvolvedores tomem decisões técnicas",
+        "Reduz a comunicação entre os membros da equipe",
+        "Garante que todos com conhecimento necessário estejam envolvidos no sucesso do projeto",
+        "Aumenta a dependência de ferramentas automatizadas"
+      ],
+      "resposta": "C"
+    },
+    {
+      "pergunta": "Por que o feedback inicial e frequente é importante no desenvolvimento ágil de software?",
+      "alternativas": [
+        "Para garantir que a documentação esteja sempre atualizada",
+        "Para remover defeitos antecipadamente e melhorar a qualidade do produto",
+        "Para evitar mudanças de requisitos durante o projeto",
+        "Para permitir que apenas o gerente de projeto tome decisões"
+      ],
+      "resposta": "B"
+    },
+    {
+      "pergunta": "Segundo os princípios ágeis, qual é a principal medida de progresso em um projeto?",
+      "alternativas": [
+        "Quantidade de documentação produzida",
+        "Software funcionando",
+        "Número de reuniões realizadas",
+        "Tempo gasto em planejamento"
+      ],
+      "resposta": "B"
+    },
+    {
+      "pergunta": "Como o Manifesto Ágil sugere lidar com mudanças de requisitos durante o desenvolvimento?",
+      "alternativas": [
+        "Evitar mudanças para manter o plano original",
+        "Aceitar mudanças apenas no início do projeto",
+        "Aceitar mudanças de requisitos mesmo no final do desenvolvimento",
+        "Permitir mudanças apenas após aprovação formal do cliente"
+      ],
+      "resposta": "C"
+    },
+    {
+      "pergunta": "Qual é o objetivo principal do syllabus CTAL-TAE 2.0 do ISTQB?",
+      "alternativas": [
+        "Fornecer um guia para a certificação de testadores iniciantes em automação.",
+        "Estabelecer diretrizes para a engenharia de automação de testes em nível avançado.",
+        "Apresentar técnicas básicas de teste manual para iniciantes.",
+        "Descrever as ferramentas específicas para automação de testes."
+      ],
+      "resposta": "B"
+    },
+    {
+      "pergunta": "Segundo o texto, qual é uma condição para que um Provedor de Treinamento Credenciado utilize o syllabus como base para um curso?",
+      "alternativas": [
+        "O curso pode ser anunciado antes do credenciamento oficial dos materiais.",
+        "Os autores e o ISTQB® devem ser reconhecidos como fonte e proprietários dos direitos autorais.",
+        "Não é necessário citar a fonte do syllabus no curso.",
+        "O uso do syllabus é permitido para fins comerciais sem restrições."
+      ],
+      "resposta": "B"
+    },
+    {
+      "pergunta": "Qual é a data de liberação da versão GA do CTAL-TAE v2.0 conforme o histórico de revisões?",
+      "alternativas": [
+        "21/10/2016",
+        "03/05/2024",
+        "14/06/2024",
+        "29/07/2024"
+      ],
+      "resposta": "B"
+    },
+    {
+      "pergunta": "Quem foi o presidente do Grupo de Trabalho do Foundation Level Extension Agile Tester do ISTQB?",
+      "alternativas": [
+        "Rex Black",
+        "Bertrand Cornanguer",
+        "Gerry Coleman",
+        "Alon Linetzki"
+      ],
+      "resposta": "A"
+    },
+    {
+      "pergunta": "Qual das opções abaixo NÃO é mencionada como uma seção do índice do Syllabus CTFL-AT v1.0?",
+      "alternativas": [
+        "Direitos Autorais",
+        "Histórico da Revisão",
+        "Princípios de Engenharia de Requisitos",
+        "Agradecimentos"
+      ],
+      "resposta": "C"
+    },
+    {
+      "pergunta": "Qual é a sequência correta do processo no Test Driven Development (TDD)?",
+      "alternativas": [
+        "Executar o teste, criar o código, escrever o teste, melhorar o código",
+        "Criar um teste automatizado, executar o teste que falha, escrever o código até passar o teste, melhorar o código",
+        "Escrever o código, criar o teste, executar o teste, melhorar o código",
+        "Executar o teste, melhorar o código, criar o teste, escrever o código"
+      ],
+      "resposta": "B"
+    },
+    {
+      "pergunta": "Qual das seguintes afirmações melhor descreve o papel do Acceptance Test Driven Development (ATDD) em projetos ágeis?",
+      "alternativas": [
+        "Foca em testes unitários automatizados para garantir a qualidade do código",
+        "Define critérios e testes de aceite durante a criação das histórias para garantir o comportamento esperado da funcionalidade",
+        "Utiliza o padrão Gherkin para escrever testes baseados no comportamento esperado",
+        "Realiza testes manuais de sistema para validar a interface do usuário"
+      ],
+      "resposta": "B"
+    },
+    {
+      "pergunta": "Na pirâmide de teste em projetos ágeis, qual é a característica correta da distribuição dos testes?",
+      "alternativas": [
+        "Maior quantidade de testes no nível de sistema e aceitação, diminuindo nos níveis inferiores",
+        "Quantidade igual de testes em todos os níveis para garantir cobertura uniforme",
+        "Maior quantidade de testes no nível mais baixo (unidade), diminuindo conforme sobe para níveis superiores",
+        "Testes manuais predominam em todos os níveis para garantir qualidade"
+      ],
+      "resposta": "C"
+    },
+    {
+      "pergunta": "Qual é a sequência correta do processo no Test Driven Development (TDD)?",
+      "alternativas": [
+        "Executar o teste, criar o código, escrever o teste, melhorar o código",
+        "Criar um teste automatizado, executar o teste que falha, escrever o código até passar o teste, melhorar o código",
+        "Escrever o código, criar o teste, executar o teste, melhorar o código",
+        "Executar o teste, melhorar o código, criar o teste, escrever o código"
+      ],
+      "resposta": "B",
+      "capitulo_id": "importados",
+      "capitulo_nome": "importados"
+    },
+    {
+      "pergunta": "Qual das seguintes afirmações melhor descreve o papel do Acceptance Test Driven Development (ATDD) em projetos ágeis?",
+      "alternativas": [
+        "Foca em testes unitários automatizados para garantir a qualidade do código",
+        "Define critérios e testes de aceite durante a criação das histórias para garantir o comportamento esperado da funcionalidade",
+        "Utiliza o padrão Gherkin para escrever testes baseados no comportamento esperado",
+        "Realiza testes manuais de sistema para validar a interface do usuário"
+      ],
+      "resposta": "B",
+      "capitulo_id": "importados",
+      "capitulo_nome": "importados"
+    },
+    {
+      "pergunta": "Na pirâmide de teste em projetos ágeis, qual é a característica correta da distribuição dos testes?",
+      "alternativas": [
+        "Maior quantidade de testes no nível de sistema e aceitação, diminuindo nos níveis inferiores",
+        "Quantidade igual de testes em todos os níveis para garantir cobertura uniforme",
+        "Maior quantidade de testes no nível mais baixo (unidade), diminuindo conforme sobe para níveis superiores",
+        "Testes manuais predominam em todos os níveis para garantir qualidade"
+      ],
+      "resposta": "C",
+      "capitulo_id": "importados",
+      "capitulo_nome": "importados"
+    }
+  ]
+}
