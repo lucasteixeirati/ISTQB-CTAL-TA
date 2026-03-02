@@ -42,7 +42,7 @@ Aplicação web em Flask para preparação da certificação **ISTQB CTAL-TA**, 
 
 ## Capturas de tela
 
-**[Ver fotos do sistema em funcionamento](https://lucasteixeirati.github.io/ISTQB-CTAL-TA/screenshots.html)**
+**[Ver fotos do sistema em funcionamento](https://lucasteixeirati.github.io/ISTQB-CTAL-TA/)**
 
 ## Endpoints (resumo)
 
