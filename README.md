@@ -237,6 +237,10 @@ O worker processará automaticamente jobs pendentes em background.
 
 Licença MIT — Veja [LICENSE](LICENSE) para detalhes.
 
-by Lucas Teixeira Quality Assurance Specialist
+## Autor
+
+Lucas Teixeira 
+Quality Assurance Specialist
+
 ---
 
