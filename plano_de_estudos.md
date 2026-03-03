@@ -265,40 +265,7 @@
 
 ---
 
-## 📊 Tracking de Progresso
-
-### Checklist Geral
-- [ ] Semana 1 completa
-- [ ] Semana 2 completa
-- [ ] Semana 3 completa
-- [ ] Semana 4 completa
-- [ ] Semana 5 completa
-- [ ] Semana 6 completa
-- [ ] Semana 7 completa
-- [ ] Semana 8 completa
-- [ ] Exame agendado
-- [ ] Exame realizado
-- [ ] APROVADO! 🎉
-
-### Métricas de Sucesso
-- [ ] 80%+ em todos os simulados da semana 8
-- [ ] Todos os flashcards revisados 3x
-- [ ] Todos os capítulos resumidos
-- [ ] Zero dúvidas pendentes
-
----
-
-## 🚨 Sinais de Alerta
-
-Se você está com dificuldade:
-- ❌ Menos de 60% nos simulados → Revisar capítulo inteiro
-- ❌ Mesmos erros repetidos → Criar mais flashcards
-- ❌ Falta de tempo → Reduzir para 1h/dia mas manter consistência
-- ❌ Desmotivação → Lembrar do objetivo (vaga internacional!)
-
----
-
-## 💡 Dicas de Ouro
+## 💡 Dicas
 
 1. **Consistência > Intensidade:** 1h/dia é melhor que 7h no sábado
 2. **Active Recall:** Sempre tente lembrar antes de reler
