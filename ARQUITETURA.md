@@ -6,7 +6,7 @@ O projeto é uma aplicação web monolítica em Flask com frontend server-render
 
 Características principais:
 - Interface web para simulados, flashcards, dashboard, arquivos e gerações
-- Upload de materiais (PDF/TXT) e extração de texto
+- Upload de materiais em múltiplos formatos, com extração/geração limitada a PDF/TXT
 - Geração de questões por múltiplos providers de LLM
 - Pipeline assíncrono com worker em thread (opcional)
 - Publicação de galeria de prints via GitHub Pages
@@ -47,7 +47,7 @@ Observação: `requests` é utilizado em `app/services/simulado_service.py` e de
   - Helpers de parsing e fallback
 
 - `app/services/geracoes_service.py`
-  - CRUD de jobs assíncronos em JSON (`geracoes_questoes.json`)
+  - CRUD de jobs assíncronos em JSON consolidado (`questoes_banco.json` → `geracoes.jobs`)
 
 - `app/services/flashcards_service.py`
   - Placeholder (a lógica operacional está atualmente no `app.py`)
@@ -58,9 +58,11 @@ Observação: `requests` é utilizado em `app/services/simulado_service.py` e de
 - CSS global em `static/css/style.css`
 
 ### Persistência (file-based)
+- `questoes_banco.json`: banco consolidado contendo:
+  - `questoes`: questões geradas/validadas organizadas por capítulo
+  - `geracoes`: estado e histórico de jobs assíncronos (array jobs)
+  - `metadata`: metadados do sistema (versão, data atualização, totalizadores)
 - `arquivos_anexados.json`: metadados de uploads
-- `geracoes_questoes.json`: estado de jobs assíncronos
-- `banco_questoes.json`: banco de questões geradas/validadas
 - `progresso_simulados.json`: tracking de simulados
 
 ---
@@ -74,19 +76,19 @@ Observação: `requests` é utilizado em `app/services/simulado_service.py` e de
 4. Backend calcula resultado, persiste tracking e retorna feedback detalhado
 
 ### 4.2 Fluxo de arquivos e geração síncrona
-1. Upload via `POST /api/upload` (validação de extensão + MIME)
+1. Upload via `POST /api/upload` (aceita qualquer tipo de arquivo; validação/log leve de MIME)
 2. Metadados persistidos em `arquivos_anexados.json`
 3. Geração direta via `POST /api/gerar-questoes/<arquivo_id>`
 4. Questões retornam para revisão no frontend
-5. Salvamento via `POST /api/arquivos/salvar-questoes/<arquivo_id>` em `banco_questoes.json`
+5. Salvamento via `POST /api/arquivos/salvar-questoes/<arquivo_id>` em `questoes_banco.json` (seção questões)
 
 ### 4.3 Fluxo de gerações assíncronas (jobs)
 1. Frontend cria job com `POST /api/geracoes`
-2. Job entra como `pendente` em `geracoes_questoes.json`
+2. Job entra como `pendente` em `questoes_banco.json` (seção geracoes.jobs)
 3. Worker (thread) processa pendências quando `ENABLE_GERACOES_WORKER=1`
 4. Status evolui para `processando`, `concluido`, `erro` ou `concluido_salvo`
 5. Frontend acompanha por `GET /api/geracoes` e `GET /api/geracoes/<job_id>`
-6. Salvamento final por `POST /api/geracoes/<job_id>/salvar`
+6. Salvamento final por `POST /api/geracoes/<job_id>/salvar` (adiciona questões à seção questões)
 
 ### 4.4 Fluxo de materiais de estudo
 1. `GET /api/materiais` lista arquivos permitidos da pasta `uploads/`
@@ -98,7 +100,7 @@ Observação: `requests` é utilizado em `app/services/simulado_service.py` e de
 ## 5) Segurança e confiabilidade
 
 Controles implementados:
-- Validação de extensão e MIME para upload de PDF/TXT
+- Validação/log leve de MIME no upload; geração com IA permitida apenas para PDF/TXT
 - `secure_filename` para nomes de arquivo
 - Limite de payload com `MAX_CONTENT_LENGTH`
 - Cookie de sessão com `HTTPOnly`, `SameSite` e `Secure` configuráveis
@@ -118,7 +120,7 @@ Variáveis de ambiente relevantes:
 - `SECRET_KEY`
 - `UPLOAD_FOLDER` (default: `uploads`)
 - `MAX_CONTENT_LENGTH`
-- `GERACOES_FILE` (default: `geracoes_questoes.json`)
+- `QUESTOES_BANCO_FILE` (default: `questoes_banco.json`)
 - `ARQUIVOS_FILE` (default: `arquivos_anexados.json`)
 - `ENABLE_GERACOES_WORKER` (`1` para habilitar worker)
 - `FLASK_DEBUG`, `PORT`, `LOG_LEVEL`
@@ -169,9 +171,9 @@ flowchart TD
    E --> F[simulado_service.py]
    F --> G[Ollama / HuggingFace / OpenAI]
    E --> J[geracoes_service.py]
-   J --> K[geracoes_questoes.json]
+  J --> K[questoes_banco.json: geracoes.jobs]
 
-   H --> L[banco_questoes.json]
+  H --> L[questoes_banco.json: questoes]
    I --> M[progresso_simulados.json]
 ```
 

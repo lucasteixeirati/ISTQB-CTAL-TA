@@ -9,9 +9,44 @@ import requests
 import re
 import logging
 
-from banco_questoes_completo import QUESTOES_DB
-
 logger = logging.getLogger(__name__)
+
+
+def _carregar_questoes_db() -> dict:
+    """Carrega questões a partir do banco consolidado `questoes_banco.json`.
+
+    Fallbacks:
+    - Se o arquivo consolidado não existir, tenta `banco_questoes.json` (legado).
+    - Em erro de leitura/parsing, retorna dict vazio para evitar crash no import.
+    """
+    candidatos = ["questoes_banco.json", "banco_questoes.json"]
+    for path in candidatos:
+        if not os.path.exists(path):
+            continue
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                dados = json.load(f)
+
+            if path == "questoes_banco.json":
+                questoes = dados.get("questoes", {})
+                if isinstance(questoes, dict):
+                    return questoes
+                logger.warning("Formato inesperado em %s: chave 'questoes' inválida", path)
+                return {}
+
+            if isinstance(dados, dict):
+                return dados
+            logger.warning("Formato inesperado em %s: conteúdo não é objeto JSON", path)
+            return {}
+        except Exception:
+            logger.exception("Erro ao carregar banco de questões: %s", path)
+            return {}
+
+    logger.warning("Nenhum arquivo de banco de questões encontrado (%s)", ", ".join(candidatos))
+    return {}
+
+
+QUESTOES_DB = _carregar_questoes_db()
 
 # --------- LLM (HuggingFace / Ollama / OpenAI) ---------
 

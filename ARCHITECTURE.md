@@ -6,7 +6,7 @@ The project is a monolithic Flask web application with server-rendered frontend 
 
 Key characteristics:
 - Web interface for simulations, flashcards, dashboard, file management, and generation tracking
-- Material upload (PDF/TXT) with text extraction
+- Material upload for multiple file types, with text extraction/generation limited to PDF/TXT
 - Question generation from multiple LLM providers
 - Optional asynchronous pipeline with background worker thread
 - Screenshot gallery publication via GitHub Pages
@@ -45,7 +45,7 @@ Note: `requests` is used in `app/services/simulado_service.py` for API communica
   - Parsing helpers and fallback mechanisms
 
 - `app/services/geracoes_service.py`
-  - CRUD operations for async jobs persisted in JSON (`geracoes_questoes.json`)
+  - CRUD operations for async jobs persisted in consolidated JSON (`questoes_banco.json` → `geracoes.jobs`)
 
 - `app/services/flashcards_service.py`
   - Placeholder (operational logic currently in `app.py`)
@@ -56,9 +56,11 @@ Note: `requests` is used in `app/services/simulado_service.py` for API communica
 - Global CSS in `static/css/style.css`
 
 ### Persistence (file-based)
+- `questoes_banco.json`: Consolidated database containing:
+  - `questoes`: Generated and validated questions organized by chapter
+  - `geracoes`: State and history of asynchronous generation jobs (jobs array)
+  - `metadata`: System metadata (version, last update, total counts)
 - `arquivos_anexados.json`: Metadata of uploaded files
-- `geracoes_questoes.json`: State of asynchronous generation jobs
-- `banco_questoes.json`: Database of generated and validated questions
 - `progresso_simulados.json`: Simulation progress tracking
 
 ---
@@ -72,19 +74,19 @@ Note: `requests` is used in `app/services/simulado_service.py` for API communica
 4. Backend calculates result, persists tracking, returns detailed feedback
 
 ### 4.2 File Upload and Synchronous Generation Flow
-1. Upload via `POST /api/upload` (extension + MIME validation)
+1. Upload via `POST /api/upload` (accepts any file type; MIME is logged/checked lightly)
 2. Metadata persisted in `arquivos_anexados.json`
 3. Direct generation via `POST /api/gerar-questoes/<arquivo_id>`
 4. Questions returned for frontend review
-5. Saving via `POST /api/arquivos/salvar-questoes/<arquivo_id>` to `banco_questoes.json`
+5. Saving via `POST /api/arquivos/salvar-questoes/<arquivo_id>` to `questoes_banco.json` (questions section)
 
 ### 4.3 Asynchronous Generation (Jobs) Flow
 1. Frontend creates job with `POST /api/geracoes`
-2. Job enters as `pendente` in `geracoes_questoes.json`
+2. Job enters as `pendente` in `questoes_banco.json` (geracoes.jobs section)
 3. Worker (thread) processes pending jobs when `ENABLE_GERACOES_WORKER=1`
 4. Status evolves: `pendente` → `processando` → `concluido`/`erro` → `concluido_salvo`
 5. Frontend monitors via `GET /api/geracoes` and `GET /api/geracoes/<job_id>`
-6. Final saving via `POST /api/geracoes/<job_id>/salvar`
+6. Final saving via `POST /api/geracoes/<job_id>/salvar` (adds questions to questoes section)
 
 ### 4.4 Study Materials Flow
 1. `GET /api/materiais` lists allowed files from `uploads/` folder
@@ -96,7 +98,7 @@ Note: `requests` is used in `app/services/simulado_service.py` for API communica
 ## 5) Security and Reliability
 
 Implemented controls:
-- Extension and MIME type validation for PDF/TXT uploads
+- Lightweight MIME validation/logging for uploads; AI generation allowed only for PDF/TXT
 - `secure_filename` for file naming
 - Payload size limit via `MAX_CONTENT_LENGTH`
 - Session cookies configured with `HTTPOnly`, `SameSite`, and `Secure` flags
@@ -116,7 +118,7 @@ Relevant environment variables:
 - `SECRET_KEY`
 - `UPLOAD_FOLDER` (default: `uploads`)
 - `MAX_CONTENT_LENGTH`
-- `GERACOES_FILE` (default: `geracoes_questoes.json`)
+- `QUESTOES_BANCO_FILE` (default: `questoes_banco.json`)
 - `ARQUIVOS_FILE` (default: `arquivos_anexados.json`)
 - `ENABLE_GERACOES_WORKER` (set to `1` to enable background worker)
 - `FLASK_DEBUG`, `PORT`, `LOG_LEVEL`
@@ -167,9 +169,9 @@ flowchart TD
     E --> F[simulado_service.py]
     F --> G["Ollama / HuggingFace / OpenAI"]
     E --> J[geracoes_service.py]
-    J --> K[geracoes_questoes.json]
+    J --> K[questoes_banco.json: geracoes.jobs]
 
-    H --> L[banco_questoes.json]
+    H --> L[questoes_banco.json: questoes]
     I --> M[progresso_simulados.json]
 ```
 

@@ -23,7 +23,7 @@ A comprehensive Flask web application for preparing and mastering the **ISTQB CT
 - **Study recommendations**: Personalized suggestions based on your performance patterns
 
 ### 🤖 AI-Powered Question Generation
-- **Intelligent creation**: Generate custom questions from your own study materials (PDF/TXT)
+- **Intelligent creation**: Generate custom questions from PDF/TXT study materials
 - **Multiple LLM providers**: Choose from Ollama (local), HuggingFace, or OpenAI models
 - **Batch processing**: Asynchronous job system for generating large question sets without blocking
 - **Quality review**: Edit and validate AI-generated questions before saving to your question bank
@@ -31,7 +31,7 @@ A comprehensive Flask web application for preparing and mastering the **ISTQB CT
 
 ### 📚 Study Materials Library
 - **Unified library**: Access both annexed materials and uploaded study resources in one place
-- **Multiple formats**: Support for PDF documents and text files
+- **Multiple formats**: Upload any file type to organize your study library
 - **Efficient management**: Upload, organize, and manage your study materials easily
 - **Content preview**: Quick access to view or open materials directly from the app
 
@@ -104,12 +104,11 @@ A comprehensive Flask web application for preparing and mastering the **ISTQB CT
 ├── flashcards/                     # Pre-built flashcard decks (Markdown format)
 ├── simulados/                      # Practice exam question sets by chapter
 ├── resumos/                        # Study summaries & reference materials
-├── uploads/                        # User-uploaded study materials (PDFs/TXTs)
+├── uploads/                        # User-uploaded study materials (multiple file types)
 ├── screenshots.html                # Gallery of system screenshots
 ├── prints/                         # Screenshots & system screenshots
-├── banco_questoes.json             # Generated & saved questions database
+├── questoes_banco.json             # Consolidated database: questions + async jobs + metadata
 ├── arquivos_anexados.json          # Metadata of uploaded files
-├── geracoes_questoes.json          # Async generation job state
 ├── progresso_simulados.json        # Simulation progress tracking
 └── requirements.txt                # Python dependencies
 ```
@@ -125,9 +124,9 @@ A comprehensive Flask web application for preparing and mastering the **ISTQB CT
 - **Time tracking**: Optional time limits to simulate exam conditions
 
 ### 2. Files & AI Generation (`/arquivos`)
-- **Upload interface**: Drag-and-drop upload for PDF and TXT files
+- **Upload interface**: Drag-and-drop upload for any file type
 - **Material library**: Unified view of all study materials and uploaded documents
-- **AI generation**: Select files and generate custom questions with configurable parameters:
+- **AI generation**: Select PDF/TXT files and generate custom questions with configurable parameters:
   - Number of questions to generate
   - LLM provider selection (Ollama local / HuggingFace / OpenAI)
   - Target certification chapter assignment
@@ -161,9 +160,9 @@ A comprehensive Flask web application for preparing and mastering the **ISTQB CT
 
 ### File Management
 - `GET /api/arquivos` — List uploaded study materials
-- `POST /api/upload` — Upload a new PDF or TXT file
+- `POST /api/upload` — Upload a new file (any type)
 - `DELETE /api/deletar-arquivo/<id>` — Remove an uploaded file
-- `POST /api/gerar-questoes/<id>` — Generate questions from a file (synchronous)
+- `POST /api/gerar-questoes/<id>` — Generate questions from a PDF/TXT file (synchronous)
 - `POST /api/arquivos/salvar-questoes/<id>` — Save reviewed questions to the database
 
 ### Async Generation Jobs
@@ -199,7 +198,7 @@ UPLOAD_FOLDER=uploads
 MAX_CONTENT_LENGTH=16777216  # 16MB
 
 # Question Generation
-GERACOES_FILE=geracoes_questoes.json
+QUESTOES_BANCO_FILE=questoes_banco.json
 ARQUIVOS_FILE=arquivos_anexados.json
 ENABLE_GERACOES_WORKER=1  # Set to enable async worker
 

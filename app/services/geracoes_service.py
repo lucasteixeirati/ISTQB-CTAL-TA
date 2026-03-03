@@ -17,12 +17,35 @@ class GeracoesService:
     geracoes_file: str
 
     def carregar(self) -> dict[str, Any]:
+        """Carrega dados do arquivo. Se consolidado (questoes_banco.json), extrai jobs."""
         if os.path.exists(self.geracoes_file):
             with open(self.geracoes_file, "r", encoding="utf-8") as f:
-                return json.load(f)
+                dados = json.load(f)
+            
+            # Se é o arquivo consolidado (tem 'geracoes' e 'questoes'), navega até jobs
+            if "geracoes" in dados and "questoes" in dados:
+                # Retorna estrutura compatível: {"jobs": [...]}
+                return {"jobs": dados.get("geracoes", {}).get("jobs", [])}
+            
+            # Senão, retorna como está (compatibilidade com geracoes_questoes.json legado)
+            return dados
         return {"jobs": []}
 
     def salvar(self, dados: dict[str, Any]) -> None:
+        """Persiste dados. Se arquivo consolidado, atualiza apenas a seção 'geracoes'."""
+        if os.path.exists(self.geracoes_file):
+            with open(self.geracoes_file, "r", encoding="utf-8") as f:
+                conteudo_completo = json.load(f)
+            
+            # Se é consolidado, preserva estrutura e atualiza só 'geracoes.jobs'
+            if "geracoes" in conteudo_completo and "questoes" in conteudo_completo:
+                conteudo_completo["geracoes"]["jobs"] = dados.get("jobs", [])
+                conteudo_completo["metadata"]["ultima_atualizacao"] = datetime.now().isoformat()
+                with open(self.geracoes_file, "w", encoding="utf-8") as f:
+                    json.dump(conteudo_completo, f, indent=2, ensure_ascii=False)
+                return
+        
+        # Caso contrário, salva como está (compatibilidade legado)
         with open(self.geracoes_file, "w", encoding="utf-8") as f:
             json.dump(dados, f, indent=2, ensure_ascii=False)
 

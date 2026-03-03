@@ -23,7 +23,7 @@ Uma aplicação web completa em Flask para preparação e domínio da certifica�
 - **Recomendações personalizadas**: Sugestões baseadas no seu histórico de desempenho
 
 ### 🤖 Geração de Questões com IA
-- **Criação inteligente**: Gere questões personalizadas a partir de seus próprios materiais de estudo (PDF/TXT)
+- **Criação inteligente**: Gere questões personalizadas a partir de materiais de estudo em PDF/TXT
 - **Múltiplos provedores de LLM**: Escolha entre Ollama (local), HuggingFace ou OpenAI
 - **Processamento em lote**: Sistema assíncrono de jobs para gerar grandes volumes sem bloquear
 - **Revisão de qualidade**: Edite e valide questões geradas pela IA antes de salvar no banco
@@ -31,7 +31,7 @@ Uma aplicação web completa em Flask para preparação e domínio da certifica�
 
 ### 📚 Biblioteca Unificada de Materiais
 - **Biblioteca unificada**: Acesse materiais anexados e materiais carregados em um único lugar
-- **Múltiplos formatos**: Suporte para documentos PDF e arquivos de texto
+- **Múltiplos formatos**: Upload de qualquer tipo de arquivo para organização da biblioteca
 - **Gerenciamento eficiente**: Carregue, organize e gerencie seus materiais de estudo facilmente
 - **Visualização rápida**: Acesso direto para visualizar ou abrir materiais do aplicativo
 
@@ -98,8 +98,8 @@ Uma aplicação web completa em Flask para preparação e domínio da certifica�
 ├── uploads/                        # Materiais carregados pelo usuário
 ├── banco_questoes.json             # Base de dados de questões
 ├── arquivos_anexados.json          # Metadados de arquivos
-├── geracoes_questoes.json          # Estado de jobs assíncronos
-├── progresso_simulados.json        # Rastreamento de progresso
+├── questoes_banco.json             # Banco consolidado: questões + jobs assíncronos + metadados
+├── progresso_simulados.json        # Rastreamento de progresso dos simulados
 └── requirements.txt                # Dependências Python
 ```
 
@@ -114,9 +114,9 @@ Uma aplicação web completa em Flask para preparação e domínio da certifica�
 - **Rastreamento de tempo**: Limites de tempo opcionais para simular condições de exame
 
 ### 2. Arquivos & Geração com IA (`/arquivos`)
-- **Interface de upload**: Carregamento via arrastar-soltar para arquivos PDF e TXT
+- **Interface de upload**: Carregamento via arrastar-soltar para qualquer tipo de arquivo
 - **Biblioteca de materiais**: Visualização unificada de todos os materiais de estudo
-- **Geração com IA**: Selecione arquivos e gere questões personalizadas:
+- **Geração com IA**: Selecione arquivos PDF/TXT e gere questões personalizadas:
   - Número de questões a gerar
   - Seleção de provedor LLM (Ollama local / HuggingFace / OpenAI)
   - Atribuição de capítulo da certificação
@@ -150,9 +150,9 @@ Uma aplicação web completa em Flask para preparação e domínio da certifica�
 
 ### Gerenciamento de Arquivos
 - `GET /api/arquivos` — Lista materiais de estudo carregados
-- `POST /api/upload` — Carrega um novo arquivo PDF ou TXT
+- `POST /api/upload` — Carrega um novo arquivo (qualquer tipo)
 - `DELETE /api/deletar-arquivo/<id>` — Remove um arquivo carregado
-- `POST /api/gerar-questoes/<id>` — Gera questões de um arquivo (síncrono)
+- `POST /api/gerar-questoes/<id>` — Gera questões de um arquivo PDF/TXT (síncrono)
 - `POST /api/arquivos/salvar-questoes/<id>` — Salva questões revisadas no banco
 
 ### Jobs de Geração Assíncrona
@@ -186,9 +186,9 @@ PORT=5000
 # Armazenamento de Arquivos
 UPLOAD_FOLDER=uploads
 MAX_CONTENT_LENGTH=16777216  # 16MB
+QUESTOES_BANCO_FILE=questoes_banco.json
 
 # Geração de Questões
-GERACOES_FILE=geracoes_questoes.json
 ARQUIVOS_FILE=arquivos_anexados.json
 ENABLE_GERACOES_WORKER=1
 

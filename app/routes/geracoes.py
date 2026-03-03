@@ -14,7 +14,7 @@ geracoes_bp = Blueprint("geracoes", __name__)
 
 
 def _service() -> GeracoesService:
-    return GeracoesService(geracoes_file=current_app.config["GERACOES_FILE"])
+    return GeracoesService(geracoes_file=current_app.config["QUESTOES_BANCO_FILE"])
 
 
 def _carregar_arquivos_storage() -> list[dict]:
@@ -49,6 +49,14 @@ def criar_geracao():
     arquivo = next((a for a in arquivos if a.get("id") == arquivo_id), None)
     if not arquivo:
         return jsonify({"success": False, "error": "Arquivo não encontrado"}), 404
+    
+    # Valida se o arquivo pode gerar questões (apenas PDF e TXT)
+    tipo = (arquivo.get("tipo") or "").lower()
+    if tipo not in {"pdf", "txt"}:
+        return jsonify({
+            "success": False, 
+            "error": f"Apenas arquivos PDF e TXT podem gerar questões. Tipo do arquivo: {tipo.upper()}"
+        }), 400
 
     job = _service().criar_job(
         arquivo=arquivo,

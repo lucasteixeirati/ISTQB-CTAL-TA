@@ -19,7 +19,6 @@ import time
 from app.services.simulado_service import salvar_no_tracking
 from app.services.geracoes_service import GeracoesService
 
-from banco_questoes_completo import QUESTOES_DB
 from app.services.simulado_service import gerar_perguntas_llm_escolha
 
 # Registrar blueprints (rotas modularizadas em app/routes)
@@ -44,23 +43,24 @@ _secret_from_env = os.getenv('SECRET_KEY')
 app.secret_key = _secret_from_env or 'istqb-ctal-ta-secret-key-2025'
 app.config['UPLOAD_FOLDER'] = os.getenv('UPLOAD_FOLDER', 'uploads')
 app.config['MAX_CONTENT_LENGTH'] = int(os.getenv('MAX_CONTENT_LENGTH', str(16 * 1024 * 1024)))
-app.config['GERACOES_FILE'] = os.getenv('GERACOES_FILE', 'geracoes_questoes.json')
+app.config['QUESTOES_BANCO_FILE'] = os.getenv('QUESTOES_BANCO_FILE', 'questoes_banco.json')
 
 # Hardening básico de cookies de sessão (ajuda em produção; em HTTP local o Secure pode ser desabilitado via env)
 app.config['SESSION_COOKIE_HTTPONLY'] = True
 app.config['SESSION_COOKIE_SAMESITE'] = os.getenv('SESSION_COOKIE_SAMESITE', 'Lax')  # Lax/Strict/None
 app.config['SESSION_COOKIE_SECURE'] = os.getenv('SESSION_COOKIE_SECURE', '0') == '1'
 
-ALLOWED_EXTENSIONS = {'txt', 'pdf'}
+# Extensões suportadas para geração de questões com IA (não limita upload)
+AI_GENERATION_EXTENSIONS = {'txt', 'pdf'}
 ARQUIVOS_FILE = os.getenv('ARQUIVOS_FILE', 'arquivos_anexados.json')
 app.config['ARQUIVOS_FILE'] = ARQUIVOS_FILE
 
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 logger.info(
-    "App inicializado. UPLOAD_FOLDER=%s MAX_CONTENT_LENGTH=%s GERACOES_FILE=%s ARQUIVOS_FILE=%s",
+    "App inicializado. UPLOAD_FOLDER=%s MAX_CONTENT_LENGTH=%s QUESTOES_BANCO_FILE=%s ARQUIVOS_FILE=%s",
     app.config['UPLOAD_FOLDER'],
     app.config['MAX_CONTENT_LENGTH'],
-    app.config['GERACOES_FILE'],
+    app.config['QUESTOES_BANCO_FILE'],
     app.config['ARQUIVOS_FILE'],
 )
 
@@ -76,28 +76,45 @@ if _is_production and not _secret_from_env:
     raise RuntimeError('SECRET_KEY não configurada. Defina SECRET_KEY no ambiente antes de rodar em produção.')
 
 
-def allowed_file(filename):
-    """Return True if filename has an allowed extension."""
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+def can_generate_questions(filename):
+    """Verifica se o arquivo pode ser usado para gerar questões com IA."""
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in AI_GENERATION_EXTENSIONS
+
+
+def carregar_questoes_banco():
+    """Carrega o banco consolidado de questões de questoes_banco.json."""
+    banco_file = app.config['QUESTOES_BANCO_FILE']
+    if os.path.exists(banco_file):
+        try:
+            with open(banco_file, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except Exception as e:
+            logger.exception("Erro ao carregar questoes_banco: %s", banco_file)
+            return {'questoes': {}, 'geracoes': {'jobs': []}, 'metadata': {}}
+    return {'questoes': {}, 'geracoes': {'jobs': []}, 'metadata': {}}
+
+
+def salvar_questoes_banco(banco_data):
+    """Persiste o banco consolidado em questoes_banco.json."""
+    banco_file = app.config['QUESTOES_BANCO_FILE']
+    try:
+        with open(banco_file, 'w', encoding='utf-8') as f:
+            json.dump(banco_data, f, indent=2, ensure_ascii=False)
+    except Exception as e:
+        logger.exception("Erro ao salvar questoes_banco: %s", banco_file)
 
 
 def _upload_mime_ok(file_storage) -> bool:
     """Validação leve de MIME (não substitui antivírus/validação profunda).
-
-    Aceita:
-    - PDF: application/pdf
-    - TXT: text/plain (alguns browsers podem enviar application/octet-stream)
+    
+    Aceita qualquer arquivo, mas registra no log para auditoria.
     """
     try:
         mimetype = (getattr(file_storage, 'mimetype', None) or '').lower()
         filename = (getattr(file_storage, 'filename', '') or '').lower()
-        ext = filename.rsplit('.', 1)[-1] if '.' in filename else ''
-
-        if ext == 'pdf':
-            return mimetype in ('application/pdf', 'application/x-pdf', 'application/octet-stream')
-        if ext == 'txt':
-            return mimetype in ('text/plain', 'application/octet-stream')
-        return False
+        logger.debug(f"Upload: filename={filename} mimetype={mimetype}")
+        # Aceita qualquer arquivo - validação específica será feita na geração
+        return True
     except Exception:
         return False
 
@@ -171,7 +188,7 @@ def carregar_flashcards():
     return flashcards
 
 # Service para jobs de gerações
-_geracoes_service = GeracoesService(geracoes_file=app.config['GERACOES_FILE'])
+_geracoes_service = GeracoesService(geracoes_file=app.config['QUESTOES_BANCO_FILE'])
 
 
 def _worker_geracao_loop(intervalo=3):
@@ -271,9 +288,11 @@ def iniciar_simulado():
     data = request.get_json(silent=True) or {}
     num_questoes = data.get('num_questoes', 40)
     
+    banco = carregar_questoes_banco()
     todas_questoes = []
-    for cap_questoes in QUESTOES_DB.values():
-        todas_questoes.extend(cap_questoes)
+    for cap_questoes in banco.get('questoes', {}).values():
+        if isinstance(cap_questoes, list):
+            todas_questoes.extend(cap_questoes)
     
     questoes_selecionadas = random.sample(todas_questoes, min(num_questoes, len(todas_questoes)))
     
@@ -360,9 +379,9 @@ def upload_arquivo():
         logger.warning("Upload chamado com filename vazio")
         return jsonify({'success': False, 'error': 'Nenhum arquivo selecionado'})
 
-    if file and allowed_file(file.filename):
+    if file and file.filename:
         if not _upload_mime_ok(file):
-            logger.warning("Upload bloqueado (mimetype inesperado): filename=%s mimetype=%s", getattr(file, 'filename', None), getattr(file, 'mimetype', None))
+            logger.warning("Upload bloqueado (validação MIME falhou): filename=%s mimetype=%s", getattr(file, 'filename', None), getattr(file, 'mimetype', None))
             return jsonify({'success': False, 'error': 'Tipo de arquivo inválido (MIME não esperado).'}), 400
 
         filename = secure_filename(file.filename or '')
@@ -371,22 +390,27 @@ def upload_arquivo():
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename_final)
         file.save(filepath)
 
+        # Detecta extensão
+        ext = filename.rsplit('.', 1)[1].lower() if '.' in filename else 'unknown'
+        pode_gerar_ia = can_generate_questions(filename)
+
         arquivos = carregar_arquivos()
         arquivos.append({
             'id': len(arquivos) + 1,
             'nome': filename,
             'nome_arquivo': filename_final,
-            'tipo': filename.rsplit('.', 1)[1].lower(),
+            'tipo': ext,
+            'pode_gerar_ia': pode_gerar_ia,
             'data_upload': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             'questoes_geradas': 0
         })
         salvar_arquivos(arquivos)
 
-        logger.info("Upload ok: id=%s nome=%s tipo=%s path=%s", len(arquivos), filename, filename.rsplit('.', 1)[1].lower(), filepath)
+        logger.info("Upload ok: id=%s nome=%s tipo=%s pode_gerar_ia=%s path=%s", len(arquivos), filename, ext, pode_gerar_ia, filepath)
         return jsonify({'success': True, 'message': 'Arquivo enviado com sucesso'})
 
-    logger.warning("Upload bloqueado (tipo nao permitido): %s", getattr(file, "filename", None))
-    return jsonify({'success': False, 'error': 'Tipo de arquivo nao permitido'})
+    logger.warning("Upload falhou: filename vazio ou inválido")
+    return jsonify({'success': False, 'error': 'Erro ao processar arquivo'})
 
 @app.route('/api/deletar-arquivo/<int:arquivo_id>', methods=['DELETE'])
 def deletar_arquivo(arquivo_id):
@@ -460,9 +484,12 @@ def api_gerar_questoes(arquivo_id):
             'fonte': 'llm'
         })
 
-    if 'cap_arquivos' not in QUESTOES_DB:
-        QUESTOES_DB['cap_arquivos'] = []
-    QUESTOES_DB['cap_arquivos'].extend(questoes)
+    # Carrega banco, adiciona questões temporárias e salva
+    banco = carregar_questoes_banco()
+    if 'cap_arquivos' not in banco.get('questoes', {}):
+        banco['questoes']['cap_arquivos'] = []
+    banco['questoes']['cap_arquivos'].extend(questoes)
+    salvar_questoes_banco(banco)
 
     arquivo['questoes_geradas'] += len(questoes)
     salvar_arquivos(arquivos)
@@ -547,12 +574,10 @@ def salvar_questoes_geradas(arquivo_id):
             'details': invalidas[:10]
         }), 400
 
-    banco_path = 'banco_questoes.json'
-    if os.path.exists(banco_path):
-        with open(banco_path, 'r', encoding='utf-8') as f:
-            banco = json.load(f)
-    else:
-        banco = {}
+    # Carrega o banco consolidado
+    banco = carregar_questoes_banco()
+    if 'questoes' not in banco:
+        banco['questoes'] = {}
 
     payload = request.get_json(silent=True) or {}
     capitulo_id = (payload.get('capitulo_id') or 'importados').strip() or 'importados'
@@ -560,11 +585,11 @@ def salvar_questoes_geradas(arquivo_id):
 
     # Mantém compatibilidade com o formato antigo (string) e também suporta objeto com label.
     capitulo_key = capitulo_id
-    if capitulo_key not in banco:
-        banco[capitulo_key] = []
+    if capitulo_key not in banco['questoes']:
+        banco['questoes'][capitulo_key] = []
 
     for q in completas:
-        banco[capitulo_key].append({
+        banco['questoes'][capitulo_key].append({
             'pergunta': q['pergunta'],
             'alternativas': q['alternativas'][:4],
             'resposta': q['resposta'],
@@ -572,8 +597,14 @@ def salvar_questoes_geradas(arquivo_id):
             'capitulo_nome': capitulo_nome,
         })
 
-    with open(banco_path, 'w', encoding='utf-8') as f:
-        json.dump(banco, f, indent=2, ensure_ascii=False)
+    # Atualiza metadados
+    if 'metadata' not in banco:
+        banco['metadata'] = {}
+    banco['metadata']['ultima_atualizacao'] = datetime.now().isoformat()
+    total_questoes = sum(len(v) if isinstance(v, list) else 0 for v in banco['questoes'].values())
+    banco['metadata']['total_questoes'] = total_questoes
+    
+    salvar_questoes_banco(banco)
 
     logger.info(
         "Questoes salvas: arquivo_id=%s salvas=%s capitulo=%s descartadas=%s",

@@ -78,10 +78,13 @@ async function renderizarListaUnica() {
             const metaParts = [tipoLabel, origemLabel, item.modificado_em || '-'];
             if (tamanhoKb !== null) metaParts.splice(2, 0, `${tamanhoKb} KB`);
 
+            // Verifica se pode gerar questões (apenas PDF/TXT de anexos)
+            const podeGerarIA = item.origem === 'anexo' && (item.tipo === 'pdf' || item.tipo === 'txt');
+            
             const acoesHtml = item.origem === 'anexo'
-                ? `
-                    <button onclick="abrirModalGerar(${item.arquivo_id})" class="btn-primary">Examinar e Gerar Questões</button>
-                  `
+                ? podeGerarIA
+                    ? `<button onclick="abrirModalGerar(${item.arquivo_id})" class="btn-primary">Examinar e Gerar Questões</button>`
+                    : `<button class="btn-secondary" disabled title="Apenas PDF e TXT podem gerar questões">🚫 Não gera questões (${item.tipo.toUpperCase()})</button>`
                 : `
                     <button class="btn-primary" onclick="abrirPreview('${item.url}', '${escapeHtml(item.nome)}', '${item.tipo || 'outros'}')">Abrir</button>
                     <a class="btn-secondary" href="${item.url}" target="_blank" rel="noopener">Nova aba</a>
