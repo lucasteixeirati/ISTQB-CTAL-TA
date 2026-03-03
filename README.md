@@ -41,6 +41,13 @@ Uma aplicação web completa em Flask para preparação e domínio da certifica�
 - **Tratamento de erros**: Lógica automática de retry com mensagens de erro detalhadas
 - **Arquitetura escalável**: Suporte para múltiplos jobs de geração simultâneos
 
+### ✅ Novidades Recentes (Mar/2026)
+- **Rotating inteligente de questões**: prioriza questões menos usadas e mistura conteúdo novo/antigo
+- **Proteção anti-duplicatas no simulado**: evita perguntas repetidas no mesmo exame
+- **Validação anti-duplicatas no salvamento**: analisa similaridade antes de persistir novas questões
+- **Feedback visual no salvar**: exibe estado de análise de duplicidade e estatísticas de importação
+- **Banco reorganizado por capítulos**: estrutura consolidada em `cap1` a `cap5` + `importados`
+
 ---
 
 ## Instalação Rápida
@@ -96,9 +103,9 @@ Uma aplicação web completa em Flask para preparação e domínio da certifica�
 ├── simulados/                      # Conjuntos de questões de prova
 ├── resumos/                        # Resumos de estudo
 ├── uploads/                        # Materiais carregados pelo usuário
-├── banco_questoes.json             # Base de dados de questões
 ├── arquivos_anexados.json          # Metadados de arquivos
 ├── questoes_banco.json             # Banco consolidado: questões + jobs assíncronos + metadados
+├── questoes_rotacao.json           # Rastreamento de uso para rotating inteligente
 ├── progresso_simulados.json        # Rastreamento de progresso dos simulados
 └── requirements.txt                # Dependências Python
 ```

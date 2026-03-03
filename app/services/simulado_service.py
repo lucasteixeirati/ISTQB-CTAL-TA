@@ -436,7 +436,19 @@ def gerar_perguntas_llm(texto, num_perguntas=3):
         return []
 
 
-def gerar_perguntas_llm_escolha(texto, num_perguntas=3, provider: str | None = None):
+def _mapear_nome_capitulo(capitulo_id: str) -> str:
+    """Mapeia cap1-cap5 para nomes descritivos"""
+    mapa = {
+        'cap1': 'Risk-Based Testing',
+        'cap2': 'Test Techniques',
+        'cap3': 'Quality Characteristics',
+        'cap4': 'Reviews',
+        'cap5': 'Test Tools'
+    }
+    return mapa.get(capitulo_id, capitulo_id)
+
+
+def gerar_perguntas_llm_escolha(texto, num_perguntas=3, provider: str | None = None, capitulo_id: str | None = None, capitulo_nome: str | None = None):
     """Gera perguntas usando o provider explicito escolhido pelo usuario.
 
     Providers suportados:
@@ -448,9 +460,19 @@ def gerar_perguntas_llm_escolha(texto, num_perguntas=3, provider: str | None = N
       - hf_qwen      -> forca HF com modelo Qwen
       - gpt-4.1-mini -> forca OpenAI gpt-4.1-mini
       - openai_pro   -> forca OpenAI modelo "profissional" (OPENAI_MODEL_PRO ou gpt-4.1)
+    
+    Args:
+        texto: texto para extrair questões
+        num_perguntas: número de questões a gerar
+        provider: LLM provider a usar
+        capitulo_id: cap1|cap2|cap3|cap4|cap5 (usado para contexto no prompt)
+        capitulo_nome: nome descritivo do capítulo (ex: 'Risk-Based Testing')
     """
     provider = (provider or "auto").strip().lower()
-    logger.info("LLM provider (escolha usuario): %s", provider)
+    capitulo_id = capitulo_id or "cap2"  # Default cap2
+    capitulo_nome = capitulo_nome or _mapear_nome_capitulo(capitulo_id)
+    
+    logger.info("LLM provider (escolha usuario): %s | Capítulo: %s (%s)", provider, capitulo_id, capitulo_nome)
 
     if provider == "auto":
         return gerar_perguntas_llm(texto, num_perguntas=num_perguntas)
@@ -550,17 +572,55 @@ def gerar_perguntas_llm_escolha(texto, num_perguntas=3, provider: str | None = N
     return gerar_perguntas_llm(texto, num_perguntas=num_perguntas)
 
 def gerar_simulado(capitulo="todos", num_questoes=10, k_levels=None):
-    """Return a random sample of questions for a chapter (and optional K-level filters)."""
-    if capitulo == "todos":
-        questoes_disponiveis = []
-        for cap in QUESTOES_DB.values():
-            questoes_disponiveis.extend(cap)
-    else:
-        questoes_disponiveis = QUESTOES_DB.get(capitulo, [])
-    if k_levels:
-        questoes_disponiveis = [q for q in questoes_disponiveis if q['k_level'] in k_levels]
-    num_questoes = min(num_questoes, len(questoes_disponiveis))
-    return random.sample(questoes_disponiveis, num_questoes)
+    """
+    Return a random sample of questions for a chapter (and optional K-level filters).
+    Usa sistema de rotating inteligente para favorecer questões menos usadas.
+    """
+    # Tentar usar o system de rotating se disponível
+    try:
+        from sistema_rotating import QuestoesRotating
+        rotating = QuestoesRotating()
+        
+        if capitulo == "todos":
+            # Para "todos", selecionar de cada capítulo proporcionalmente
+            questoes_disponiveis = []
+            capítulos = ['cap1', 'cap2', 'cap3', 'cap4', 'cap5']
+            questoes_por_cap = num_questoes // len(capítulos)
+            questoes_restantes = num_questoes % len(capítulos)
+            
+            for i, cap in enumerate(capítulos):
+                qtd = questoes_por_cap + (1 if i < questoes_restantes else 0)
+                questoes_cap = rotating.gerar_simulado(cap, qtd)
+                questoes_disponiveis.extend(questoes_cap)
+        else:
+            # Usar rotating para o capítulo específico
+            questoes_disponiveis = rotating.gerar_simulado(capitulo, num_questoes)
+        
+        # Aplicar filtro de k_levels se fornecido
+        if k_levels:
+            questoes_disponiveis = [q for q in questoes_disponiveis if q.get('k_level') in k_levels]
+        
+        # Garantir que temos o número correto (em caso do filtro remover algumas)
+        num_questoes = min(num_questoes, len(questoes_disponiveis))
+        
+        # Embaralhar para apresentação
+        random.shuffle(questoes_disponiveis)
+        
+        return questoes_disponiveis[:num_questoes]
+    
+    except ImportError:
+        # Fallback para método original se sistema_rotating não estiver disponível
+        logger.warning("Sistema de rotating não disponível, usando seleção aleatória simples")
+        if capitulo == "todos":
+            questoes_disponiveis = []
+            for cap in QUESTOES_DB.values():
+                questoes_disponiveis.extend(cap)
+        else:
+            questoes_disponiveis = QUESTOES_DB.get(capitulo, [])
+        if k_levels:
+            questoes_disponiveis = [q for q in questoes_disponiveis if q.get('k_level') in k_levels]
+        num_questoes = min(num_questoes, len(questoes_disponiveis))
+        return random.sample(questoes_disponiveis, num_questoes)
 
 def identificar_capitulo(id_questao):
     """Map a numeric question id to its syllabus chapter label."""
@@ -575,7 +635,16 @@ def identificar_capitulo(id_questao):
     else:
         return "Cap 5: Test Tools"
 
-def salvar_no_tracking(capitulo, total, acertos, tempo):
+def salvar_no_tracking(
+    capitulo,
+    total,
+    acertos,
+    tempo,
+    *,
+    capitulo_id: str | None = None,
+    capitulo_nome: str | None = None,
+    resultados: list[dict] | None = None,
+):
     """Append a simulation attempt into the tracking JSON file.
 
     This is the single source of truth used by both the web app and legacy CLI.
@@ -586,14 +655,19 @@ def salvar_no_tracking(capitulo, total, acertos, tempo):
             dados = json.load(f)
     else:
         dados = {"simulados": []}
+    simulado_id = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
     resultado = {
+        "id": simulado_id,
         "data": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "capitulo": capitulo,
+        "capitulo_id": capitulo_id or "todos",
+        "capitulo_nome": capitulo_nome or capitulo,
         "total_questoes": total,
         "acertos": acertos,
         "percentual": round((acertos / total) * 100, 1),
         "tempo_minutos": tempo,
-        "aprovado": acertos >= (total * 0.65)
+        "aprovado": acertos >= (total * 0.65),
+        "resultados": resultados or [],
     }
     dados["simulados"].append(resultado)
     xp_ganho = total * 10 + acertos * 20

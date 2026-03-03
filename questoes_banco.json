@@ -1,354 +1,27 @@
 {
   "questoes": {
-    "cap1_risk": [],
-    "cap2_techniques": [],
-    "cap3_quality": [],
-    "cap4_reviews": [],
-    "importados": [
+    "cap1": [
       {
-        "pergunta": "Qual é o foco principal do Manifesto Ágil para Desenvolvimento de Software?",
-        "alternativas": [
-          "Indivíduos e interações sobre processos e ferramentas",
-          "Software funcionando em detrimento da documentação",
-          "Colaboração com a equipe interna sem envolver o cliente",
-          "Resposta às mudanças por meio de negociações contratuais"
-        ],
-        "resposta": "A"
-      },
-      {
-        "pergunta": "O que representa um valor maior, segundo o Manifesto Ágil?",
-        "alternativas": [
-          "Indivíduos e interações sobre processos e ferramentas",
-          "Software funcionando em detrimento da documentação",
-          "Colaboração com a equipe interna sem envolver o cliente",
-          "Resposta às mudanças por meio de negociações contratuais"
-        ],
-        "resposta": "A"
-      },
-      {
-        "pergunta": "Quem foi o presidente do Grupo de Trabalho do Foundation Level Extension Agile Tester do ISTQB?",
-        "alternativas": [
-          "Rex Black",
-          "Bertrand Cornanguer",
-          "Gerry Coleman",
-          "Alon Linetzki"
-        ],
-        "resposta": "A"
-      },
-      {
-        "pergunta": "Qual das opções abaixo NÃO é mencionada como uma seção do índice do Syllabus CTFL-AT v1.0?",
-        "alternativas": [
-          "Direitos Autorais",
-          "Histórico da Revisão",
-          "Princípios de Engenharia de Requisitos",
-          "Agradecimentos"
-        ],
-        "resposta": "C"
-      },
-      {
-        "pergunta": "Qual dos seguintes valores do Manifesto Ágil enfatiza a importância da colaboração contínua entre as pessoas da equipe de desenvolvimento?",
-        "alternativas": [
-          "Indivíduos e interações sobre processos e ferramentas.",
-          "Software funcionando sobre documentação mais abrangente.",
-          "Colaboração com o cliente sobre negociação de contratos.",
-          "Resposta às mudanças sobre o seguimento de um plano."
-        ],
-        "resposta": "A"
-      },
-      {
-        "pergunta": "No contexto do desenvolvimento ágil, qual é um dos principais benefícios da abordagem de equipe inteira?",
-        "alternativas": [
-          "Permite que apenas desenvolvedores tomem decisões técnicas.",
-          "Garante que todos os stakeholders relevantes participem ativamente do projeto.",
-          "Reduz a necessidade de feedback frequente do cliente.",
-          "Foca exclusivamente na documentação detalhada do produto."
-        ],
-        "resposta": "B"
-      },
-      {
-        "pergunta": "Qual é o principal objetivo do Manifesto Ágil no desenvolvimento de software?",
-        "alternativas": [
-          "Aumentar a documentação detalhada para garantir qualidade",
-          "Promover a colaboração e a entrega frequente de software funcional",
-          "Focar exclusivamente na automação de testes",
-          "Estabelecer processos rígidos para evitar mudanças"
-        ],
-        "resposta": "B"
-      },
-      {
-        "pergunta": "Qual prática ágil enfatiza a criação colaborativa da História do Usuário?",
-        "alternativas": [
-          "Integração Contínua",
-          "Retrospectivas",
-          "Criação colaborativa da História do Usuário",
-          "Planejamento da Iteração"
-        ],
-        "resposta": "C"
-      },
-      {
-        "pergunta": "Qual é uma diferença fundamental entre teste em abordagens tradicionais e ágil?",
-        "alternativas": [
-          "Testes são realizados apenas no final do projeto em ágil",
-          "Testes e desenvolvimento são atividades separadas em ágil",
-          "Testes são integrados continuamente ao desenvolvimento em ágil",
-          "Não há níveis de teste definidos em ágil"
-        ],
-        "resposta": "C"
-      },
-      {
-        "pergunta": "Em quais modelos de desenvolvimento o teste de regressão é mais importante?",
-        "alternativas": [
-          "Sequencial e incremental",
-          "Sequencial e iterativo",
-          "Incremental e iterativo",
-          "É igualmente importante em todos os modelos"
-        ],
-        "resposta": "B"
-      },
-      {
-        "pergunta": "Durante qual atividade um analista de teste define os casos de teste de baixo nível?",
-        "alternativas": [
-          "Análise de teste",
-          "Design de teste",
-          "Implementação de teste",
-          "Execução de teste"
-        ],
-        "resposta": "B"
-      },
-      {
-        "pergunta": "Qual é o significado do critério de qualidade 'Necessidade' para casos de teste?",
-        "alternativas": [
-          "O caso de teste cobre condições de fronteira",
-          "O caso de teste cobre condições negativas",
-          "O caso de teste cobre algo que precisa ser testado",
-          "O caso de teste é necessário como pré-requisito para outro caso"
-        ],
-        "resposta": "C"
-      },
-      {
-        "pergunta": "Qual tipo de ferramenta é usada para gerenciar a matriz de rastreabilidade?",
-        "alternativas": [
-          "Gerenciamento de defeitos",
-          "Gerenciamento de testes",
-          "Gerenciamento de dados de teste",
-          "Gerenciamento de configuração"
-        ],
-        "resposta": "B"
-      },
-      {
+        "id": null,
+        "k_level": "K2",
         "pergunta": "Considerando um modelo iterativo e uma matriz de rastreabilidade com riscos de regressão, qual a ordem recomendada para execução dos casos de teste para mitigar riscos?",
+        "capitulo_id": "cap1",
+        "capitulo_nome": "Risk-Based Testing",
         "alternativas": [
           "1, 2, 3, 4, 5",
           "1, 3, 4 e 2, 5 se houver tempo",
           "5, 4, 3, 1 e não executar 2",
           "1, 5, 4, 3 e 2 se houver tempo"
         ],
-        "resposta": "B"
-      },
-      {
-        "pergunta": "Qual ferramenta pode ser usada para automatizar testes de cauda?",
-        "alternativas": [
-          "Selenium WebDriver.",
-          "Pingdom ou UptimeRobot.",
-          "JUnit.",
-          "TestRigor"
-        ],
-        "resposta": "C"
-      },
-      {
-        "pergunta": "Qual dos seguintes valores é enfatizado pelo Manifesto Ágil como tendo maior valor em relação ao seu oposto?",
-        "alternativas": [
-          "Processos e ferramentas sobre indivíduos e interações",
-          "Documentação abrangente sobre software funcionando",
-          "Negociação de contratos sobre colaboração com o cliente",
-          "Indivíduos e interações sobre processos e ferramentas"
-        ],
-        "resposta": "D"
-      },
-      {
-        "pergunta": "Qual é uma das principais vantagens da abordagem de equipe inteira em projetos ágeis?",
-        "alternativas": [
-          "Permite que apenas desenvolvedores tomem decisões técnicas",
-          "Reduz a comunicação entre os membros da equipe",
-          "Garante que todos com conhecimento necessário estejam envolvidos no sucesso do projeto",
-          "Aumenta a dependência de ferramentas automatizadas"
-        ],
-        "resposta": "C"
-      },
-      {
-        "pergunta": "Por que o feedback inicial e frequente é importante no desenvolvimento ágil de software?",
-        "alternativas": [
-          "Para garantir que a documentação esteja sempre atualizada",
-          "Para remover defeitos antecipadamente e melhorar a qualidade do produto",
-          "Para evitar mudanças de requisitos durante o projeto",
-          "Para permitir que apenas o gerente de projeto tome decisões"
-        ],
-        "resposta": "B"
-      },
-      {
-        "pergunta": "Segundo os princípios ágeis, qual é a principal medida de progresso em um projeto?",
-        "alternativas": [
-          "Quantidade de documentação produzida",
-          "Software funcionando",
-          "Número de reuniões realizadas",
-          "Tempo gasto em planejamento"
-        ],
-        "resposta": "B"
-      },
-      {
-        "pergunta": "Como o Manifesto Ágil sugere lidar com mudanças de requisitos durante o desenvolvimento?",
-        "alternativas": [
-          "Evitar mudanças para manter o plano original",
-          "Aceitar mudanças apenas no início do projeto",
-          "Aceitar mudanças de requisitos mesmo no final do desenvolvimento",
-          "Permitir mudanças apenas após aprovação formal do cliente"
-        ],
-        "resposta": "C"
-      },
-      {
-        "pergunta": "Qual é o objetivo principal do syllabus CTAL-TAE 2.0 do ISTQB?",
-        "alternativas": [
-          "Fornecer um guia para a certificação de testadores iniciantes em automação.",
-          "Estabelecer diretrizes para a engenharia de automação de testes em nível avançado.",
-          "Apresentar técnicas básicas de teste manual para iniciantes.",
-          "Descrever as ferramentas específicas para automação de testes."
-        ],
-        "resposta": "B"
-      },
-      {
-        "pergunta": "Segundo o texto, qual é uma condição para que um Provedor de Treinamento Credenciado utilize o syllabus como base para um curso?",
-        "alternativas": [
-          "O curso pode ser anunciado antes do credenciamento oficial dos materiais.",
-          "Os autores e o ISTQB® devem ser reconhecidos como fonte e proprietários dos direitos autorais.",
-          "Não é necessário citar a fonte do syllabus no curso.",
-          "O uso do syllabus é permitido para fins comerciais sem restrições."
-        ],
-        "resposta": "B"
-      },
-      {
-        "pergunta": "Qual é a data de liberação da versão GA do CTAL-TAE v2.0 conforme o histórico de revisões?",
-        "alternativas": [
-          "21/10/2016",
-          "03/05/2024",
-          "14/06/2024",
-          "29/07/2024"
-        ],
-        "resposta": "B"
-      },
-      {
-        "pergunta": "Quem foi o presidente do Grupo de Trabalho do Foundation Level Extension Agile Tester do ISTQB?",
-        "alternativas": [
-          "Rex Black",
-          "Bertrand Cornanguer",
-          "Gerry Coleman",
-          "Alon Linetzki"
-        ],
-        "resposta": "A"
-      },
-      {
-        "pergunta": "Qual das opções abaixo NÃO é mencionada como uma seção do índice do Syllabus CTFL-AT v1.0?",
-        "alternativas": [
-          "Direitos Autorais",
-          "Histórico da Revisão",
-          "Princípios de Engenharia de Requisitos",
-          "Agradecimentos"
-        ],
-        "resposta": "C"
-      },
-      {
-        "pergunta": "Qual é a sequência correta do processo no Test Driven Development (TDD)?",
-        "alternativas": [
-          "Executar o teste, criar o código, escrever o teste, melhorar o código",
-          "Criar um teste automatizado, executar o teste que falha, escrever o código até passar o teste, melhorar o código",
-          "Escrever o código, criar o teste, executar o teste, melhorar o código",
-          "Executar o teste, melhorar o código, criar o teste, escrever o código"
-        ],
-        "resposta": "B"
-      },
-      {
-        "pergunta": "Qual das seguintes afirmações melhor descreve o papel do Acceptance Test Driven Development (ATDD) em projetos ágeis?",
-        "alternativas": [
-          "Foca em testes unitários automatizados para garantir a qualidade do código",
-          "Define critérios e testes de aceite durante a criação das histórias para garantir o comportamento esperado da funcionalidade",
-          "Utiliza o padrão Gherkin para escrever testes baseados no comportamento esperado",
-          "Realiza testes manuais de sistema para validar a interface do usuário"
-        ],
-        "resposta": "B"
-      },
-      {
-        "pergunta": "Na pirâmide de teste em projetos ágeis, qual é a característica correta da distribuição dos testes?",
-        "alternativas": [
-          "Maior quantidade de testes no nível de sistema e aceitação, diminuindo nos níveis inferiores",
-          "Quantidade igual de testes em todos os níveis para garantir cobertura uniforme",
-          "Maior quantidade de testes no nível mais baixo (unidade), diminuindo conforme sobe para níveis superiores",
-          "Testes manuais predominam em todos os níveis para garantir qualidade"
-        ],
-        "resposta": "C"
-      },
-      {
-        "pergunta": "Qual é a sequência correta do processo no Test Driven Development (TDD)?",
-        "alternativas": [
-          "Executar o teste, criar o código, escrever o teste, melhorar o código",
-          "Criar um teste automatizado, executar o teste que falha, escrever o código até passar o teste, melhorar o código",
-          "Escrever o código, criar o teste, executar o teste, melhorar o código",
-          "Executar o teste, melhorar o código, criar o teste, escrever o código"
-        ],
         "resposta": "B",
-        "capitulo_id": "importados",
-        "capitulo_nome": "importados"
+        "justificativa": ""
       },
       {
-        "pergunta": "Qual das seguintes afirmações melhor descreve o papel do Acceptance Test Driven Development (ATDD) em projetos ágeis?",
-        "alternativas": [
-          "Foca em testes unitários automatizados para garantir a qualidade do código",
-          "Define critérios e testes de aceite durante a criação das histórias para garantir o comportamento esperado da funcionalidade",
-          "Utiliza o padrão Gherkin para escrever testes baseados no comportamento esperado",
-          "Realiza testes manuais de sistema para validar a interface do usuário"
-        ],
-        "resposta": "B",
-        "capitulo_id": "importados",
-        "capitulo_nome": "importados"
-      },
-      {
-        "pergunta": "Na pirâmide de teste em projetos ágeis, qual é a característica correta da distribuição dos testes?",
-        "alternativas": [
-          "Maior quantidade de testes no nível de sistema e aceitação, diminuindo nos níveis inferiores",
-          "Quantidade igual de testes em todos os níveis para garantir cobertura uniforme",
-          "Maior quantidade de testes no nível mais baixo (unidade), diminuindo conforme sobe para níveis superiores",
-          "Testes manuais predominam em todos os níveis para garantir qualidade"
-        ],
-        "resposta": "C",
-        "capitulo_id": "importados",
-        "capitulo_nome": "importados"
-      }
-    ],
-    "cap1": [
-      {
-        "pergunta": "Qual dos seguintes valores é enfatizado pelo Manifesto Ágil em relação ao desenvolvimento de software?",
-        "alternativas": [
-          "Processos e ferramentas sobre indivíduos e interações",
-          "Documentação abrangente sobre software funcionando",
-          "Indivíduos e interações sobre processos e ferramentas",
-          "Negociação de contratos sobre colaboração com o cliente"
-        ],
-        "resposta": "C",
-        "capitulo_id": "cap1",
-        "capitulo_nome": "Cap 1 - Risk-based Testing"
-      },
-      {
-        "pergunta": "Qual é um dos principais benefícios do feedback inicial e frequente em projetos ágeis?",
-        "alternativas": [
-          "Aumentar a quantidade de documentação",
-          "Remover defeitos antecipadamente e melhorar a qualidade do produto",
-          "Reduzir a colaboração com o cliente",
-          "Seguir rigidamente um plano pré-definido"
-        ],
-        "resposta": "B",
-        "capitulo_id": "cap1",
-        "capitulo_nome": "Cap 1 - Risk-based Testing"
-      },
-      {
+        "id": null,
+        "k_level": "K2",
         "pergunta": "Segundo o Manifesto Ágil, como as equipes devem lidar com mudanças de requisitos durante o desenvolvimento?",
+        "capitulo_id": "cap1",
+        "capitulo_nome": "Risk-Based Testing",
         "alternativas": [
           "Evitar mudanças após o início do projeto",
           "Aceitar mudanças apenas no início do projeto",
@@ -356,11 +29,14 @@
           "Ignorar mudanças para manter o plano original"
         ],
         "resposta": "C",
-        "capitulo_id": "cap1",
-        "capitulo_nome": "Cap 1 - Risk-based Testing"
+        "justificativa": ""
       },
       {
+        "id": null,
+        "k_level": "K2",
         "pergunta": "Na abordagem de equipe inteira em projetos ágeis, qual das opções a seguir é correta?",
+        "capitulo_id": "cap1",
+        "capitulo_nome": "Risk-Based Testing",
         "alternativas": [
           "A equipe deve ser composta apenas por desenvolvedores",
           "A equipe inclui representantes do cliente e outros stakeholders de negócios",
@@ -368,11 +44,281 @@
           "A equipe deve trabalhar de forma isolada dos clientes"
         ],
         "resposta": "B",
-        "capitulo_id": "cap1",
-        "capitulo_nome": "Cap 1 - Risk-based Testing"
+        "justificativa": ""
       },
       {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Na análise de risco baseada em qualidade, qual é o papel típico do Analista de Teste (TA) durante a avaliação?",
+        "capitulo_id": "cap1",
+        "capitulo_nome": "Risk-Based Testing",
+        "alternativas": [
+          "Atribuir a probabilidade técnica de uma falha ocorrer no código-fonte.",
+          "Avaliar o impacto das falhas sob a perspectiva do negócio e do uso do software.",
+          "Decidir sozinho se o risco é aceitável ou não para o lançamento.",
+          "Codificar correções de bugs para mitigar riscos de segurança."
+        ],
+        "resposta": "B",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Você está priorizando testes de regressão. O Teste X cobre um requisito de alto risco mas não foi alterado. O Teste Y cobre um requisito de médio risco mas está em uma área que sofreu mudanças recentes no código. Como você deve proceder?",
+        "capitulo_id": "cap1",
+        "capitulo_nome": "Risk-Based Testing",
+        "alternativas": [
+          "Executar apenas o Teste X, pois o risco do requisito é sempre mais importante.",
+          "Priorizar o Teste Y, pois o risco de regressão em áreas alteradas indica maior probabilidade de defeitos novos.",
+          "Ignorar ambos e executar apenas testes novos de funcionalidades inéditas.",
+          "Executar o Teste X apenas se o Teste Y falhar."
+        ],
+        "resposta": "B",
+        "justificativa": ""
+      },
+      {
+        "pergunta": "Qual das seguintes afirmações descreve MELHOR o conceito de Risk-Based Testing?",
+        "alternativas": [
+          "Testar apenas funcionalidades de alto risco e ignorar as de baixo risco",
+          "Priorizar testes baseados na probabilidade e impacto de falhas",
+          "Executar testes aleatórios para identificar riscos desconhecidos",
+          "Focar exclusivamente em testes de segurança e performance"
+        ],
+        "resposta": "B",
+        "justificativa": "Risk-Based Testing prioriza testes baseados no nível de risco (probabilidade × impacto), não ignora baixo risco (A), não é aleatório (C) e não foca apenas segurança (D).",
+        "k_level": "K2",
+        "fonte": "simulado_01_risk_based_testing.md",
+        "capitulo_id": "cap1",
+        "capitulo_nome": "Risk-Based Testing",
+        "id": null
+      },
+      {
+        "pergunta": "Qual é a diferença entre Product Risk e Project Risk?",
+        "alternativas": [
+          "Product Risk afeta o cronograma; Project Risk afeta a qualidade",
+          "Product Risk é técnico; Project Risk é gerencial",
+          "Product Risk são falhas no software; Project Risk são problemas no processo",
+          "Não há diferença, são sinônimos"
+        ],
+        "resposta": "C",
+        "justificativa": "Product Risk = falhas no produto (bugs, performance). Project Risk = problemas no projeto (atrasos, falta de recursos).",
+        "k_level": "K2",
+        "fonte": "simulado_01_risk_based_testing.md",
+        "capitulo_id": "cap1",
+        "capitulo_nome": "Risk-Based Testing",
+        "id": null
+      },
+      {
+        "pergunta": "Um sistema bancário tem as seguintes funcionalidades:",
+        "alternativas": [
+          "Transferência > Login > Relatórios > Consulta saldo",
+          "Login > Transferência > Consulta saldo > Relatórios",
+          "Transferência > Relatórios > Login > Consulta saldo",
+          "Relatórios > Transferência > Login > Consulta saldo"
+        ],
+        "resposta": "A",
+        "justificativa": "Cálculo de risco (P×I):",
+        "k_level": "K3",
+        "fonte": "simulado_01_risk_based_testing.md",
+        "capitulo_id": "cap1",
+        "capitulo_nome": "Risk-Based Testing",
+        "id": null
+      },
+      {
+        "pergunta": "Você é Test Analyst em um projeto e-commerce. Durante a análise de risco, identifica que o módulo de pagamento tem alta complexidade técnica (nova API de terceiros) e processa transações financeiras críticas. Como você classificaria este risco?",
+        "alternativas": [
+          "Baixa probabilidade, baixo impacto",
+          "Alta probabilidade, baixo impacto",
+          "Baixa probabilidade, alto impacto",
+          "Alta probabilidade, alto impacto"
+        ],
+        "resposta": "D",
+        "justificativa": "",
+        "k_level": "K4",
+        "fonte": "simulado_01_risk_based_testing.md",
+        "capitulo_id": "cap1",
+        "capitulo_nome": "Risk-Based Testing",
+        "id": null
+      },
+      {
+        "pergunta": "Qual das seguintes NÃO é uma atividade típica do Test Analyst em Risk-Based Testing?",
+        "alternativas": [
+          "Identificar riscos de produto",
+          "Avaliar probabilidade e impacto de riscos",
+          "Definir o orçamento do projeto",
+          "Priorizar casos de teste baseados em risco"
+        ],
+        "resposta": "C",
+        "justificativa": "Definir orçamento é responsabilidade do gerente de projeto, não do Test Analyst.",
+        "k_level": "K2",
+        "fonte": "simulado_01_risk_based_testing.md",
+        "capitulo_id": "cap1",
+        "capitulo_nome": "Risk-Based Testing",
+        "id": null
+      },
+      {
+        "pergunta": "Durante um sprint, novos requisitos são adicionados ao backlog. O que você deve fazer em relação à análise de risco?",
+        "alternativas": [
+          "Manter a análise de risco original sem alterações",
+          "Re-avaliar riscos considerando as mudanças",
+          "Ignorar os novos requisitos até o próximo sprint",
+          "Aumentar automaticamente o risco de todos os itens"
+        ],
+        "resposta": "B",
+        "justificativa": "Mudanças nos requisitos exigem re-avaliação de riscos, pois podem introduzir novos riscos ou alterar os existentes.",
+        "k_level": "K3",
+        "fonte": "simulado_01_risk_based_testing.md",
+        "capitulo_id": "cap1",
+        "capitulo_nome": "Risk-Based Testing",
+        "id": null
+      },
+      {
+        "pergunta": "O que é uma Risk Matrix?",
+        "alternativas": [
+          "Documento que lista todos os bugs encontrados",
+          "Ferramenta visual que cruza probabilidade e impacto",
+          "Planilha de casos de teste priorizados",
+          "Relatório de cobertura de código"
+        ],
+        "resposta": "B",
+        "justificativa": "Risk Matrix é uma tabela (geralmente 5×5) que visualiza riscos cruzando probabilidade (eixo Y) com impacto (eixo X).",
+        "k_level": "K2",
+        "fonte": "simulado_01_risk_based_testing.md",
+        "capitulo_id": "cap1",
+        "capitulo_nome": "Risk-Based Testing",
+        "id": null
+      },
+      {
+        "pergunta": "Você tem 40 horas para testar um sistema com 5 módulos. A análise de risco resultou em:",
+        "alternativas": [
+          "8h para cada módulo (distribuição igual)",
+          "A:15h, B:12h, C:8h, D:3h, E:2h",
+          "A:20h, B:10h, C:5h, D:3h, E:2h",
+          "Testar apenas A e B (alto risco)"
+        ],
+        "resposta": "B",
+        "justificativa": "Distribuição proporcional ao risco, mas sem ignorar completamente baixo risco. Opção B aloca mais tempo para alto risco mantendo cobertura mínima nos demais.",
+        "k_level": "K4",
+        "fonte": "simulado_01_risk_based_testing.md",
+        "capitulo_id": "cap1",
+        "capitulo_nome": "Risk-Based Testing",
+        "id": null
+      },
+      {
+        "pergunta": "Qual fator NÃO aumenta a probabilidade de risco?",
+        "alternativas": [
+          "Equipe inexperiente na tecnologia",
+          "Código legado sem documentação",
+          "Funcionalidade crítica de negócio",
+          "Mudanças frequentes nos requisitos"
+        ],
+        "resposta": "C",
+        "justificativa": "\"Funcionalidade crítica de negócio\" aumenta o IMPACTO, não a probabilidade. Os demais aumentam a chance de falha (probabilidade).",
+        "k_level": "K2",
+        "fonte": "simulado_01_risk_based_testing.md",
+        "capitulo_id": "cap1",
+        "capitulo_nome": "Risk-Based Testing",
+        "id": null
+      },
+      {
+        "pergunta": "Um risco identificado tem probabilidade 5 (muito alta) e impacto 5 (muito alto). Qual ação é MAIS apropriada?",
+        "alternativas": [
+          "Aceitar o risco e documentar",
+          "Transferir o risco para terceiros",
+          "Mitigar com testes rigorosos e revisões",
+          "Ignorar pois é muito complexo de resolver"
+        ],
+        "resposta": "C",
+        "justificativa": "Risco 25 (5×5) é CRÍTICO e exige mitigação ativa através de testes extensivos, revisões de código, pair programming, etc. Não pode ser aceito (A) ou ignorado (D).",
+        "k_level": "K3",
+        "fonte": "simulado_01_risk_based_testing.md",
+        "capitulo_id": "cap1",
+        "capitulo_nome": "Risk-Based Testing",
+        "id": null
+      }
+    ],
+    "cap2": [
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "No contexto do desenvolvimento ágil, qual é um dos principais benefícios da abordagem de equipe inteira?",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "alternativas": [
+          "Permite que apenas desenvolvedores tomem decisões técnicas.",
+          "Garante que todos os stakeholders relevantes participem ativamente do projeto.",
+          "Reduz a necessidade de feedback frequente do cliente.",
+          "Foca exclusivamente na documentação detalhada do produto."
+        ],
+        "resposta": "B",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Qual é uma diferença fundamental entre teste em abordagens tradicionais e ágil?",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "alternativas": [
+          "Testes são realizados apenas no final do projeto em ágil",
+          "Testes e desenvolvimento são atividades separadas em ágil",
+          "Testes são integrados continuamente ao desenvolvimento em ágil",
+          "Não há níveis de teste definidos em ágil"
+        ],
+        "resposta": "C",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Durante qual atividade um analista de teste define os casos de teste de baixo nível?",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "alternativas": [
+          "Análise de teste",
+          "Design de teste",
+          "Implementação de teste",
+          "Execução de teste"
+        ],
+        "resposta": "B",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Qual é o significado do critério de qualidade 'Necessidade' para casos de teste?",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "alternativas": [
+          "O caso de teste cobre condições de fronteira",
+          "O caso de teste cobre condições negativas",
+          "O caso de teste cobre algo que precisa ser testado",
+          "O caso de teste é necessário como pré-requisito para outro caso"
+        ],
+        "resposta": "C",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Qual é uma das principais vantagens da abordagem de equipe inteira em projetos ágeis?",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "alternativas": [
+          "Permite que apenas desenvolvedores tomem decisões técnicas",
+          "Reduz a comunicação entre os membros da equipe",
+          "Garante que todos com conhecimento necessário estejam envolvidos no sucesso do projeto",
+          "Aumenta a dependência de ferramentas automatizadas"
+        ],
+        "resposta": "C",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
         "pergunta": "Qual princípio ágil destaca a importância da equipe refletir e ajustar seu comportamento regularmente?",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
         "alternativas": [
           "Satisfazer o cliente",
           "Simplicidade",
@@ -380,10 +326,1795 @@
           "Excelência técnica"
         ],
         "resposta": "C",
-        "capitulo_id": "cap1",
-        "capitulo_nome": "Cap 1 - Risk-based Testing"
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "No contexto do processo de teste, em qual atividade o Analista de Teste é especificamente responsável por identificar e priorizar as condições de teste com base na análise da base de teste?",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "alternativas": [
+          "Modelagem de Teste.",
+          "Análise de Teste.",
+          "Implementação de Teste.",
+          "Execução de Teste."
+        ],
+        "resposta": "B",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "De acordo com o Syllabus, o critério de qualidade 'Necessidade' para um caso de teste implica que:",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "alternativas": [
+          "O caso de teste deve cobrir obrigatoriamente um valor de limite.",
+          "O caso de teste é essencial porque valida um requisito ou condição que realmente precisa ser testada.",
+          "O caso de teste deve ser automatizado para garantir a rapidez da regressão.",
+          "O caso de teste deve ser um pré-requisito técnico para outros testes mais complexos."
+        ],
+        "resposta": "B",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Ao utilizar perfis operacionais para guiar o esforço de teste, o Analista de Teste foca em:",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "alternativas": [
+          "Testar todos os caminhos lógicos possíveis do sistema, independentemente do uso.",
+          "Priorizar as funções e caminhos que são mais frequentemente utilizados pelos usuários reais.",
+          "Focar exclusivamente em testes de caixa-branca para garantir 100% de cobertura de decisão.",
+          "Testar apenas as funções que foram corrigidas no último sprint."
+        ],
+        "resposta": "B",
+        "justificativa": ""
+      },
+      {
+        "pergunta": "Qual é o principal objetivo do syllabus ISTQB Certified Tester Foundation Level Extension Agile Tester?",
+        "alternativas": [
+          "Fornecer um guia para desenvolvimento de software tradicional.",
+          "Definir padrões de codificação para equipes ágeis.",
+          "Estabelecer os fundamentos do teste de software em ambientes ágeis.",
+          "Descrever ferramentas automatizadas para teste ágil."
+        ],
+        "resposta": "C",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Cap 2 - Test Techniques"
+      },
+      {
+        "pergunta": "De acordo com o índice do syllabus, qual dos tópicos abaixo é abordado na seção 1.1.1?",
+        "alternativas": [
+          "Retrospectivas",
+          "Desenvolvimento Ágil de Software e o Manifesto Ágil",
+          "Planejamento da Iteração e Lançamento",
+          "Integração Contínua"
+        ],
+        "resposta": "B",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Cap 2 - Test Techniques"
+      },
+      {
+        "pergunta": "O que caracteriza a abordagem de equipe inteira em ambientes ágeis, segundo o syllabus?",
+        "alternativas": [
+          "A responsabilidade pelo teste é exclusiva do testador.",
+          "A equipe de desenvolvimento não participa dos testes.",
+          "Todos os membros da equipe são responsáveis pela qualidade e testes.",
+          "O gerente de projeto define todos os testes."
+        ],
+        "resposta": "C",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Cap 2 - Test Techniques"
+      },
+      {
+        "pergunta": "Qual é a importância do feedback inicial e frequente em projetos ágeis?",
+        "alternativas": [
+          "Permite atrasar a identificação de defeitos.",
+          "Garante que o planejamento seja feito apenas no início do projeto.",
+          "Permite identificar e corrigir problemas rapidamente durante o desenvolvimento.",
+          "Evita a necessidade de retrospectivas."
+        ],
+        "resposta": "C",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Cap 2 - Test Techniques"
+      },
+      {
+        "pergunta": "Segundo o syllabus, qual das opções a seguir é uma prática comum em abordagens ágeis?",
+        "alternativas": [
+          "Documentação extensa antes do início do projeto.",
+          "Criação colaborativa da história do usuário.",
+          "Testes realizados apenas no final do ciclo.",
+          "Planejamento de testes após a entrega do produto."
+        ],
+        "resposta": "B",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Cap 2 - Test Techniques"
+      },
+      {
+        "pergunta": "O que é destacado como um dos principais benefícios das retrospectivas em equipes ágeis?",
+        "alternativas": [
+          "Reduzir a comunicação entre membros da equipe.",
+          "Aumentar a burocracia do processo.",
+          "Promover a melhoria contínua dos processos e práticas da equipe.",
+          "Eliminar a necessidade de reuniões diárias."
+        ],
+        "resposta": "C",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Cap 2 - Test Techniques"
+      },
+      {
+        "pergunta": "Qual é o objetivo da integração contínua em projetos ágeis conforme apresentado no syllabus?",
+        "alternativas": [
+          "Permitir que o código seja integrado apenas no final do projeto.",
+          "Garantir que as alterações de código sejam integradas e testadas frequentemente.",
+          "Reduzir a frequência de testes automatizados.",
+          "Evitar o uso de ferramentas de integração."
+        ],
+        "resposta": "B",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Cap 2 - Test Techniques"
+      },
+      {
+        "pergunta": "No contexto do syllabus, qual é a diferença principal entre teste em abordagens tradicionais e ágeis?",
+        "alternativas": [
+          "Em ágil, o teste é realizado apenas após o desenvolvimento.",
+          "No tradicional, todos testam, enquanto em ágil apenas o testador testa.",
+          "Em ágil, as atividades de teste e desenvolvimento são realizadas de forma integrada e contínua.",
+          "No tradicional, não há documentação de teste."
+        ],
+        "resposta": "C",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Cap 2 - Test Techniques"
+      },
+      {
+        "pergunta": "De acordo com o histórico de revisão do syllabus, o que representa a versão 2014-09-30?",
+        "alternativas": [
+          "A primeira versão beta do syllabus.",
+          "A versão com pequenas correções após o lançamento GA.",
+          "A versão inicial do grupo de trabalho.",
+          "A versão padronizada com o ISTQB."
+        ],
+        "resposta": "B",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Cap 2 - Test Techniques"
+      },
+      {
+        "pergunta": "Qual das opções abaixo é um dos tópicos listados no índice do syllabus ISTQB CTFL-AT?",
+        "alternativas": [
+          "Testes de Segurança em Ágil",
+          "Planejamento da Iteração e Lançamento",
+          "Gestão de Configuração Tradicional",
+          "Testes de Interface de Usuário"
+        ],
+        "resposta": "B",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Cap 2 - Test Techniques"
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Em quais modelos de desenvolvimento o teste de regressão é mais importante?",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "alternativas": [
+          "Sequencial e incremental",
+          "Sequencial e iterativo",
+          "Incremental e iterativo",
+          "É igualmente importante em todos os modelos"
+        ],
+        "resposta": "B",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Segundo os princípios ágeis, qual é a principal medida de progresso em um projeto?",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "alternativas": [
+          "Quantidade de documentação produzida",
+          "Software funcionando",
+          "Número de reuniões realizadas",
+          "Tempo gasto em planejamento"
+        ],
+        "resposta": "B",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Como o Manifesto Ágil sugere lidar com mudanças de requisitos durante o desenvolvimento?",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "alternativas": [
+          "Evitar mudanças para manter o plano original",
+          "Aceitar mudanças apenas no início do projeto",
+          "Aceitar mudanças de requisitos mesmo no final do desenvolvimento",
+          "Permitir mudanças apenas após aprovação formal do cliente"
+        ],
+        "resposta": "C",
+        "justificativa": ""
+      },
+      {
+        "pergunta": "Campo \"Idade\" aceita valores de 18 a 65 anos. Aplicando EP, quantas partições você identificaria?",
+        "alternativas": [
+          "2 partições (válida e inválida)",
+          "3 partições (1 válida e 2 inválidas)",
+          "4 partições (2 válidas e 2 inválidas)",
+          "5 partições (1 válida e 4 inválidas)"
+        ],
+        "resposta": "B",
+        "justificativa": "",
+        "k_level": "K3",
+        "fonte": "simulado_02_test_techniques.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Sistema aceita valores de 1 a 100. Usando BVA 3-value, quais valores você testaria?",
+        "alternativas": [
+          "0, 1, 100, 101",
+          "1, 50, 100",
+          "0, 1, 2, 99, 100, 101",
+          "1, 2, 99, 100"
+        ],
+        "resposta": "C",
+        "justificativa": "BVA 3-value testa 3 valores por fronteira:",
+        "k_level": "K4",
+        "fonte": "simulado_02_test_techniques.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Sistema de desconto: Cliente VIP (Sim/Não) e Compra > R$100 (Sim/Não). Quantas regras uma decision table completa teria?",
+        "alternativas": [
+          "2 regras",
+          "3 regras",
+          "4 regras",
+          "8 regras"
+        ],
+        "resposta": "C",
+        "justificativa": "2^n onde n=2 condições → 2^2 = 4 regras (VV, VF, FV, FF)",
+        "k_level": "K3",
+        "fonte": "simulado_02_test_techniques.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Duas regras: R1(Sim, Sim → Desconto 20%) e R2(Sim, Não → Desconto 20%). Podem ser collapsed?",
+        "alternativas": [
+          "Não, são regras diferentes",
+          "Sim, resultam em (Sim, - → Desconto 20%)",
+          "Sim, resultam em (-, Sim → Desconto 20%)",
+          "Apenas se houver terceira condição"
+        ],
+        "resposta": "B",
+        "justificativa": "Ambas têm mesma ação quando condição 1 = Sim, independente da condição 2. Usa-se \"-\" (don't care) na condição 2.",
+        "k_level": "K4",
+        "fonte": "simulado_02_test_techniques.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Sistema de login tem 3 estados: Deslogado, Logado, Bloqueado. Para cobertura 1-switch (all transitions), quantos casos de teste mínimos?",
+        "alternativas": [
+          "3 casos (um por estado)",
+          "4 casos (número de transições válidas)",
+          "6 casos (todas as combinações)",
+          "9 casos (todas as possibilidades)"
+        ],
+        "resposta": "B",
+        "justificativa": "1-switch cobre todas as transições válidas. Exemplo:",
+        "k_level": "K3",
+        "fonte": "simulado_02_test_techniques.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Qual a diferença entre 0-switch e 1-switch coverage?",
+        "alternativas": [
+          "0-switch testa estados, 1-switch testa transições",
+          "0-switch é mais rigoroso que 1-switch",
+          "Não há diferença prática",
+          "0-switch testa transições inválidas"
+        ],
+        "resposta": "A",
+        "justificativa": "",
+        "k_level": "K4",
+        "fonte": "simulado_02_test_techniques.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Use Case \"Comprar Produto\" tem: 1 main flow, 2 alternative flows, 3 exception flows. Quantos casos de teste mínimos para cobertura completa?",
+        "alternativas": [
+          "3 casos",
+          "4 casos",
+          "6 casos",
+          "12 casos"
+        ],
+        "resposta": "C",
+        "justificativa": "1 (main) + 2 (alternative) + 3 (exception) = 6 casos mínimos",
+        "k_level": "K3",
+        "fonte": "simulado_02_test_techniques.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Qual afirmação está CORRETA sobre Use Case vs User Story?",
+        "alternativas": [
+          "Use Case é mais adequado para metodologias ágeis",
+          "User Story é mais detalhada que Use Case",
+          "Use Case inclui fluxos alternativos e de exceção",
+          "User Story substitui completamente Use Case"
+        ],
+        "resposta": "C",
+        "justificativa": "Use Case é mais detalhado e formal, incluindo main/alternative/exception flows. User Story é concisa e focada em valor.",
+        "k_level": "K4",
+        "fonte": "simulado_02_test_techniques.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Busca de produtos: Tipo (3 opções), Ordenação (2 opções), Filtro (2 opções). Quantas combinações possíveis?",
+        "alternativas": [
+          "7 combinações",
+          "12 combinações",
+          "18 combinações",
+          "24 combinações"
+        ],
+        "resposta": "B",
+        "justificativa": "3 × 2 × 2 = 12 combinações possíveis",
+        "k_level": "K3",
+        "fonte": "simulado_02_test_techniques.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Qual estratégia de seleção de combinações em Classification Tree oferece melhor custo-benefício?",
+        "alternativas": [
+          "All combinations (exaustivo)",
+          "Each choice (mínimo)",
+          "Pairwise (balanceado)",
+          "Random selection"
+        ],
+        "resposta": "C",
+        "justificativa": "Pairwise testa cada par de valores pelo menos 1x, oferecendo boa cobertura com número reduzido de casos (balanceado).",
+        "k_level": "K4",
+        "fonte": "simulado_02_test_techniques.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "O que mede Statement Coverage?",
+        "alternativas": [
+          "Percentual de decisões testadas",
+          "Percentual de linhas de código executadas",
+          "Percentual de branches testadas",
+          "Percentual de caminhos testados"
+        ],
+        "resposta": "B",
+        "justificativa": "Statement Coverage mede % de linhas/statements executadas pelos testes.",
+        "k_level": "K2",
+        "fonte": "simulado_02_test_techniques.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Código tem 5 IFs (10 branches). Testes cobrem 8 branches. Qual a Branch Coverage?",
+        "alternativas": [
+          "50%",
+          "60%",
+          "80%",
+          "100%"
+        ],
+        "resposta": "C",
+        "justificativa": "8/10 × 100 = 80%",
+        "k_level": "K3",
+        "fonte": "simulado_02_test_techniques.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "É possível ter 100% Statement Coverage mas menos de 100% Branch Coverage?",
+        "alternativas": [
+          "Não, são equivalentes",
+          "Sim, Statement é mais fraco que Branch",
+          "Não, Branch é mais fraco que Statement",
+          "Apenas em linguagens específicas"
+        ],
+        "resposta": "B",
+        "justificativa": "Exemplo:",
+        "k_level": "K4",
+        "fonte": "simulado_02_test_techniques.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "O que é Error Guessing?",
+        "alternativas": [
+          "Técnica formal baseada em especificações",
+          "Técnica que usa experiência para antecipar erros prováveis",
+          "Ferramenta automatizada de detecção de bugs",
+          "Método de análise estática de código"
+        ],
+        "resposta": "B",
+        "justificativa": "Error Guessing é técnica experience-based onde testador antecipa erros baseado em experiência e intuição.",
+        "k_level": "K2",
+        "fonte": "simulado_02_test_techniques.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Qual característica NÃO é típica de Exploratory Testing?",
+        "alternativas": [
+          "Design e execução simultâneos",
+          "Scripts detalhados pré-definidos",
+          "Aprendizado contínuo durante teste",
+          "Adaptação baseada em resultados"
+        ],
+        "resposta": "B",
+        "justificativa": "Exploratory Testing NÃO usa scripts pré-definidos. Design acontece durante a execução.",
+        "k_level": "K3",
+        "fonte": "simulado_02_test_techniques.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "O que é um Charter em Session-Based Exploratory Testing?",
+        "alternativas": [
+          "Relatório final da sessão",
+          "Objetivo/missão da sessão exploratória",
+          "Ferramenta de automação",
+          "Métrica de cobertura"
+        ],
+        "resposta": "B",
+        "justificativa": "Charter define o objetivo/foco da sessão exploratória. Ex: \"Explorar upload de arquivos focando em tipos e tamanhos\".",
+        "k_level": "K3",
+        "fonte": "simulado_02_test_techniques.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Qual a principal LIMITAÇÃO de Checklist-Based Testing?",
+        "alternativas": [
+          "É muito caro de implementar",
+          "Requer ferramentas especializadas",
+          "Pode ficar desatualizado e criar \"checkbox mentality\"",
+          "Não pode ser usado em projetos ágeis"
+        ],
+        "resposta": "C",
+        "justificativa": "Checklists podem ficar desatualizados e criar mentalidade de apenas \"marcar itens\" sem análise crítica.",
+        "k_level": "K4",
+        "fonte": "simulado_02_test_techniques.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Qual a melhor estratégia para combinar técnicas de teste?",
+        "alternativas": [
+          "Usar apenas técnicas formais (EP, BVA)",
+          "Usar apenas técnicas experience-based",
+          "Aplicar técnicas formais primeiro, depois experience-based para gaps",
+          "Escolher apenas uma técnica por projeto"
+        ],
+        "resposta": "C",
+        "justificativa": "Melhor abordagem: técnicas formais para cobertura sistemática + experience-based para casos não cobertos e exploração.",
+        "k_level": "K4",
+        "fonte": "simulado_02_test_techniques.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Sistema bancário com cálculos complexos de juros. Qual técnica é MAIS apropriada?",
+        "alternativas": [
+          "Exploratory Testing",
+          "Decision Tables",
+          "State Transition",
+          "Error Guessing"
+        ],
+        "resposta": "B",
+        "justificativa": "Decision Tables são ideais para lógica complexa com múltiplas condições e regras de negócio (como cálculos de juros).",
+        "k_level": "K3",
+        "fonte": "simulado_02_test_techniques.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Qual técnica é MAIS apropriada para testes de INTEGRAÇÃO?",
+        "alternativas": [
+          "Statement Coverage",
+          "Branch Coverage",
+          "State Transition Testing",
+          "Exploratory Testing"
+        ],
+        "resposta": "C",
+        "justificativa": "State Transition é ideal para integração, testando interações e mudanças de estado entre componentes. White-box (A, B) é para unitário.",
+        "k_level": "K4",
+        "fonte": "simulado_02_test_techniques.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "O que é Risk-Based Testing?",
+        "alternativas": [
+          "Testar apenas funcionalidades de alto risco",
+          "Priorizar testes baseados em probabilidade e impacto",
+          "Executar testes aleatórios",
+          "Focar apenas em testes de segurança"
+        ],
+        "resposta": "B",
+        "justificativa": "",
+        "k_level": "K2",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Sistema tem: Login (P=2, I=5), Pagamento (P=4, I=5), Relatório (P=3, I=2). Qual a ordem de priorização?",
+        "alternativas": [
+          "Pagamento > Login > Relatório",
+          "Login > Pagamento > Relatório",
+          "Pagamento > Relatório > Login",
+          "Relatório > Login > Pagamento"
+        ],
+        "resposta": "A",
+        "justificativa": "",
+        "k_level": "K3",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Diferença entre Product Risk e Project Risk?",
+        "alternativas": [
+          "Product Risk afeta cronograma; Project Risk afeta qualidade",
+          "Não há diferença",
+          "Product Risk são falhas no software; Project Risk são problemas no processo",
+          "Product Risk é mais grave"
+        ],
+        "resposta": "C",
+        "justificativa": "",
+        "k_level": "K2",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Módulo de pagamento usa nova API e processa transações críticas. Como classificar?",
+        "alternativas": [
+          "Baixa probabilidade, baixo impacto",
+          "Alta probabilidade, baixo impacto",
+          "Baixa probabilidade, alto impacto",
+          "Alta probabilidade, alto impacto"
+        ],
+        "resposta": "D",
+        "justificativa": "Nova tecnologia = alta probabilidade; Transações críticas = alto impacto",
+        "k_level": "K4",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Quando re-avaliar riscos?",
+        "alternativas": [
+          "Apenas no início do projeto",
+          "Quando há mudanças nos requisitos ou novos defeitos",
+          "Apenas no final do projeto",
+          "Nunca, análise inicial é suficiente"
+        ],
+        "resposta": "B",
+        "justificativa": "",
+        "k_level": "K3",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "40 horas para testar 5 módulos: A(20), B(15), C(8), D(5), E(3). Como distribuir tempo?",
+        "alternativas": [
+          "8h cada (igual)",
+          "A:15h, B:12h, C:8h, D:3h, E:2h",
+          "Testar apenas A e B",
+          "A:20h, B:20h, ignorar resto"
+        ],
+        "resposta": "B",
+        "justificativa": "Distribuição proporcional ao risco mantendo cobertura mínima",
+        "k_level": "K3",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Campo aceita 18-65 anos. Quantas partições?",
+        "alternativas": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "resposta": "B",
+        "justificativa": "1 válida [18-65], 2 inválidas [<18][>65]",
+        "k_level": "K3",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Range [1-100]. BVA 3-value testa quais valores?",
+        "alternativas": [
+          "0, 1, 100, 101",
+          "1, 50, 100",
+          "0, 1, 2, 99, 100, 101",
+          "1, 2, 99, 100"
+        ],
+        "resposta": "C",
+        "justificativa": "",
+        "k_level": "K3",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "2 condições booleanas. Quantas regras em tabela completa?",
+        "alternativas": [
+          "2",
+          "3",
+          "4",
+          "8"
+        ],
+        "resposta": "C",
+        "justificativa": "2^2 = 4",
+        "k_level": "K3",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "R1(Y,Y→A) e R2(Y,N→A) podem ser collapsed?",
+        "alternativas": [
+          "Não",
+          "Sim, (Y,-→A)",
+          "Sim, (-,Y→A)",
+          "Apenas com 3 condições"
+        ],
+        "resposta": "B",
+        "justificativa": "",
+        "k_level": "K4",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "3 estados, 4 transições válidas. Casos mínimos para 1-switch?",
+        "alternativas": [
+          "3",
+          "4",
+          "6",
+          "9"
+        ],
+        "resposta": "B",
+        "justificativa": "1-switch = todas as transições",
+        "k_level": "K3",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Diferença entre 0-switch e 1-switch?",
+        "alternativas": [
+          "0-switch testa estados, 1-switch testa transições",
+          "0-switch é mais rigoroso",
+          "Não há diferença",
+          "0-switch testa transições inválidas"
+        ],
+        "resposta": "A",
+        "justificativa": "",
+        "k_level": "K4",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Use Case: 1 main, 2 alternative, 3 exception. Casos mínimos?",
+        "alternativas": [
+          "3",
+          "4",
+          "6",
+          "12"
+        ],
+        "resposta": "C",
+        "justificativa": "1+2+3=6",
+        "k_level": "K3",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Qual afirmação está CORRETA?",
+        "alternativas": [
+          "Use Case é mais adequado para ágil",
+          "User Story é mais detalhada",
+          "Use Case inclui fluxos alternativos e de exceção",
+          "User Story substitui Use Case"
+        ],
+        "resposta": "C",
+        "justificativa": "",
+        "k_level": "K3",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "3 classificações (3, 2, 2 classes). Quantas combinações?",
+        "alternativas": [
+          "7",
+          "12",
+          "18",
+          "24"
+        ],
+        "resposta": "B",
+        "justificativa": "3×2×2=12",
+        "k_level": "K3",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Melhor custo-benefício em seleção de combinações?",
+        "alternativas": [
+          "All combinations",
+          "Each choice",
+          "Pairwise",
+          "Random"
+        ],
+        "resposta": "C",
+        "justificativa": "",
+        "k_level": "K4",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "5 IFs (10 branches), 8 cobertos. Qual a cobertura?",
+        "alternativas": [
+          "50%",
+          "60%",
+          "80%",
+          "100%"
+        ],
+        "resposta": "C",
+        "justificativa": "8/10×100=80%",
+        "k_level": "K3",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "100% Statement mas <100% Branch é possível?",
+        "alternativas": [
+          "Não, são equivalentes",
+          "Sim, Statement é mais fraco",
+          "Não, Branch é mais fraco",
+          "Apenas em linguagens específicas"
+        ],
+        "resposta": "B",
+        "justificativa": "",
+        "k_level": "K4",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Qual característica NÃO é típica?",
+        "alternativas": [
+          "Design e execução simultâneos",
+          "Scripts detalhados pré-definidos",
+          "Aprendizado contínuo",
+          "Adaptação baseada em resultados"
+        ],
+        "resposta": "B",
+        "justificativa": "",
+        "k_level": "K3",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "O que é Charter?",
+        "alternativas": [
+          "Relatório final",
+          "Objetivo da sessão exploratória",
+          "Ferramenta de automação",
+          "Métrica de cobertura"
+        ],
+        "resposta": "B",
+        "justificativa": "",
+        "k_level": "K3",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Principal LIMITAÇÃO?",
+        "alternativas": [
+          "Muito caro",
+          "Requer ferramentas especializadas",
+          "Pode ficar desatualizado e criar \"checkbox mentality\"",
+          "Não pode ser usado em ágil"
+        ],
+        "resposta": "C",
+        "justificativa": "",
+        "k_level": "K4",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Melhor estratégia?",
+        "alternativas": [
+          "Apenas técnicas formais",
+          "Apenas experience-based",
+          "Formais primeiro, depois experience-based para gaps",
+          "Escolher apenas uma"
+        ],
+        "resposta": "C",
+        "justificativa": "",
+        "k_level": "K4",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Sistema bancário com cálculos complexos. Técnica MAIS apropriada?",
+        "alternativas": [
+          "Exploratory",
+          "Decision Tables",
+          "State Transition",
+          "Error Guessing"
+        ],
+        "resposta": "B",
+        "justificativa": "",
+        "k_level": "K3",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Técnica MAIS apropriada para testes de INTEGRAÇÃO?",
+        "alternativas": [
+          "Statement Coverage",
+          "Branch Coverage",
+          "State Transition",
+          "Exploratory"
+        ],
+        "resposta": "C",
+        "justificativa": "",
+        "k_level": "K4",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Quantas características principais?",
+        "alternativas": [
+          "5",
+          "6",
+          "8",
+          "10"
+        ],
+        "resposta": "C",
+        "justificativa": "",
+        "k_level": "K2",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Sistema calcula impostos corretamente e fornece todas as funções. Quais sub-características?",
+        "alternativas": [
+          "Apenas Correctness",
+          "Completeness e Correctness",
+          "Apenas Appropriateness",
+          "Todas as três"
+        ],
+        "resposta": "B",
+        "justificativa": "",
+        "k_level": "K3",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Responder <2s com 500 usuários usando max 70% CPU. Quais sub-características?",
+        "alternativas": [
+          "Apenas Time Behaviour",
+          "Time Behaviour e Capacity",
+          "Time Behaviour, Resource Utilization e Capacity",
+          "Apenas Resource Utilization"
+        ],
+        "resposta": "C",
+        "justificativa": "",
+        "k_level": "K3",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Funcionar em Chrome/Firefox/Safari e integrar com API externa. Quais sub-características?",
+        "alternativas": [
+          "Apenas Co-existence",
+          "Apenas Interoperability",
+          "Co-existence e Interoperability",
+          "Isso é Portability"
+        ],
+        "resposta": "C",
+        "justificativa": "",
+        "k_level": "K3",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Acessível para deficientes visuais. Sub-característica MAIS relevante?",
+        "alternativas": [
+          "Learnability",
+          "Operability",
+          "Accessibility",
+          "User Interface Aesthetics"
+        ],
+        "resposta": "C",
+        "justificativa": "",
+        "k_level": "K4",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "99.9% uptime e recuperar dados após falha. Quais sub-características?",
+        "alternativas": [
+          "Maturity e Availability",
+          "Availability e Recoverability",
+          "Fault Tolerance e Maturity",
+          "Apenas Availability"
+        ],
+        "resposta": "B",
+        "justificativa": "",
+        "k_level": "K3",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Apenas autorizados acessam dados e ações são rastreáveis. Quais sub-características?",
+        "alternativas": [
+          "Confidentiality e Accountability",
+          "Integrity e Non-repudiation",
+          "Apenas Authenticity",
+          "Todas"
+        ],
+        "resposta": "A",
+        "justificativa": "",
+        "k_level": "K3",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "E-commerce crítico, tempo limitado. Como priorizar?",
+        "alternativas": [
+          "Testar todas igualmente",
+          "Focar em Functional Suitability, Security e Performance",
+          "Apenas Usability",
+          "Apenas características funcionais"
+        ],
+        "resposta": "B",
+        "justificativa": "",
+        "k_level": "K4",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Tipo MAIS formal?",
+        "alternativas": [
+          "Informal",
+          "Walkthrough",
+          "Technical Review",
+          "Inspection"
+        ],
+        "resposta": "D",
+        "justificativa": "",
+        "k_level": "K2",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Papel principal do AUTOR?",
+        "alternativas": [
+          "Observar passivamente",
+          "Conduzir a apresentação",
+          "Documentar defeitos",
+          "Moderar"
+        ],
+        "resposta": "B",
+        "justificativa": "",
+        "k_level": "K3",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Sequência CORRETA?",
+        "alternativas": [
+          "Planning → Preparation → Meeting → Rework → Follow-up",
+          "Preparation → Planning → Meeting → Follow-up → Rework",
+          "Planning → Meeting → Preparation → Rework → Follow-up",
+          "Meeting → Planning → Preparation → Rework → Follow-up"
+        ],
+        "resposta": "A",
+        "justificativa": "",
+        "k_level": "K3",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Fator MAIS crítico?",
+        "alternativas": [
+          "Usar sempre Inspection",
+          "Cultura positiva e não-punitiva",
+          "Ferramentas caras",
+          "Reviews apenas no final"
+        ],
+        "resposta": "B",
+        "justificativa": "",
+        "k_level": "K4",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Por que fazer Pilot Project?",
+        "alternativas": [
+          "Economizar dinheiro",
+          "Validar compatibilidade e treinar equipe em escala pequena",
+          "Obrigatório por normas",
+          "Impressionar stakeholders"
+        ],
+        "resposta": "B",
+        "justificativa": "",
+        "k_level": "K3",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
+      },
+      {
+        "pergunta": "Situação onde automação NÃO é recomendada?",
+        "alternativas": [
+          "Regressão executada frequentemente",
+          "Funcionalidade estável",
+          "Testes raros em funcionalidade instável",
+          "Testes de API"
+        ],
+        "resposta": "C",
+        "justificativa": "",
+        "k_level": "K4",
+        "fonte": "simulado_05_completo_final.md",
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Test Techniques",
+        "id": null
       }
-    ]
+    ],
+    "cap3": [
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Qual é o principal objetivo do Manifesto Ágil no desenvolvimento de software?",
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Quality Characteristics",
+        "alternativas": [
+          "Aumentar a documentação detalhada para garantir qualidade",
+          "Promover a colaboração e a entrega frequente de software funcional",
+          "Focar exclusivamente na automação de testes",
+          "Estabelecer processos rígidos para evitar mudanças"
+        ],
+        "resposta": "B",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Por que o feedback inicial e frequente é importante no desenvolvimento ágil de software?",
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Quality Characteristics",
+        "alternativas": [
+          "Para garantir que a documentação esteja sempre atualizada",
+          "Para remover defeitos antecipadamente e melhorar a qualidade do produto",
+          "Para evitar mudanças de requisitos durante o projeto",
+          "Para permitir que apenas o gerente de projeto tome decisões"
+        ],
+        "resposta": "B",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Qual das seguintes afirmações melhor descreve o papel do Acceptance Test Driven Development (ATDD) em projetos ágeis?",
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Quality Characteristics",
+        "alternativas": [
+          "Foca em testes unitários automatizados para garantir a qualidade do código",
+          "Define critérios e testes de aceite durante a criação das histórias para garantir o comportamento esperado da funcionalidade",
+          "Utiliza o padrão Gherkin para escrever testes baseados no comportamento esperado",
+          "Realiza testes manuais de sistema para validar a interface do usuário"
+        ],
+        "resposta": "B",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Na pirâmide de teste em projetos ágeis, qual é a característica correta da distribuição dos testes?",
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Quality Characteristics",
+        "alternativas": [
+          "Maior quantidade de testes no nível de sistema e aceitação, diminuindo nos níveis inferiores",
+          "Quantidade igual de testes em todos os níveis para garantir cobertura uniforme",
+          "Maior quantidade de testes no nível mais baixo (unidade), diminuindo conforme sobe para níveis superiores",
+          "Testes manuais predominam em todos os níveis para garantir qualidade"
+        ],
+        "resposta": "C",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Qual é um dos principais benefícios do feedback inicial e frequente em projetos ágeis?",
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Quality Characteristics",
+        "alternativas": [
+          "Aumentar a quantidade de documentação",
+          "Remover defeitos antecipadamente e melhorar a qualidade do produto",
+          "Reduzir a colaboração com o cliente",
+          "Seguir rigidamente um plano pré-definido"
+        ],
+        "resposta": "B",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Qual das opções abaixo representa um desafio comum na gestão de dados de teste quando se utiliza dados de produção anonimizados?",
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Quality Characteristics",
+        "alternativas": [
+          "Os dados perdem a sua utilidade para testes de performance.",
+          "A anonimização pode remover a variabilidade necessária para testar cenários negativos complexos.",
+          "Dados anonimizados são sempre maiores em volume do que os originais.",
+          "O uso de dados anonimizados dispensa a necessidade de um oráculo de teste."
+        ],
+        "resposta": "B",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Qual das alternativas abaixo descreve corretamente um risco de qualidade funcional voltado para a acurácia?",
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Quality Characteristics",
+        "alternativas": [
+          "O sistema não carrega a página em menos de 2 segundos.",
+          "O cálculo do imposto de renda no fechamento da folha está retornando valores incorretos.",
+          "A interface do usuário possui cores que dificultam a leitura por daltônicos.",
+          "O software para de funcionar quando 1000 usuários acessam simultaneamente."
+        ],
+        "resposta": "B",
+        "justificativa": ""
+      },
+      {
+        "pergunta": "Quantas características de qualidade principais a ISO/IEC 25010 define?",
+        "alternativas": [
+          "5 características",
+          "6 características",
+          "8 características",
+          "10 características"
+        ],
+        "resposta": "C",
+        "justificativa": "ISO 25010 define 8 características: Functional Suitability, Performance Efficiency, Compatibility, Usability, Reliability, Security, Maintainability, Portability.",
+        "k_level": "K2",
+        "fonte": "simulado_03_quality_characteristics.md",
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Quality Characteristics",
+        "id": null
+      },
+      {
+        "pergunta": "Sistema deve calcular impostos corretamente e fornecer todas as funções necessárias. Quais sub-características de Functional Suitability estão envolvidas?",
+        "alternativas": [
+          "Apenas Functional Correctness",
+          "Functional Completeness e Functional Correctness",
+          "Functional Appropriateness apenas",
+          "Todas as três sub-características"
+        ],
+        "resposta": "B",
+        "justificativa": "",
+        "k_level": "K3",
+        "fonte": "simulado_03_quality_characteristics.md",
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Quality Characteristics",
+        "id": null
+      },
+      {
+        "pergunta": "Sistema deve responder em <2s com 500 usuários simultâneos usando no máximo 70% de CPU. Quais sub-características são testadas?",
+        "alternativas": [
+          "Apenas Time Behaviour",
+          "Time Behaviour e Capacity",
+          "Time Behaviour, Resource Utilization e Capacity",
+          "Apenas Resource Utilization"
+        ],
+        "resposta": "C",
+        "justificativa": "",
+        "k_level": "K3",
+        "fonte": "simulado_03_quality_characteristics.md",
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Quality Characteristics",
+        "id": null
+      },
+      {
+        "pergunta": "Aplicação web deve funcionar em Chrome, Firefox e Safari, e integrar com API de pagamento externa. Quais sub-características?",
+        "alternativas": [
+          "Apenas Co-existence",
+          "Apenas Interoperability",
+          "Co-existence e Interoperability",
+          "Nenhuma, isso é Portability"
+        ],
+        "resposta": "C",
+        "justificativa": "",
+        "k_level": "K3",
+        "fonte": "simulado_03_quality_characteristics.md",
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Quality Characteristics",
+        "id": null
+      },
+      {
+        "pergunta": "Sistema deve ser acessível para pessoas com deficiência visual. Qual sub-característica de Usability é MAIS relevante?",
+        "alternativas": [
+          "Learnability",
+          "Operability",
+          "Accessibility",
+          "User Interface Aesthetics"
+        ],
+        "resposta": "C",
+        "justificativa": "Accessibility trata especificamente de tornar o sistema utilizável por pessoas com deficiências (visual, auditiva, motora).",
+        "k_level": "K4",
+        "fonte": "simulado_03_quality_characteristics.md",
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Quality Characteristics",
+        "id": null
+      },
+      {
+        "pergunta": "Sistema bancário deve ter 99.9% uptime e recuperar dados em caso de falha. Quais sub-características?",
+        "alternativas": [
+          "Maturity e Availability",
+          "Availability e Recoverability",
+          "Fault Tolerance e Maturity",
+          "Apenas Availability"
+        ],
+        "resposta": "B",
+        "justificativa": "",
+        "k_level": "K3",
+        "fonte": "simulado_03_quality_characteristics.md",
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Quality Characteristics",
+        "id": null
+      },
+      {
+        "pergunta": "Sistema deve garantir que apenas usuários autorizados acessem dados sensíveis e que todas as ações sejam rastreáveis. Quais sub-características?",
+        "alternativas": [
+          "Confidentiality e Accountability",
+          "Integrity e Non-repudiation",
+          "Authenticity apenas",
+          "Todas as sub-características de Security"
+        ],
+        "resposta": "A",
+        "justificativa": "",
+        "k_level": "K3",
+        "fonte": "simulado_03_quality_characteristics.md",
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Quality Characteristics",
+        "id": null
+      },
+      {
+        "pergunta": "Código deve ser fácil de modificar e testar. Quais sub-características de Maintainability são MAIS relevantes?",
+        "alternativas": [
+          "Modularity e Reusability",
+          "Modifiability e Testability",
+          "Analysability apenas",
+          "Todas igualmente"
+        ],
+        "resposta": "B",
+        "justificativa": "",
+        "k_level": "K3",
+        "fonte": "simulado_03_quality_characteristics.md",
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Quality Characteristics",
+        "id": null
+      },
+      {
+        "pergunta": "Aplicação deve ser facilmente instalada em Windows, Linux e Mac. Qual sub-característica?",
+        "alternativas": [
+          "Adaptability",
+          "Installability",
+          "Replaceability",
+          "Todas as três"
+        ],
+        "resposta": "B",
+        "justificativa": "Installability trata da facilidade de instalar/desinstalar em diferentes ambientes.",
+        "k_level": "K3",
+        "fonte": "simulado_03_quality_characteristics.md",
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Quality Characteristics",
+        "id": null
+      },
+      {
+        "pergunta": "Projeto tem tempo limitado. Sistema é e-commerce crítico. Como priorizar características para teste?",
+        "alternativas": [
+          "Testar todas igualmente",
+          "Focar em Functional Suitability, Security e Performance",
+          "Focar apenas em Usability",
+          "Testar apenas características funcionais"
+        ],
+        "resposta": "B",
+        "justificativa": "Para e-commerce crítico:",
+        "k_level": "K4",
+        "fonte": "simulado_03_quality_characteristics.md",
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Quality Characteristics",
+        "id": null
+      },
+      {
+        "pergunta": "Por que o Analista de Teste deve ser envolvido precocemente no ciclo de vida de desenvolvimento, especialmente na revisão de requisitos?",
+        "alternativas": [
+          "Para começar a codificar os scripts de automação antes que o design termine.",
+          "Para identificar defeitos nos requisitos e aumentar a testabilidade do sistema desde o início.",
+          "Para garantir que o Gerente de Projeto não reduza o tempo de execução de teste.",
+          "Porque o Analista de Teste é o único responsável pela aprovação final dos requisitos de negócio."
+        ],
+        "resposta": "B",
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Cap 3 - Quality Characteristics"
+      },
+      {
+        "pergunta": "Em um ambiente de Integração Contínua (CI), se um teste de regressão automatizado que passava anteriormente falha após um novo build, a primeira ação do Analista de Teste deve ser:",
+        "alternativas": [
+          "Deletar o teste da suíte de regressão.",
+          "Investigar se a falha é um defeito real ou se o teste ficou obsoleto devido a uma mudança legítima.",
+          "Reiniciar o servidor de build e ignorar a falha se o teste passar na segunda vez.",
+          "Solicitar que o desenvolvedor reverta todas as mudanças do dia anterior sem analisar."
+        ],
+        "resposta": "B",
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Cap 3 - Quality Characteristics"
+      }
+    ],
+    "cap4": [
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Qual das opções abaixo NÃO é mencionada como uma seção do índice do Syllabus CTFL-AT v1.0?",
+        "capitulo_id": "cap4",
+        "capitulo_nome": "Reviews",
+        "alternativas": [
+          "Direitos Autorais",
+          "Histórico da Revisão",
+          "Princípios de Engenharia de Requisitos",
+          "Agradecimentos"
+        ],
+        "resposta": "C",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Segundo o texto, qual é uma condição para que um Provedor de Treinamento Credenciado utilize o syllabus como base para um curso?",
+        "capitulo_id": "cap4",
+        "capitulo_nome": "Reviews",
+        "alternativas": [
+          "O curso pode ser anunciado antes do credenciamento oficial dos materiais.",
+          "Os autores e o ISTQB® devem ser reconhecidos como fonte e proprietários dos direitos autorais.",
+          "Não é necessário citar a fonte do syllabus no curso.",
+          "O uso do syllabus é permitido para fins comerciais sem restrições."
+        ],
+        "resposta": "B",
+        "justificativa": ""
+      },
+      {
+        "pergunta": "Ao especificar requisitos para uma ferramenta de simulação (como um simulador de hardware), qual informação é vital para o Analista de Teste garantir a execução sem bloqueios?",
+        "alternativas": [
+          "O custo total de aquisição da ferramenta.",
+          "A unidade organizacional responsável por manter e disponibilizar o simulador.",
+          "A linguagem de programação utilizada para construir o simulador.",
+          "A lista de todos os defeitos encontrados no simulador em versões de 5 anos atrás."
+        ],
+        "resposta": "B",
+        "capitulo_id": "cap4",
+        "capitulo_nome": "Cap 4 - Reviews"
+      },
+      {
+        "pergunta": "Qual tipo de review é o MAIS formal e estruturado?",
+        "alternativas": [
+          "Informal Review",
+          "Walkthrough",
+          "Technical Review",
+          "Inspection"
+        ],
+        "resposta": "D",
+        "justificativa": "Inspection (Fagan) é o tipo mais formal, com processo definido, papéis claros, métricas e fases estruturadas.",
+        "k_level": "K2",
+        "fonte": "simulado_04_reviews_tools.md",
+        "capitulo_id": "cap4",
+        "capitulo_nome": "Reviews",
+        "id": null
+      },
+      {
+        "pergunta": "Em um Walkthrough, qual é o papel principal do AUTOR?",
+        "alternativas": [
+          "Apenas observar passivamente",
+          "Conduzir a apresentação do artefato",
+          "Documentar os defeitos encontrados",
+          "Moderar a reunião"
+        ],
+        "resposta": "B",
+        "justificativa": "No Walkthrough, o autor conduz/apresenta o artefato para obter feedback da equipe.",
+        "k_level": "K3",
+        "fonte": "simulado_04_reviews_tools.md",
+        "capitulo_id": "cap4",
+        "capitulo_nome": "Reviews",
+        "id": null
+      },
+      {
+        "pergunta": "Qual afirmação está CORRETA sobre Technical Review?",
+        "alternativas": [
+          "É conduzida apenas pelo autor",
+          "Não requer documentação de defeitos",
+          "É conduzida por peers técnicos e documenta defeitos",
+          "É menos formal que Walkthrough"
+        ],
+        "resposta": "C",
+        "justificativa": "Technical Review é conduzida por especialistas técnicos (peers) e documenta defeitos encontrados. É mais formal que Walkthrough.",
+        "k_level": "K3",
+        "fonte": "simulado_04_reviews_tools.md",
+        "capitulo_id": "cap4",
+        "capitulo_nome": "Reviews",
+        "id": null
+      },
+      {
+        "pergunta": "Qual é a sequência CORRETA das fases de uma Inspection formal?",
+        "alternativas": [
+          "Planning → Preparation → Meeting → Rework → Follow-up",
+          "Preparation → Planning → Meeting → Follow-up → Rework",
+          "Planning → Meeting → Preparation → Rework → Follow-up",
+          "Meeting → Planning → Preparation → Rework → Follow-up"
+        ],
+        "resposta": "A",
+        "justificativa": "Fases corretas: Planning (planejamento) → Overview (opcional) → Preparation (revisão individual) → Inspection Meeting (reunião) → Rework (correções) → Follow-up (verificação).",
+        "k_level": "K3",
+        "fonte": "simulado_04_reviews_tools.md",
+        "capitulo_id": "cap4",
+        "capitulo_nome": "Reviews",
+        "id": null
+      },
+      {
+        "pergunta": "Em uma Inspection, qual papel é responsável por LIDERAR o processo e garantir que as regras sejam seguidas?",
+        "alternativas": [
+          "Author",
+          "Moderator",
+          "Inspector",
+          "Scribe"
+        ],
+        "resposta": "B",
+        "justificativa": "Moderator lidera o processo de Inspection, garante que regras sejam seguidas e facilita a reunião.",
+        "k_level": "K3",
+        "fonte": "simulado_04_reviews_tools.md",
+        "capitulo_id": "cap4",
+        "capitulo_nome": "Reviews",
+        "id": null
+      },
+      {
+        "pergunta": "Qual fator é MAIS crítico para o sucesso de reviews?",
+        "alternativas": [
+          "Usar sempre o tipo mais formal (Inspection)",
+          "Cultura positiva e não-punitiva",
+          "Ter ferramentas caras de review",
+          "Fazer reviews apenas no final do projeto"
+        ],
+        "resposta": "B",
+        "justificativa": "Cultura positiva (foco em melhorar qualidade, não punir pessoas) é fundamental. Reviews devem ser construtivas, não ameaçadoras.",
+        "k_level": "K4",
+        "fonte": "simulado_04_reviews_tools.md",
+        "capitulo_id": "cap4",
+        "capitulo_nome": "Reviews",
+        "id": null
+      },
+      {
+        "pergunta": "Qual ferramenta é usada para análise ESTÁTICA de código?",
+        "alternativas": [
+          "Selenium",
+          "JMeter",
+          "SonarQube",
+          "Postman"
+        ],
+        "resposta": "C",
+        "justificativa": "SonarQube analisa código sem executá-lo (análise estática), identificando code smells, vulnerabilidades e violações de padrões.",
+        "k_level": "K2",
+        "fonte": "simulado_04_reviews_tools.md",
+        "capitulo_id": "cap4",
+        "capitulo_nome": "Reviews",
+        "id": null
+      },
+      {
+        "pergunta": "Qual critério é MENOS relevante ao selecionar ferramenta de teste?",
+        "alternativas": [
+          "Compatibilidade com tecnologia do projeto",
+          "Custo de licença e manutenção",
+          "Popularidade da ferramenta no mercado",
+          "Facilidade de uso e curva de aprendizado"
+        ],
+        "resposta": "C",
+        "justificativa": "Popularidade sozinha não garante adequação. Compatibilidade técnica, custo e usabilidade são mais críticos. Ferramenta popular pode não atender necessidades específicas.",
+        "k_level": "K3",
+        "fonte": "simulado_04_reviews_tools.md",
+        "capitulo_id": "cap4",
+        "capitulo_nome": "Reviews",
+        "id": null
+      },
+      {
+        "pergunta": "Por que fazer um Pilot Project antes de adotar ferramenta de automação?",
+        "alternativas": [
+          "Para economizar dinheiro",
+          "Para validar compatibilidade técnica e treinar equipe em escala pequena",
+          "Porque é obrigatório por normas ISTQB",
+          "Para impressionar stakeholders"
+        ],
+        "resposta": "B",
+        "justificativa": "Pilot Project valida ferramenta em ambiente real, identifica desafios, treina equipe e estabelece padrões antes de rollout completo.",
+        "k_level": "K3",
+        "fonte": "simulado_04_reviews_tools.md",
+        "capitulo_id": "cap4",
+        "capitulo_nome": "Reviews",
+        "id": null
+      },
+      {
+        "pergunta": "Em qual situação a automação de testes NÃO é recomendada?",
+        "alternativas": [
+          "Testes de regressão executados frequentemente",
+          "Testes em funcionalidade estável e madura",
+          "Testes executados raramente em funcionalidade instável",
+          "Testes de API com dados variados"
+        ],
+        "resposta": "C",
+        "justificativa": "Automação não vale a pena quando:",
+        "k_level": "K4",
+        "fonte": "simulado_04_reviews_tools.md",
+        "capitulo_id": "cap4",
+        "capitulo_nome": "Reviews",
+        "id": null
+      }
+    ],
+    "cap5": [
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Qual é o foco principal do Manifesto Ágil para Desenvolvimento de Software?",
+        "capitulo_id": "cap5",
+        "capitulo_nome": "Test Tools",
+        "alternativas": [
+          "Indivíduos e interações sobre processos e ferramentas",
+          "Software funcionando em detrimento da documentação",
+          "Colaboração com a equipe interna sem envolver o cliente",
+          "Resposta às mudanças por meio de negociações contratuais"
+        ],
+        "resposta": "A",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "O que representa um valor maior, segundo o Manifesto Ágil?",
+        "capitulo_id": "cap5",
+        "capitulo_nome": "Test Tools",
+        "alternativas": [
+          "Indivíduos e interações sobre processos e ferramentas",
+          "Software funcionando em detrimento da documentação",
+          "Colaboração com a equipe interna sem envolver o cliente",
+          "Resposta às mudanças por meio de negociações contratuais"
+        ],
+        "resposta": "A",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Qual dos seguintes valores do Manifesto Ágil enfatiza a importância da colaboração contínua entre as pessoas da equipe de desenvolvimento?",
+        "capitulo_id": "cap5",
+        "capitulo_nome": "Test Tools",
+        "alternativas": [
+          "Indivíduos e interações sobre processos e ferramentas.",
+          "Software funcionando sobre documentação mais abrangente.",
+          "Colaboração com o cliente sobre negociação de contratos.",
+          "Resposta às mudanças sobre o seguimento de um plano."
+        ],
+        "resposta": "A",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Qual prática ágil enfatiza a criação colaborativa da História do Usuário?",
+        "capitulo_id": "cap5",
+        "capitulo_nome": "Test Tools",
+        "alternativas": [
+          "Integração Contínua",
+          "Retrospectivas",
+          "Criação colaborativa da História do Usuário",
+          "Planejamento da Iteração"
+        ],
+        "resposta": "C",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Qual tipo de ferramenta é usada para gerenciar a matriz de rastreabilidade?",
+        "capitulo_id": "cap5",
+        "capitulo_nome": "Test Tools",
+        "alternativas": [
+          "Gerenciamento de defeitos",
+          "Gerenciamento de testes",
+          "Gerenciamento de dados de teste",
+          "Gerenciamento de configuração"
+        ],
+        "resposta": "B",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Qual ferramenta pode ser usada para automatizar testes de cauda?",
+        "capitulo_id": "cap5",
+        "capitulo_nome": "Test Tools",
+        "alternativas": [
+          "Selenium WebDriver.",
+          "Pingdom ou UptimeRobot.",
+          "JUnit.",
+          "TestRigor"
+        ],
+        "resposta": "C",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Qual dos seguintes valores é enfatizado pelo Manifesto Ágil como tendo maior valor em relação ao seu oposto?",
+        "capitulo_id": "cap5",
+        "capitulo_nome": "Test Tools",
+        "alternativas": [
+          "Processos e ferramentas sobre indivíduos e interações",
+          "Documentação abrangente sobre software funcionando",
+          "Negociação de contratos sobre colaboração com o cliente",
+          "Indivíduos e interações sobre processos e ferramentas"
+        ],
+        "resposta": "D",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Qual é o objetivo principal do syllabus CTAL-TAE 2.0 do ISTQB?",
+        "capitulo_id": "cap5",
+        "capitulo_nome": "Test Tools",
+        "alternativas": [
+          "Fornecer um guia para a certificação de testadores iniciantes em automação.",
+          "Estabelecer diretrizes para a engenharia de automação de testes em nível avançado.",
+          "Apresentar técnicas básicas de teste manual para iniciantes.",
+          "Descrever as ferramentas específicas para automação de testes."
+        ],
+        "resposta": "B",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Qual é a sequência correta do processo no Test Driven Development (TDD)?",
+        "capitulo_id": "cap5",
+        "capitulo_nome": "Test Tools",
+        "alternativas": [
+          "Executar o teste, criar o código, escrever o teste, melhorar o código",
+          "Criar um teste automatizado, executar o teste que falha, escrever o código até passar o teste, melhorar o código",
+          "Escrever o código, criar o teste, executar o teste, melhorar o código",
+          "Executar o teste, melhorar o código, criar o teste, escrever o código"
+        ],
+        "resposta": "B",
+        "justificativa": ""
+      },
+      {
+        "id": null,
+        "k_level": "K2",
+        "pergunta": "Qual dos seguintes valores é enfatizado pelo Manifesto Ágil em relação ao desenvolvimento de software?",
+        "capitulo_id": "cap5",
+        "capitulo_nome": "Test Tools",
+        "alternativas": [
+          "Processos e ferramentas sobre indivíduos e interações",
+          "Documentação abrangente sobre software funcionando",
+          "Indivíduos e interações sobre processos e ferramentas",
+          "Negociação de contratos sobre colaboração com o cliente"
+        ],
+        "resposta": "C",
+        "justificativa": ""
+      }
+    ],
+    "importados": []
   },
   "geracoes": {
     "jobs": [
@@ -1922,15 +3653,1421 @@
             "fonte": "llm"
           }
         ]
+      },
+      {
+        "id": "20260303_125307_49",
+        "arquivo_id": 4,
+        "arquivo_nome": "syllabus_ctal-tae_2.0br.pdf",
+        "provider": "gpt-4.1-mini",
+        "num_questoes": 5,
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Cap 2 - Test Techniques",
+        "status": "concluido",
+        "erro_msg": null,
+        "criado_em": "2026-03-03 12:53:07",
+        "atualizado_em": "2026-03-03 12:53:27",
+        "questoes": [
+          {
+            "id": 12532701,
+            "k_level": "K2",
+            "pergunta": "Qual é o objetivo principal do syllabus CTAL-TAE 2.0 do ISTQB?",
+            "opcoes": {
+              "A": "A) Fornecer um guia para o desenvolvimento de software.",
+              "B": "B) Definir os direitos autorais do ISTQB.",
+              "C": "C) Capacitar profissionais para a engenharia de automação de testes.",
+              "D": "D) Apresentar as normas internacionais de qualidade de software."
+            },
+            "resposta": "C",
+            "justificativa": "O syllabus CTAL-TAE 2.0 tem como objetivo principal capacitar profissionais na área de engenharia de automação de testes, conforme apresentado na introdução do documento.",
+            "fonte": "llm"
+          },
+          {
+            "id": 12532702,
+            "k_level": "K2",
+            "pergunta": "Qual das seguintes condições é necessária para que um Provedor de Treinamento Credenciado utilize o syllabus CTAL-TAE 2.0 como base para um curso?",
+            "opcoes": {
+              "A": "A) O curso pode ser anunciado antes do credenciamento oficial.",
+              "B": "B) Os autores e o ISTQB devem ser reconhecidos como fonte e proprietários dos direitos autorais.",
+              "C": "C) O curso pode ser comercializado sem restrições.",
+              "D": "D) O syllabus pode ser modificado livremente para atender às necessidades do curso."
+            },
+            "resposta": "B",
+            "justificativa": "O uso do syllabus por provedores de treinamento credenciados exige o reconhecimento dos autores e do ISTQB como fonte e proprietários dos direitos autorais, além do credenciamento oficial do material.",
+            "fonte": "llm"
+          },
+          {
+            "id": 12532703,
+            "k_level": "K2",
+            "pergunta": "Qual é a política do ISTQB sobre a tradução do syllabus CTAL-TAE 2.0 por Conselhos Membros reconhecidos?",
+            "opcoes": {
+              "A": "A) Traduções podem ser feitas sem restrições.",
+              "B": "B) Traduções só podem ser feitas após aprovação por escrito do ISTQB.",
+              "C": "C) Traduções são permitidas desde que o aviso de direitos autorais seja reproduzido na versão traduzida.",
+              "D": "D) Traduções são proibidas para manter a integridade do conteúdo."
+            },
+            "resposta": "C",
+            "justificativa": "Conselhos Membros reconhecidos podem traduzir o syllabus desde que reproduzam o aviso de direitos autorais na versão traduzida, conforme descrito no documento.",
+            "fonte": "llm"
+          },
+          {
+            "id": 12532704,
+            "k_level": "K2",
+            "pergunta": "Qual é a data de liberação da versão 2.0 do syllabus CTAL-TAE?",
+            "opcoes": {
+              "A": "A) 21/10/2016",
+              "B": "B) 03/05/2024",
+              "C": "C) 14/06/2024",
+              "D": "D) 29/07/2024"
+            },
+            "resposta": "B",
+            "justificativa": "A versão 2.0 do syllabus CTAL-TAE foi liberada em 03/05/2024, conforme o histórico de revisões apresentado.",
+            "fonte": "llm"
+          },
+          {
+            "id": 12532705,
+            "k_level": "K2",
+            "pergunta": "Qual é uma das vantagens mencionadas para o uso da automação de teste no ciclo de vida de desenvolvimento de software?",
+            "opcoes": {
+              "A": "A) Eliminação completa da necessidade de testes manuais.",
+              "B": "B) Redução do tempo e esforço na execução de testes repetitivos.",
+              "C": "C) Garantia de que o software estará livre de defeitos.",
+              "D": "D) Substituição da equipe de testes por ferramentas automatizadas."
+            },
+            "resposta": "B",
+            "justificativa": "Uma das vantagens da automação de testes é a redução do tempo e esforço na execução de testes repetitivos, conforme discutido na seção sobre objetivos da automação de teste.",
+            "fonte": "llm"
+          }
+        ]
+      },
+      {
+        "id": "20260303_125841_50",
+        "arquivo_id": 8,
+        "arquivo_nome": "Simulado_Preparatorio_ISTQB_CTAL-TA_-NotebookLM-v1.md",
+        "provider": "auto",
+        "num_questoes": 5,
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Cap 3 - Quality Characteristics",
+        "status": "concluido",
+        "erro_msg": null,
+        "criado_em": "2026-03-03 12:58:41",
+        "atualizado_em": "2026-03-03 13:01:22",
+        "questoes": []
+      },
+      {
+        "id": "20260303_125910_51",
+        "arquivo_id": 8,
+        "arquivo_nome": "Simulado_Preparatorio_ISTQB_CTAL-TA_-NotebookLM-v1.md",
+        "provider": "ollama",
+        "num_questoes": 5,
+        "capitulo_id": "cap5",
+        "capitulo_nome": "Cap 5 - Test Tools",
+        "status": "concluido",
+        "erro_msg": null,
+        "criado_em": "2026-03-03 12:59:10",
+        "atualizado_em": "2026-03-03 13:03:19",
+        "questoes": []
+      },
+      {
+        "id": "20260303_125936_52",
+        "arquivo_id": 8,
+        "arquivo_nome": "Simulado_Preparatorio_ISTQB_CTAL-TA_-NotebookLM-v1.md",
+        "provider": "openai_pro",
+        "num_questoes": 10,
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Cap 2 - Test Techniques",
+        "status": "concluido_salvo",
+        "erro_msg": null,
+        "criado_em": "2026-03-03 12:59:36",
+        "atualizado_em": "2026-03-03 13:05:26",
+        "questoes": [
+          {
+            "id": 13031901,
+            "k_level": "K2",
+            "pergunta": "No contexto do processo de teste, em qual atividade o Analista de Teste é especificamente responsável por identificar e priorizar as condições de teste com base na análise da base de teste?",
+            "opcoes": {
+              "A": "Modelagem de Teste.",
+              "B": "Análise de Teste.",
+              "C": "Implementação de Teste.",
+              "D": "Execução de Teste."
+            },
+            "resposta": "B",
+            "justificativa": "A identificação e priorização das condições de teste com base na base de teste é responsabilidade do Analista de Teste durante a atividade de Análise de Teste.",
+            "fonte": "llm"
+          },
+          {
+            "id": 13031902,
+            "k_level": "K2",
+            "pergunta": "De acordo com o Syllabus, o critério de qualidade 'Necessidade' para um caso de teste implica que:",
+            "opcoes": {
+              "A": "O caso de teste deve cobrir obrigatoriamente um valor de limite.",
+              "B": "O caso de teste é essencial porque valida um requisito ou condição que realmente precisa ser testada.",
+              "C": "O caso de teste deve ser automatizado para garantir a rapidez da regressão.",
+              "D": "O caso de teste deve ser um pré-requisito técnico para outros testes mais complexos."
+            },
+            "resposta": "B",
+            "justificativa": "O critério 'Necessidade' indica que o caso de teste só deve existir se for realmente necessário para validar um requisito ou condição relevante.",
+            "fonte": "llm"
+          },
+          {
+            "id": 13031903,
+            "k_level": "K2",
+            "pergunta": "Por que o Analista de Teste deve ser envolvido precocemente no ciclo de vida de desenvolvimento, especialmente na revisão de requisitos?",
+            "opcoes": {
+              "A": "Para começar a codificar os scripts de automação antes que o design termine.",
+              "B": "Para identificar defeitos nos requisitos e aumentar a testabilidade do sistema desde o início.",
+              "C": "Para garantir que o Gerente de Projeto não reduza o tempo de execução de teste.",
+              "D": "Porque o Analista de Teste é o único responsável pela aprovação final dos requisitos de negócio."
+            },
+            "resposta": "B",
+            "justificativa": "O envolvimento precoce do Analista de Teste permite identificar defeitos nos requisitos e contribuir para a testabilidade desde o início do projeto.",
+            "fonte": "llm"
+          },
+          {
+            "id": 13031904,
+            "k_level": "K2",
+            "pergunta": "Ao especificar requisitos para uma ferramenta de simulação (como um simulador de hardware), qual informação é vital para o Analista de Teste garantir a execução sem bloqueios?",
+            "opcoes": {
+              "A": "O custo total de aquisição da ferramenta.",
+              "B": "A unidade organizacional responsável por manter e disponibilizar o simulador.",
+              "C": "A linguagem de programação utilizada para construir o simulador.",
+              "D": "A lista de todos os defeitos encontrados no simulador em versões de 5 anos atrás."
+            },
+            "resposta": "B",
+            "justificativa": "Saber quem mantém e disponibiliza o simulador é fundamental para garantir acesso e suporte durante a execução dos testes.",
+            "fonte": "llm"
+          },
+          {
+            "id": 13031905,
+            "k_level": "K2",
+            "pergunta": "Qual das opções abaixo representa um desafio comum na gestão de dados de teste quando se utiliza dados de produção anonimizados?",
+            "opcoes": {
+              "A": "Os dados perdem a sua utilidade para testes de performance.",
+              "B": "A anonimização pode remover a variabilidade necessária para testar cenários negativos complexos.",
+              "C": "Dados anonimizados são sempre maiores em volume do que os originais.",
+              "D": "O uso de dados anonimizados dispensa a necessidade de um oráculo de teste."
+            },
+            "resposta": "B",
+            "justificativa": "A anonimização pode eliminar variações importantes dos dados, dificultando a criação de cenários negativos ou complexos.",
+            "fonte": "llm"
+          },
+          {
+            "id": 13031906,
+            "k_level": "K2",
+            "pergunta": "Na análise de risco baseada em qualidade, qual é o papel típico do Analista de Teste (TA) durante a avaliação?",
+            "opcoes": {
+              "A": "Atribuir a probabilidade técnica de uma falha ocorrer no código-fonte.",
+              "B": "Avaliar o impacto das falhas sob a perspectiva do negócio e do uso do software.",
+              "C": "Decidir sozinho se o risco é aceitável ou não para o lançamento.",
+              "D": "Codificar correções de bugs para mitigar riscos de segurança."
+            },
+            "resposta": "B",
+            "justificativa": "O Analista de Teste contribui avaliando o impacto das falhas do ponto de vista do negócio e do usuário final.",
+            "fonte": "llm"
+          },
+          {
+            "id": 13031907,
+            "k_level": "K2",
+            "pergunta": "Você está priorizando testes de regressão. O Teste X cobre um requisito de alto risco mas não foi alterado. O Teste Y cobre um requisito de médio risco mas está em uma área que sofreu mudanças recentes no código. Como você deve proceder?",
+            "opcoes": {
+              "A": "Executar apenas o Teste X, pois o risco do requisito é sempre mais importante.",
+              "B": "Priorizar o Teste Y, pois o risco de regressão em áreas alteradas indica maior probabilidade de defeitos novos.",
+              "C": "Ignorar ambos e executar apenas testes novos de funcionalidades inéditas.",
+              "D": "Executar o Teste X apenas se o Teste Y falhar."
+            },
+            "resposta": "B",
+            "justificativa": "Mudanças recentes aumentam a probabilidade de defeitos, tornando prioritário testar áreas alteradas mesmo que o risco do requisito seja menor.",
+            "fonte": "llm"
+          },
+          {
+            "id": 13031908,
+            "k_level": "K2",
+            "pergunta": "Qual das alternativas abaixo descreve corretamente um risco de qualidade funcional voltado para a acurácia?",
+            "opcoes": {
+              "A": "O sistema não carrega a página em menos de 2 segundos.",
+              "B": "O cálculo do imposto de renda no fechamento da folha está retornando valores incorretos.",
+              "C": "A interface do usuário possui cores que dificultam a leitura por daltônicos.",
+              "D": "O software para de funcionar quando 1000 usuários acessam simultaneamente."
+            },
+            "resposta": "B",
+            "justificativa": "A acurácia diz respeito à precisão dos resultados; cálculos incorretos refletem um risco funcional de acurácia.",
+            "fonte": "llm"
+          },
+          {
+            "id": 13031909,
+            "k_level": "K2",
+            "pergunta": "Ao utilizar perfis operacionais para guiar o esforço de teste, o Analista de Teste foca em:",
+            "opcoes": {
+              "A": "Testar todos os caminhos lógicos possíveis do sistema, independentemente do uso.",
+              "B": "Priorizar as funções e caminhos que são mais frequentemente utilizados pelos usuários reais.",
+              "C": "Focar exclusivamente em testes de caixa-branca para garantir 100% de cobertura de decisão.",
+              "D": "Testar apenas as funções que foram corrigidas no último sprint."
+            },
+            "resposta": "B",
+            "justificativa": "Perfis operacionais direcionam o teste para aquilo que é mais relevante e frequente no uso real do sistema.",
+            "fonte": "llm"
+          },
+          {
+            "id": 13031910,
+            "k_level": "K2",
+            "pergunta": "Em um ambiente de Integração Contínua (CI), se um teste de regressão automatizado que passava anteriormente falha após um novo build, a primeira ação do Analista de Teste deve ser:",
+            "opcoes": {
+              "A": "Deletar o teste da suíte de regressão.",
+              "B": "Investigar se a falha é um defeito real ou se o teste ficou obsoleto devido a uma mudança legítima.",
+              "C": "Reiniciar o servidor de build e ignorar a falha se o teste passar na segunda vez.",
+              "D": "Solicitar que o desenvolvedor reverta todas as mudanças do dia anterior sem analisar."
+            },
+            "resposta": "B",
+            "justificativa": "É essencial investigar a causa da falha para determinar se é um defeito real ou uma atualização necessária no teste.",
+            "fonte": "llm"
+          }
+        ]
+      },
+      {
+        "id": "20260303_130559_53",
+        "arquivo_id": 3,
+        "arquivo_nome": "syllabus_ctfl-at_1.0br.pdf",
+        "provider": "ollama",
+        "num_questoes": 3,
+        "capitulo_id": "cap4",
+        "capitulo_nome": "Cap 4 - Reviews",
+        "status": "concluido",
+        "erro_msg": null,
+        "criado_em": "2026-03-03 13:05:59",
+        "atualizado_em": "2026-03-03 13:09:14",
+        "questoes": []
+      },
+      {
+        "id": "20260303_130700_54",
+        "arquivo_id": 8,
+        "arquivo_nome": "Simulado_Preparatorio_ISTQB_CTAL-TA_-NotebookLM-v1.md",
+        "provider": "openai_pro",
+        "num_questoes": 10,
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Cap 3 - Quality Characteristics",
+        "status": "concluido_salvo",
+        "erro_msg": null,
+        "criado_em": "2026-03-03 13:07:00",
+        "atualizado_em": "2026-03-03 13:38:01",
+        "questoes": [
+          {
+            "id": 13080501,
+            "k_level": "K2",
+            "pergunta": "No contexto do processo de teste, em qual atividade o Analista de Teste é especificamente responsável por identificar e priorizar as condições de teste com base na análise da base de teste?",
+            "opcoes": {
+              "A": "Modelagem de Teste.",
+              "B": "Análise de Teste.",
+              "C": "Implementação de Teste.",
+              "D": "Execução de Teste."
+            },
+            "resposta": "B",
+            "justificativa": "A identificação e priorização das condições de teste com base na análise da base de teste são responsabilidades típicas da atividade de Análise de Teste.",
+            "fonte": "llm"
+          },
+          {
+            "id": 13080502,
+            "k_level": "K2",
+            "pergunta": "De acordo com o Syllabus, o critério de qualidade 'Necessidade' para um caso de teste implica que:",
+            "opcoes": {
+              "A": "O caso de teste deve cobrir obrigatoriamente um valor de limite.",
+              "B": "O caso de teste é essencial porque valida um requisito ou condição que realmente precisa ser testada.",
+              "C": "O caso de teste deve ser automatizado para garantir a rapidez da regressão.",
+              "D": "O caso de teste deve ser um pré-requisito técnico para outros testes mais complexos."
+            },
+            "resposta": "B",
+            "justificativa": "Necessidade significa que o caso de teste é realmente essencial para validar um requisito ou condição relevante.",
+            "fonte": "llm"
+          },
+          {
+            "id": 13080503,
+            "k_level": "K2",
+            "pergunta": "Por que o Analista de Teste deve ser envolvido precocemente no ciclo de vida de desenvolvimento, especialmente na revisão de requisitos?",
+            "opcoes": {
+              "A": "Para começar a codificar os scripts de automação antes que o design termine.",
+              "B": "Para identificar defeitos nos requisitos e aumentar a testabilidade do sistema desde o início.",
+              "C": "Para garantir que o Gerente de Projeto não reduza o tempo de execução de teste.",
+              "D": "Porque o Analista de Teste é o único responsável pela aprovação final dos requisitos de negócio."
+            },
+            "resposta": "B",
+            "justificativa": "O envolvimento precoce do Analista de Teste visa identificar defeitos nos requisitos e aumentar a testabilidade desde o início do projeto.",
+            "fonte": "llm"
+          },
+          {
+            "id": 13080504,
+            "k_level": "K2",
+            "pergunta": "Ao especificar requisitos para uma ferramenta de simulação (como um simulador de hardware), qual informação é vital para o Analista de Teste garantir a execução sem bloqueios?",
+            "opcoes": {
+              "A": "O custo total de aquisição da ferramenta.",
+              "B": "A unidade organizacional responsável por manter e disponibilizar o simulador.",
+              "C": "A linguagem de programação utilizada para construir o simulador.",
+              "D": "A lista de todos os defeitos encontrados no simulador em versões de 5 anos atrás."
+            },
+            "resposta": "B",
+            "justificativa": "Saber quem é responsável por manter e disponibilizar o simulador é essencial para garantir acesso e execução sem bloqueios.",
+            "fonte": "llm"
+          },
+          {
+            "id": 13080505,
+            "k_level": "K2",
+            "pergunta": "Qual das opções abaixo representa um desafio comum na gestão de dados de teste quando se utiliza dados de produção anonimizados?",
+            "opcoes": {
+              "A": "Os dados perdem a sua utilidade para testes de performance.",
+              "B": "A anonimização pode remover a variabilidade necessária para testar cenários negativos complexos.",
+              "C": "Dados anonimizados são sempre maiores em volume do que os originais.",
+              "D": "O uso de dados anonimizados dispensa a necessidade de um oráculo de teste."
+            },
+            "resposta": "B",
+            "justificativa": "A anonimização pode remover variabilidade dos dados, dificultando a criação de cenários negativos complexos.",
+            "fonte": "llm"
+          },
+          {
+            "id": 13080506,
+            "k_level": "K2",
+            "pergunta": "Na análise de risco baseada em qualidade, qual é o papel típico do Analista de Teste (TA) durante a avaliação?",
+            "opcoes": {
+              "A": "Atribuir a probabilidade técnica de uma falha ocorrer no código-fonte.",
+              "B": "Avaliar o impacto das falhas sob a perspectiva do negócio e do uso do software.",
+              "C": "Decidir sozinho se o risco é aceitável ou não para o lançamento.",
+              "D": "Codificar correções de bugs para mitigar riscos de segurança."
+            },
+            "resposta": "B",
+            "justificativa": "O Analista de Teste avalia o impacto das falhas considerando o negócio e o uso do software, contribuindo para a análise de risco.",
+            "fonte": "llm"
+          },
+          {
+            "id": 13080507,
+            "k_level": "K2",
+            "pergunta": "Você está priorizando testes de regressão. O Teste X cobre um requisito de alto risco mas não foi alterado. O Teste Y cobre um requisito de médio risco mas está em uma área que sofreu mudanças recentes no código. Como você deve proceder?",
+            "opcoes": {
+              "A": "Executar apenas o Teste X, pois o risco do requisito é sempre mais importante.",
+              "B": "Priorizar o Teste Y, pois o risco de regressão em áreas alteradas indica maior probabilidade de defeitos novos.",
+              "C": "Ignorar ambos e executar apenas testes novos de funcionalidades inéditas.",
+              "D": "Executar o Teste X apenas se o Teste Y falhar."
+            },
+            "resposta": "B",
+            "justificativa": "Testes em áreas alteradas têm maior probabilidade de revelar defeitos, mesmo que o requisito tenha risco médio.",
+            "fonte": "llm"
+          },
+          {
+            "id": 13080508,
+            "k_level": "K2",
+            "pergunta": "Qual das alternativas abaixo descreve corretamente um risco de qualidade funcional voltado para a acurácia?",
+            "opcoes": {
+              "A": "O sistema não carrega a página em menos de 2 segundos.",
+              "B": "O cálculo do imposto de renda no fechamento da folha está retornando valores incorretos.",
+              "C": "A interface do usuário possui cores que dificultam a leitura por daltônicos.",
+              "D": "O software para de funcionar quando 1000 usuários acessam simultaneamente."
+            },
+            "resposta": "B",
+            "justificativa": "A acurácia está relacionada à precisão dos resultados, como cálculos incorretos em funcionalidades críticas.",
+            "fonte": "llm"
+          },
+          {
+            "id": 13080509,
+            "k_level": "K2",
+            "pergunta": "Ao utilizar perfis operacionais para guiar o esforço de teste, o Analista de Teste foca em:",
+            "opcoes": {
+              "A": "Testar todos os caminhos lógicos possíveis do sistema, independentemente do uso.",
+              "B": "Priorizar as funções e caminhos que são mais frequentemente utilizados pelos usuários reais.",
+              "C": "Focar exclusivamente em testes de caixa-branca para garantir 100% de cobertura de decisão.",
+              "D": "Testar apenas as funções que foram corrigidas no último sprint."
+            },
+            "resposta": "B",
+            "justificativa": "Perfis operacionais orientam o teste para as funções mais usadas pelos usuários reais, otimizando o esforço de teste.",
+            "fonte": "llm"
+          },
+          {
+            "id": 13080510,
+            "k_level": "K2",
+            "pergunta": "Em um ambiente de Integração Contínua (CI), se um teste de regressão automatizado que passava anteriormente falha após um novo build, a primeira ação do Analista de Teste deve ser:",
+            "opcoes": {
+              "A": "Deletar o teste da suíte de regressão.",
+              "B": "Investigar se a falha é um defeito real ou se o teste ficou obsoleto devido a uma mudança legítima.",
+              "C": "Reiniciar o servidor de build e ignorar a falha se o teste passar na segunda vez.",
+              "D": "Solicitar que o desenvolvedor reverta todas as mudanças do dia anterior sem analisar."
+            },
+            "resposta": "B",
+            "justificativa": "A primeira ação é investigar se a falha é causada por um defeito real ou se o teste precisa ser atualizado devido a mudanças legítimas.",
+            "fonte": "llm"
+          }
+        ]
+      },
+      {
+        "id": "20260303_141814_55",
+        "arquivo_id": 8,
+        "arquivo_nome": "Simulado_Preparatorio_ISTQB_CTAL-TA_-NotebookLM-v1.md",
+        "provider": "openai_pro",
+        "num_questoes": 8,
+        "capitulo_id": "cap4",
+        "capitulo_nome": "Cap 4 - Reviews",
+        "status": "concluido_salvo",
+        "erro_msg": null,
+        "criado_em": "2026-03-03 14:18:14",
+        "atualizado_em": "2026-03-03 14:19:33",
+        "questoes": [
+          {
+            "id": 14183101,
+            "k_level": "K2",
+            "pergunta": "No contexto do processo de teste, em qual atividade o Analista de Teste é especificamente responsável por identificar e priorizar as condições de teste com base na análise da base de teste?",
+            "opcoes": {
+              "A": "Modelagem de Teste.",
+              "B": "Análise de Teste.",
+              "C": "Implementação de Teste.",
+              "D": "Execução de Teste."
+            },
+            "resposta": "B",
+            "justificativa": "A identificação e priorização das condições de teste com base na análise da base de teste é uma responsabilidade típica da atividade de Análise de Teste.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14183102,
+            "k_level": "K2",
+            "pergunta": "De acordo com o Syllabus, o critério de qualidade 'Necessidade' para um caso de teste implica que:",
+            "opcoes": {
+              "A": "O caso de teste deve cobrir obrigatoriamente um valor de limite.",
+              "B": "O caso de teste é essencial porque valida um requisito ou condição que realmente precisa ser testada.",
+              "C": "O caso de teste deve ser automatizado para garantir a rapidez da regressão.",
+              "D": "O caso de teste deve ser um pré-requisito técnico para outros testes mais complexos."
+            },
+            "resposta": "B",
+            "justificativa": "O critério 'Necessidade' significa que o caso de teste é fundamental para validar um requisito ou condição relevante a ser testada.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14183103,
+            "k_level": "K2",
+            "pergunta": "Por que o Analista de Teste deve ser envolvido precocemente no ciclo de vida de desenvolvimento, especialmente na revisão de requisitos?",
+            "opcoes": {
+              "A": "Para começar a codificar os scripts de automação antes que o design termine.",
+              "B": "Para identificar defeitos nos requisitos e aumentar a testabilidade do sistema desde o início.",
+              "C": "Para garantir que o Gerente de Projeto não reduza o tempo de execução de teste.",
+              "D": "Porque o Analista de Teste é o único responsável pela aprovação final dos requisitos de negócio."
+            },
+            "resposta": "B",
+            "justificativa": "O envolvimento precoce do Analista de Teste permite identificar defeitos nos requisitos e melhorar a testabilidade do sistema desde o início do projeto.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14183104,
+            "k_level": "K2",
+            "pergunta": "Ao especificar requisitos para uma ferramenta de simulação (como um simulador de hardware), qual informação é vital para o Analista de Teste garantir a execução sem bloqueios?",
+            "opcoes": {
+              "A": "O custo total de aquisição da ferramenta.",
+              "B": "A unidade organizacional responsável por manter e disponibilizar o simulador.",
+              "C": "A linguagem de programação utilizada para construir o simulador.",
+              "D": "A lista de todos os defeitos encontrados no simulador em versões de 5 anos atrás."
+            },
+            "resposta": "B",
+            "justificativa": "Saber quem é responsável por manter e disponibilizar o simulador é essencial para garantir que ele estará disponível quando necessário, evitando bloqueios na execução dos testes.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14183105,
+            "k_level": "K2",
+            "pergunta": "Qual das opções abaixo representa um desafio comum na gestão de dados de teste quando se utiliza dados de produção anonimizados?",
+            "opcoes": {
+              "A": "Os dados perdem a sua utilidade para testes de performance.",
+              "B": "A anonimização pode remover a variabilidade necessária para testar cenários negativos complexos.",
+              "C": "Dados anonimizados são sempre maiores em volume do que os originais.",
+              "D": "O uso de dados anonimizados dispensa a necessidade de um oráculo de teste."
+            },
+            "resposta": "B",
+            "justificativa": "A anonimização pode eliminar características importantes dos dados, reduzindo a variabilidade e dificultando o teste de cenários negativos complexos.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14183106,
+            "k_level": "K2",
+            "pergunta": "Na análise de risco baseada em qualidade, qual é o papel típico do Analista de Teste (TA) durante a avaliação?",
+            "opcoes": {
+              "A": "Atribuir a probabilidade técnica de uma falha ocorrer no código-fonte.",
+              "B": "Avaliar o impacto das falhas sob a perspectiva do negócio e do uso do software.",
+              "C": "Decidir sozinho se o risco é aceitável ou não para o lançamento.",
+              "D": "Codificar correções de bugs para mitigar riscos de segurança."
+            },
+            "resposta": "B",
+            "justificativa": "O Analista de Teste normalmente avalia o impacto das falhas do ponto de vista do negócio e do uso do software, contribuindo para a priorização dos testes.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14183107,
+            "k_level": "K2",
+            "pergunta": "Você está priorizando testes de regressão. O Teste X cobre um requisito de alto risco mas não foi alterado. O Teste Y cobre um requisito de médio risco mas está em uma área que sofreu mudanças recentes no código. Como você deve proceder?",
+            "opcoes": {
+              "A": "Executar apenas o Teste X, pois o risco do requisito é sempre mais importante.",
+              "B": "Priorizar o Teste Y, pois o risco de regressão em áreas alteradas indica maior probabilidade de defeitos novos.",
+              "C": "Ignorar ambos e executar apenas testes novos de funcionalidades inéditas.",
+              "D": "Executar o Teste X apenas se o Teste Y falhar."
+            },
+            "resposta": "B",
+            "justificativa": "Testes em áreas modificadas têm maior probabilidade de encontrar defeitos, mesmo que o requisito tenha risco médio, devendo ser priorizados.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14183108,
+            "k_level": "K2",
+            "pergunta": "Qual das alternativas abaixo descreve corretamente um risco de qualidade funcional voltado para a acurácia?",
+            "opcoes": {
+              "A": "O sistema não carrega a página em menos de 2 segundos.",
+              "B": "O cálculo do imposto de renda no fechamento da folha está retornando valores incorretos.",
+              "C": "A interface do usuário possui cores que dificultam a leitura por daltônicos.",
+              "D": "O software para de funcionar quando 1000 usuários acessam simultaneamente."
+            },
+            "resposta": "B",
+            "justificativa": "A acurácia está relacionada à precisão dos resultados funcionais, como no caso de cálculos incorretos de imposto de renda.",
+            "fonte": "llm"
+          }
+        ]
+      },
+      {
+        "id": "20260303_141841_56",
+        "arquivo_id": 8,
+        "arquivo_nome": "Simulado_Preparatorio_ISTQB_CTAL-TA_-NotebookLM-v1.md",
+        "provider": "openai_pro",
+        "num_questoes": 8,
+        "capitulo_id": "cap1",
+        "capitulo_nome": "Cap 1 - Risk-based Testing",
+        "status": "concluido",
+        "erro_msg": null,
+        "criado_em": "2026-03-03 14:18:41",
+        "atualizado_em": "2026-03-03 14:18:59",
+        "questoes": [
+          {
+            "id": 14185901,
+            "k_level": "K2",
+            "pergunta": "No contexto do processo de teste, em qual atividade o Analista de Teste é especificamente responsável por identificar e priorizar as condições de teste com base na análise da base de teste?",
+            "opcoes": {
+              "A": "Modelagem de Teste.",
+              "B": "Análise de Teste.",
+              "C": "Implementação de Teste.",
+              "D": "Execução de Teste."
+            },
+            "resposta": "B",
+            "justificativa": "A identificação e priorização das condições de teste com base na base de teste é uma responsabilidade da Análise de Teste.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14185902,
+            "k_level": "K2",
+            "pergunta": "De acordo com o Syllabus, o critério de qualidade 'Necessidade' para um caso de teste implica que:",
+            "opcoes": {
+              "A": "O caso de teste deve cobrir obrigatoriamente um valor de limite.",
+              "B": "O caso de teste é essencial porque valida um requisito ou condição que realmente precisa ser testada.",
+              "C": "O caso de teste deve ser automatizado para garantir a rapidez da regressão.",
+              "D": "O caso de teste deve ser um pré-requisito técnico para outros testes mais complexos."
+            },
+            "resposta": "B",
+            "justificativa": "Necessidade implica que o caso de teste é essencial para validar um requisito ou condição que precisa ser testada.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14185903,
+            "k_level": "K2",
+            "pergunta": "Por que o Analista de Teste deve ser envolvido precocemente no ciclo de vida de desenvolvimento, especialmente na revisão de requisitos?",
+            "opcoes": {
+              "A": "Para começar a codificar os scripts de automação antes que o design termine.",
+              "B": "Para identificar defeitos nos requisitos e aumentar a testabilidade do sistema desde o início.",
+              "C": "Para garantir que o Gerente de Projeto não reduza o tempo de execução de teste.",
+              "D": "Porque o Analista de Teste é o único responsável pela aprovação final dos requisitos de negócio."
+            },
+            "resposta": "B",
+            "justificativa": "O envolvimento precoce permite identificar defeitos nos requisitos e melhorar a testabilidade desde o início do projeto.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14185904,
+            "k_level": "K2",
+            "pergunta": "Qual das opções abaixo representa um desafio comum na gestão de dados de teste quando se utiliza dados de produção anonimizados?",
+            "opcoes": {
+              "A": "Os dados perdem a sua utilidade para testes de performance.",
+              "B": "A anonimização pode remover a variabilidade necessária para testar cenários negativos complexos.",
+              "C": "Dados anonimizados são sempre maiores em volume do que os originais.",
+              "D": "O uso de dados anonimizados dispensa a necessidade de um oráculo de teste."
+            },
+            "resposta": "B",
+            "justificativa": "A anonimização pode reduzir a variabilidade dos dados, dificultando a criação de cenários negativos complexos.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14185905,
+            "k_level": "K2",
+            "pergunta": "Na análise de risco baseada em qualidade, qual é o papel típico do Analista de Teste (TA) durante a avaliação?",
+            "opcoes": {
+              "A": "Atribuir a probabilidade técnica de uma falha ocorrer no código-fonte.",
+              "B": "Avaliar o impacto das falhas sob a perspectiva do negócio e do uso do software.",
+              "C": "Decidir sozinho se o risco é aceitável ou não para o lançamento.",
+              "D": "Codificar correções de bugs para mitigar riscos de segurança."
+            },
+            "resposta": "B",
+            "justificativa": "O Analista de Teste normalmente avalia o impacto das falhas do ponto de vista do negócio e do uso do sistema.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14185906,
+            "k_level": "K2",
+            "pergunta": "Você está priorizando testes de regressão. O Teste X cobre um requisito de alto risco mas não foi alterado. O Teste Y cobre um requisito de médio risco mas está em uma área que sofreu mudanças recentes no código. Como você deve proceder?",
+            "opcoes": {
+              "A": "Executar apenas o Teste X, pois o risco do requisito é sempre mais importante.",
+              "B": "Priorizar o Teste Y, pois o risco de regressão em áreas alteradas indica maior probabilidade de defeitos novos.",
+              "C": "Ignorar ambos e executar apenas testes novos de funcionalidades inéditas.",
+              "D": "Executar o Teste X apenas se o Teste Y falhar."
+            },
+            "resposta": "B",
+            "justificativa": "Testes em áreas alteradas têm maior probabilidade de identificar defeitos, mesmo que o requisito original seja de risco médio.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14185907,
+            "k_level": "K2",
+            "pergunta": "Qual das alternativas abaixo descreve corretamente um risco de qualidade funcional voltado para a acurácia?",
+            "opcoes": {
+              "A": "O sistema não carrega a página em menos de 2 segundos.",
+              "B": "O cálculo do imposto de renda no fechamento da folha está retornando valores incorretos.",
+              "C": "A interface do usuário possui cores que dificultam a leitura por daltônicos.",
+              "D": "O software para de funcionar quando 1000 usuários acessam simultaneamente."
+            },
+            "resposta": "B",
+            "justificativa": "A acurácia está relacionada à precisão dos resultados, como cálculos incorretos.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14185908,
+            "k_level": "K2",
+            "pergunta": "Em um ambiente de Integração Contínua (CI), se um teste de regressão automatizado que passava anteriormente falha após um novo build, a primeira ação do Analista de Teste deve ser:",
+            "opcoes": {
+              "A": "Deletar o teste da suíte de regressão.",
+              "B": "Investigar se a falha é um defeito real ou se o teste ficou obsoleto devido a uma mudança legítima.",
+              "C": "Reiniciar o servidor de build e ignorar a falha se o teste passar na segunda vez.",
+              "D": "Solicitar que o desenvolvedor reverta todas as mudanças do dia anterior sem analisar."
+            },
+            "resposta": "B",
+            "justificativa": "É necessário investigar a causa da falha para determinar se é um defeito real ou um teste desatualizado.",
+            "fonte": "llm"
+          }
+        ]
+      },
+      {
+        "id": "20260303_141913_57",
+        "arquivo_id": 3,
+        "arquivo_nome": "syllabus_ctfl-at_1.0br.pdf",
+        "provider": "openai_pro",
+        "num_questoes": 10,
+        "capitulo_id": "cap2",
+        "capitulo_nome": "Cap 2 - Test Techniques",
+        "status": "concluido_salvo",
+        "erro_msg": null,
+        "criado_em": "2026-03-03 14:19:13",
+        "atualizado_em": "2026-03-03 14:20:22",
+        "questoes": [
+          {
+            "id": 14194401,
+            "k_level": "K2",
+            "pergunta": "Qual é o principal objetivo do syllabus ISTQB Certified Tester Foundation Level Extension Agile Tester?",
+            "opcoes": {
+              "A": "Fornecer um guia para desenvolvimento de software tradicional.",
+              "B": "Definir padrões de codificação para equipes ágeis.",
+              "C": "Estabelecer os fundamentos do teste de software em ambientes ágeis.",
+              "D": "Descrever ferramentas automatizadas para teste ágil."
+            },
+            "resposta": "C",
+            "justificativa": "O objetivo do syllabus é estabelecer os fundamentos do teste de software em ambientes ágeis, conforme indicado na seção de objetivos do documento.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14194402,
+            "k_level": "K2",
+            "pergunta": "De acordo com o índice do syllabus, qual dos tópicos abaixo é abordado na seção 1.1.1?",
+            "opcoes": {
+              "A": "Retrospectivas",
+              "B": "Desenvolvimento Ágil de Software e o Manifesto Ágil",
+              "C": "Planejamento da Iteração e Lançamento",
+              "D": "Integração Contínua"
+            },
+            "resposta": "B",
+            "justificativa": "A seção 1.1.1 do índice trata de 'Desenvolvimento Ágil de Software e o Manifesto Ágil'.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14194403,
+            "k_level": "K2",
+            "pergunta": "O que caracteriza a abordagem de equipe inteira em ambientes ágeis, segundo o syllabus?",
+            "opcoes": {
+              "A": "A responsabilidade pelo teste é exclusiva do testador.",
+              "B": "A equipe de desenvolvimento não participa dos testes.",
+              "C": "Todos os membros da equipe são responsáveis pela qualidade e testes.",
+              "D": "O gerente de projeto define todos os testes."
+            },
+            "resposta": "C",
+            "justificativa": "Na abordagem de equipe inteira, todos são responsáveis pela qualidade e pelos testes, não apenas o testador.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14194404,
+            "k_level": "K2",
+            "pergunta": "Qual é a importância do feedback inicial e frequente em projetos ágeis?",
+            "opcoes": {
+              "A": "Permite atrasar a identificação de defeitos.",
+              "B": "Garante que o planejamento seja feito apenas no início do projeto.",
+              "C": "Permite identificar e corrigir problemas rapidamente durante o desenvolvimento.",
+              "D": "Evita a necessidade de retrospectivas."
+            },
+            "resposta": "C",
+            "justificativa": "O feedback inicial e frequente é fundamental para identificar e corrigir problemas rapidamente em ambientes ágeis.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14194405,
+            "k_level": "K2",
+            "pergunta": "Segundo o syllabus, qual das opções a seguir é uma prática comum em abordagens ágeis?",
+            "opcoes": {
+              "A": "Documentação extensa antes do início do projeto.",
+              "B": "Criação colaborativa da história do usuário.",
+              "C": "Testes realizados apenas no final do ciclo.",
+              "D": "Planejamento de testes após a entrega do produto."
+            },
+            "resposta": "B",
+            "justificativa": "A criação colaborativa da história do usuário é uma prática comum e incentivada em abordagens ágeis.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14194406,
+            "k_level": "K2",
+            "pergunta": "O que é destacado como um dos principais benefícios das retrospectivas em equipes ágeis?",
+            "opcoes": {
+              "A": "Reduzir a comunicação entre membros da equipe.",
+              "B": "Aumentar a burocracia do processo.",
+              "C": "Promover a melhoria contínua dos processos e práticas da equipe.",
+              "D": "Eliminar a necessidade de reuniões diárias."
+            },
+            "resposta": "C",
+            "justificativa": "Retrospectivas promovem a melhoria contínua dos processos e práticas da equipe.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14194407,
+            "k_level": "K2",
+            "pergunta": "Qual é o objetivo da integração contínua em projetos ágeis conforme apresentado no syllabus?",
+            "opcoes": {
+              "A": "Permitir que o código seja integrado apenas no final do projeto.",
+              "B": "Garantir que as alterações de código sejam integradas e testadas frequentemente.",
+              "C": "Reduzir a frequência de testes automatizados.",
+              "D": "Evitar o uso de ferramentas de integração."
+            },
+            "resposta": "B",
+            "justificativa": "A integração contínua visa garantir que as alterações de código sejam integradas e testadas frequentemente.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14194408,
+            "k_level": "K2",
+            "pergunta": "No contexto do syllabus, qual é a diferença principal entre teste em abordagens tradicionais e ágeis?",
+            "opcoes": {
+              "A": "Em ágil, o teste é realizado apenas após o desenvolvimento.",
+              "B": "No tradicional, todos testam, enquanto em ágil apenas o testador testa.",
+              "C": "Em ágil, as atividades de teste e desenvolvimento são realizadas de forma integrada e contínua.",
+              "D": "No tradicional, não há documentação de teste."
+            },
+            "resposta": "C",
+            "justificativa": "Em abordagens ágeis, teste e desenvolvimento ocorrem de forma integrada e contínua, diferentemente do tradicional.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14194409,
+            "k_level": "K2",
+            "pergunta": "De acordo com o histórico de revisão do syllabus, o que representa a versão 2014-09-30?",
+            "opcoes": {
+              "A": "A primeira versão beta do syllabus.",
+              "B": "A versão com pequenas correções após o lançamento GA.",
+              "C": "A versão inicial do grupo de trabalho.",
+              "D": "A versão padronizada com o ISTQB."
+            },
+            "resposta": "B",
+            "justificativa": "A versão 2014-09-30 corresponde a pequenas correções após o lançamento da versão GA.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14194410,
+            "k_level": "K2",
+            "pergunta": "Qual das opções abaixo é um dos tópicos listados no índice do syllabus ISTQB CTFL-AT?",
+            "opcoes": {
+              "A": "Testes de Segurança em Ágil",
+              "B": "Planejamento da Iteração e Lançamento",
+              "C": "Gestão de Configuração Tradicional",
+              "D": "Testes de Interface de Usuário"
+            },
+            "resposta": "B",
+            "justificativa": "O índice do syllabus inclui o tópico 'Planejamento da Iteração e Lançamento' como parte das práticas ágeis.",
+            "fonte": "llm"
+          }
+        ]
+      },
+      {
+        "id": "20260303_143547_58",
+        "arquivo_id": 8,
+        "arquivo_nome": "Simulado_Preparatorio_ISTQB_CTAL-TA_-NotebookLM-v1.md",
+        "provider": "openai_pro",
+        "num_questoes": 5,
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Cap 3 - Quality Characteristics",
+        "status": "concluido_salvo",
+        "erro_msg": null,
+        "criado_em": "2026-03-03 14:35:47",
+        "atualizado_em": "2026-03-03 14:36:56",
+        "questoes": [
+          {
+            "id": 14355901,
+            "k_level": "K2",
+            "pergunta": "No contexto do processo de teste, em qual atividade o Analista de Teste é especificamente responsável por identificar e priorizar as condições de teste com base na análise da base de teste?",
+            "opcoes": {
+              "A": "Modelagem de Teste.",
+              "B": "Análise de Teste.",
+              "C": "Implementação de Teste.",
+              "D": "Execução de Teste."
+            },
+            "resposta": "B",
+            "justificativa": "A identificação e priorização das condições de teste com base na análise da base de teste é uma responsabilidade típica da Análise de Teste.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14355902,
+            "k_level": "K2",
+            "pergunta": "De acordo com o Syllabus, o critério de qualidade 'Necessidade' para um caso de teste implica que:",
+            "opcoes": {
+              "A": "O caso de teste deve cobrir obrigatoriamente um valor de limite.",
+              "B": "O caso de teste é essencial porque valida um requisito ou condição que realmente precisa ser testada.",
+              "C": "O caso de teste deve ser automatizado para garantir a rapidez da regressão.",
+              "D": "O caso de teste deve ser um pré-requisito técnico para outros testes mais complexos."
+            },
+            "resposta": "B",
+            "justificativa": "Necessidade indica que o caso de teste é essencial pois valida um requisito ou condição que realmente precisa ser testada.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14355903,
+            "k_level": "K2",
+            "pergunta": "Por que o Analista de Teste deve ser envolvido precocemente no ciclo de vida de desenvolvimento, especialmente na revisão de requisitos?",
+            "opcoes": {
+              "A": "Para começar a codificar os scripts de automação antes que o design termine.",
+              "B": "Para identificar defeitos nos requisitos e aumentar a testabilidade do sistema desde o início.",
+              "C": "Para garantir que o Gerente de Projeto não reduza o tempo de execução de teste.",
+              "D": "Porque o Analista de Teste é o único responsável pela aprovação final dos requisitos de negócio."
+            },
+            "resposta": "B",
+            "justificativa": "A participação precoce do Analista de Teste permite identificar defeitos nos requisitos e aumentar a testabilidade desde o início do projeto.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14355904,
+            "k_level": "K2",
+            "pergunta": "Qual das opções abaixo representa um desafio comum na gestão de dados de teste quando se utiliza dados de produção anonimizados?",
+            "opcoes": {
+              "A": "Os dados perdem a sua utilidade para testes de performance.",
+              "B": "A anonimização pode remover a variabilidade necessária para testar cenários negativos complexos.",
+              "C": "Dados anonimizados são sempre maiores em volume do que os originais.",
+              "D": "O uso de dados anonimizados dispensa a necessidade de um oráculo de teste."
+            },
+            "resposta": "B",
+            "justificativa": "A anonimização pode remover características importantes dos dados, reduzindo a variabilidade e dificultando o teste de cenários negativos complexos.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14355905,
+            "k_level": "K2",
+            "pergunta": "Em um ambiente de Integração Contínua (CI), se um teste de regressão automatizado que passava anteriormente falha após um novo build, a primeira ação do Analista de Teste deve ser:",
+            "opcoes": {
+              "A": "Deletar o teste da suíte de regressão.",
+              "B": "Investigar se a falha é um defeito real ou se o teste ficou obsoleto devido a uma mudança legítima.",
+              "C": "Reiniciar o servidor de build e ignorar a falha se o teste passar na segunda vez.",
+              "D": "Solicitar que o desenvolvedor reverta todas as mudanças do dia anterior sem analisar."
+            },
+            "resposta": "B",
+            "justificativa": "A primeira ação deve ser investigar a causa da falha para determinar se é um defeito real ou se o teste precisa ser atualizado por conta de mudanças legítimas no sistema.",
+            "fonte": "llm"
+          }
+        ]
+      },
+      {
+        "id": "20260303_143606_59",
+        "arquivo_id": 8,
+        "arquivo_nome": "Simulado_Preparatorio_ISTQB_CTAL-TA_-NotebookLM-v1.md",
+        "provider": "openai_pro",
+        "num_questoes": 5,
+        "capitulo_id": "cap4",
+        "capitulo_nome": "Cap 4 - Reviews",
+        "status": "concluido",
+        "erro_msg": null,
+        "criado_em": "2026-03-03 14:36:06",
+        "atualizado_em": "2026-03-03 14:36:18",
+        "questoes": [
+          {
+            "id": 14361801,
+            "k_level": "K2",
+            "pergunta": "No contexto do processo de teste, em qual atividade o Analista de Teste é especificamente responsável por identificar e priorizar as condições de teste com base na análise da base de teste?",
+            "opcoes": {
+              "A": "Modelagem de Teste.",
+              "B": "Análise de Teste.",
+              "C": "Implementação de Teste.",
+              "D": "Execução de Teste."
+            },
+            "resposta": "B",
+            "justificativa": "A atividade de Análise de Teste envolve identificar e priorizar as condições de teste a partir da base de teste, sendo esta uma responsabilidade central do Analista de Teste.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14361802,
+            "k_level": "K2",
+            "pergunta": "De acordo com o Syllabus, o critério de qualidade 'Necessidade' para um caso de teste implica que:",
+            "opcoes": {
+              "A": "O caso de teste deve cobrir obrigatoriamente um valor de limite.",
+              "B": "O caso de teste é essencial porque valida um requisito ou condição que realmente precisa ser testada.",
+              "C": "O caso de teste deve ser automatizado para garantir a rapidez da regressão.",
+              "D": "O caso de teste deve ser um pré-requisito técnico para outros testes mais complexos."
+            },
+            "resposta": "B",
+            "justificativa": "O critério 'Necessidade' refere-se à relevância do caso de teste para validar requisitos ou condições essenciais que realmente precisam ser testados.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14361803,
+            "k_level": "K2",
+            "pergunta": "Por que o Analista de Teste deve ser envolvido precocemente no ciclo de vida de desenvolvimento, especialmente na revisão de requisitos?",
+            "opcoes": {
+              "A": "Para começar a codificar os scripts de automação antes que o design termine.",
+              "B": "Para identificar defeitos nos requisitos e aumentar a testabilidade do sistema desde o início.",
+              "C": "Para garantir que o Gerente de Projeto não reduza o tempo de execução de teste.",
+              "D": "Porque o Analista de Teste é o único responsável pela aprovação final dos requisitos de negócio."
+            },
+            "resposta": "B",
+            "justificativa": "O envolvimento precoce do Analista de Teste permite identificar defeitos nos requisitos e aumentar a testabilidade do sistema, prevenindo problemas futuros e melhorando a qualidade do produto.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14361804,
+            "k_level": "K2",
+            "pergunta": "Qual das opções abaixo representa um desafio comum na gestão de dados de teste quando se utiliza dados de produção anonimizados?",
+            "opcoes": {
+              "A": "Os dados perdem a sua utilidade para testes de performance.",
+              "B": "A anonimização pode remover a variabilidade necessária para testar cenários negativos complexos.",
+              "C": "Dados anonimizados são sempre maiores em volume do que os originais.",
+              "D": "O uso de dados anonimizados dispensa a necessidade de um oráculo de teste."
+            },
+            "resposta": "B",
+            "justificativa": "A anonimização pode remover características importantes dos dados, reduzindo a variabilidade necessária para testar cenários negativos complexos, o que é um desafio comum na gestão de dados de teste.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14361805,
+            "k_level": "K2",
+            "pergunta": "Na análise de risco baseada em qualidade, qual é o papel típico do Analista de Teste (TA) durante a avaliação?",
+            "opcoes": {
+              "A": "Atribuir a probabilidade técnica de uma falha ocorrer no código-fonte.",
+              "B": "Avaliar o impacto das falhas sob a perspectiva do negócio e do uso do software.",
+              "C": "Decidir sozinho se o risco é aceitável ou não para o lançamento.",
+              "D": "Codificar correções de bugs para mitigar riscos de segurança."
+            },
+            "resposta": "B",
+            "justificativa": "O Analista de Teste deve avaliar o impacto das falhas do ponto de vista do negócio e do uso do software, contribuindo para a análise de risco baseada em qualidade.",
+            "fonte": "llm"
+          }
+        ]
+      },
+      {
+        "id": "20260303_143623_60",
+        "arquivo_id": 8,
+        "arquivo_nome": "Simulado_Preparatorio_ISTQB_CTAL-TA_-NotebookLM-v1.md",
+        "provider": "openai_pro",
+        "num_questoes": 5,
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Cap 3 - Quality Characteristics",
+        "status": "concluido",
+        "erro_msg": null,
+        "criado_em": "2026-03-03 14:36:23",
+        "atualizado_em": "2026-03-03 14:36:34",
+        "questoes": [
+          {
+            "id": 14363401,
+            "k_level": "K2",
+            "pergunta": "No contexto do processo de teste, em qual atividade o Analista de Teste é especificamente responsável por identificar e priorizar as condições de teste com base na análise da base de teste?",
+            "opcoes": {
+              "A": "Modelagem de Teste.",
+              "B": "Análise de Teste.",
+              "C": "Implementação de Teste.",
+              "D": "Execução de Teste."
+            },
+            "resposta": "B",
+            "justificativa": "A identificação e priorização das condições de teste com base na análise da base de teste é uma responsabilidade típica da atividade de Análise de Teste.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14363402,
+            "k_level": "K2",
+            "pergunta": "Por que o Analista de Teste deve ser envolvido precocemente no ciclo de vida de desenvolvimento, especialmente na revisão de requisitos?",
+            "opcoes": {
+              "A": "Para começar a codificar os scripts de automação antes que o design termine.",
+              "B": "Para identificar defeitos nos requisitos e aumentar a testabilidade do sistema desde o início.",
+              "C": "Para garantir que o Gerente de Projeto não reduza o tempo de execução de teste.",
+              "D": "Porque o Analista de Teste é o único responsável pela aprovação final dos requisitos de negócio."
+            },
+            "resposta": "B",
+            "justificativa": "O envolvimento precoce do Analista de Teste permite detectar defeitos nos requisitos e aumentar a testabilidade do sistema desde o início, conforme recomendado pelo Syllabus.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14363403,
+            "k_level": "K2",
+            "pergunta": "Qual das opções abaixo representa um desafio comum na gestão de dados de teste quando se utiliza dados de produção anonimizados?",
+            "opcoes": {
+              "A": "Os dados perdem a sua utilidade para testes de performance.",
+              "B": "A anonimização pode remover a variabilidade necessária para testar cenários negativos complexos.",
+              "C": "Dados anonimizados são sempre maiores em volume do que os originais.",
+              "D": "O uso de dados anonimizados dispensa a necessidade de um oráculo de teste."
+            },
+            "resposta": "B",
+            "justificativa": "A anonimização pode remover características importantes dos dados, reduzindo a variabilidade e dificultando a criação de cenários negativos complexos.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14363404,
+            "k_level": "K2",
+            "pergunta": "Na análise de risco baseada em qualidade, qual é o papel típico do Analista de Teste (TA) durante a avaliação?",
+            "opcoes": {
+              "A": "Atribuir a probabilidade técnica de uma falha ocorrer no código-fonte.",
+              "B": "Avaliar o impacto das falhas sob a perspectiva do negócio e do uso do software.",
+              "C": "Decidir sozinho se o risco é aceitável ou não para o lançamento.",
+              "D": "Codificar correções de bugs para mitigar riscos de segurança."
+            },
+            "resposta": "B",
+            "justificativa": "O Analista de Teste normalmente contribui avaliando o impacto das falhas do ponto de vista do negócio e do uso do software, não apenas aspectos técnicos.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14363405,
+            "k_level": "K2",
+            "pergunta": "Você está priorizando testes de regressão. O Teste X cobre um requisito de alto risco mas não foi alterado. O Teste Y cobre um requisito de médio risco mas está em uma área que sofreu mudanças recentes no código. Como você deve proceder?",
+            "opcoes": {
+              "A": "Executar apenas o Teste X, pois o risco do requisito é sempre mais importante.",
+              "B": "Priorizar o Teste Y, pois o risco de regressão em áreas alteradas indica maior probabilidade de defeitos novos.",
+              "C": "Ignorar ambos e executar apenas testes novos de funcionalidades inéditas.",
+              "D": "Executar o Teste X apenas se o Teste Y falhar."
+            },
+            "resposta": "B",
+            "justificativa": "Testes de regressão devem priorizar áreas alteradas, pois mudanças recentes aumentam a probabilidade de introdução de defeitos, mesmo que o requisito tenha risco médio.",
+            "fonte": "llm"
+          }
+        ]
+      },
+      {
+        "id": "20260303_145313_61",
+        "arquivo_id": 3,
+        "arquivo_nome": "syllabus_ctfl-at_1.0br.pdf",
+        "provider": "openai_pro",
+        "num_questoes": 10,
+        "capitulo_id": "cap4",
+        "capitulo_nome": "Cap 4 - Reviews",
+        "status": "concluido",
+        "erro_msg": null,
+        "criado_em": "2026-03-03 14:53:13",
+        "atualizado_em": "2026-03-03 14:53:39",
+        "questoes": [
+          {
+            "id": 14533901,
+            "k_level": "K2",
+            "pergunta": "Qual é o principal objetivo do syllabus ISTQB Certified Tester Foundation Level Extension Agile Tester v1.0 (2014)?",
+            "opcoes": {
+              "A": "Definir padrões de desenvolvimento de software ágil.",
+              "B": "Fornecer uma base de conhecimento para testadores atuando em ambientes ágeis.",
+              "C": "Estabelecer modelos de gestão de projetos ágeis.",
+              "D": "Descrever ferramentas de automação de testes."
+            },
+            "resposta": "B",
+            "justificativa": "O objetivo do syllabus é fornecer uma base de conhecimento para testadores que atuam em ambientes ágeis.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14533902,
+            "k_level": "K2",
+            "pergunta": "Segundo o índice do syllabus, qual tema é abordado na seção 1.1.1?",
+            "opcoes": {
+              "A": "Integração Contínua",
+              "B": "Criação colaborativa da História do Usuário",
+              "C": "Desenvolvimento Ágil de Software e o Manifesto Ágil",
+              "D": "Planejamento da Iteração e Lançamento"
+            },
+            "resposta": "C",
+            "justificativa": "A seção 1.1.1 trata de 'Desenvolvimento Ágil de Software e o Manifesto Ágil'.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14533903,
+            "k_level": "K2",
+            "pergunta": "O que caracteriza a abordagem de equipe inteira em ambientes ágeis, conforme o syllabus?",
+            "opcoes": {
+              "A": "A responsabilidade pelo teste é exclusiva do testador.",
+              "B": "A equipe de desenvolvimento trabalha separada da equipe de testes.",
+              "C": "Todos os membros da equipe compartilham a responsabilidade pela qualidade e pelos testes.",
+              "D": "A equipe de testes atua apenas no final do ciclo de desenvolvimento."
+            },
+            "resposta": "C",
+            "justificativa": "Na abordagem de equipe inteira, todos os membros compartilham a responsabilidade pela qualidade e pelos testes.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14533904,
+            "k_level": "K2",
+            "pergunta": "Qual é o propósito das retrospectivas em abordagens ágeis, segundo o syllabus?",
+            "opcoes": {
+              "A": "Planejar a próxima iteração.",
+              "B": "Avaliar e melhorar continuamente processos e práticas da equipe.",
+              "C": "Definir requisitos do produto.",
+              "D": "Testar funcionalidades entregues."
+            },
+            "resposta": "B",
+            "justificativa": "As retrospectivas servem para avaliar e melhorar continuamente os processos e práticas da equipe.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14533905,
+            "k_level": "K2",
+            "pergunta": "De acordo com o syllabus, o que a integração contínua proporciona em projetos ágeis?",
+            "opcoes": {
+              "A": "Entrega de software apenas ao final do projeto.",
+              "B": "Testes realizados somente após a codificação completa.",
+              "C": "Feedback rápido sobre a qualidade do software a cada alteração integrada.",
+              "D": "Separação entre desenvolvimento e testes."
+            },
+            "resposta": "C",
+            "justificativa": "A integração contínua permite feedback rápido sobre a qualidade do software a cada alteração integrada.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14533906,
+            "k_level": "K2",
+            "pergunta": "Qual seção do syllabus aborda as diferenças entre teste em abordagens tradicionais e ágeis?",
+            "opcoes": {
+              "A": "1.1.3 Feedback Inicial e Frequente",
+              "B": "2.1 Diferenças no Teste em Abordagens Tradicionais e Ágil",
+              "C": "1.2.5 Planejamento da Iteração e Lançamento",
+              "D": "0.3 Objetivos de aprendizagem examináveis"
+            },
+            "resposta": "B",
+            "justificativa": "A seção 2.1 trata especificamente das diferenças entre teste em abordagens tradicionais e ágeis.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14533907,
+            "k_level": "K2",
+            "pergunta": "O que o planejamento da iteração e lançamento envolve em projetos ágeis, conforme o índice do syllabus?",
+            "opcoes": {
+              "A": "Definição de todos os requisitos no início do projeto.",
+              "B": "Planejamento detalhado apenas da entrega final.",
+              "C": "Planejamento incremental e adaptativo para cada ciclo de desenvolvimento.",
+              "D": "Ausência de planejamento formal."
+            },
+            "resposta": "C",
+            "justificativa": "O planejamento da iteração e lançamento em ágil é incremental e adaptativo para cada ciclo de desenvolvimento.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14533908,
+            "k_level": "K2",
+            "pergunta": "Segundo o syllabus, qual é a importância do feedback inicial e frequente em projetos ágeis?",
+            "opcoes": {
+              "A": "Permite atrasar decisões importantes até o final do projeto.",
+              "B": "Facilita a detecção precoce de problemas e ajustes rápidos.",
+              "C": "Evita a comunicação entre membros da equipe.",
+              "D": "Reduz a necessidade de testes automatizados."
+            },
+            "resposta": "B",
+            "justificativa": "O feedback inicial e frequente facilita a detecção precoce de problemas e possibilita ajustes rápidos.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14533909,
+            "k_level": "K2",
+            "pergunta": "O que caracteriza a criação colaborativa da história do usuário em abordagens ágeis?",
+            "opcoes": {
+              "A": "Histórias são escritas apenas pelo gerente de projeto.",
+              "B": "Testadores não participam da criação das histórias.",
+              "C": "A equipe trabalha junto na definição e refinamento das histórias do usuário.",
+              "D": "As histórias do usuário são criadas apenas no final do projeto."
+            },
+            "resposta": "C",
+            "justificativa": "Na criação colaborativa, toda a equipe participa da definição e refinamento das histórias do usuário.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14533910,
+            "k_level": "K2",
+            "pergunta": "Qual é o papel dos produtos de trabalho do projeto nas abordagens ágeis, segundo o syllabus?",
+            "opcoes": {
+              "A": "São documentos extensos e obrigatórios.",
+              "B": "Incluem apenas documentação de requisitos.",
+              "C": "Podem ser leves e focados em fornecer valor e comunicação eficaz.",
+              "D": "São criados apenas após a entrega do produto."
+            },
+            "resposta": "C",
+            "justificativa": "Em ágil, os produtos de trabalho tendem a ser leves e focados em fornecer valor e comunicação eficaz.",
+            "fonte": "llm"
+          }
+        ]
+      },
+      {
+        "id": "20260303_145413_62",
+        "arquivo_id": 3,
+        "arquivo_nome": "syllabus_ctfl-at_1.0br.pdf",
+        "provider": "openai_pro",
+        "num_questoes": 8,
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Cap 3 - Quality Characteristics",
+        "status": "concluido",
+        "erro_msg": null,
+        "criado_em": "2026-03-03 14:54:13",
+        "atualizado_em": "2026-03-03 14:54:31",
+        "questoes": [
+          {
+            "id": 14543101,
+            "k_level": "K2",
+            "pergunta": "Qual é o principal objetivo do syllabus ISTQB CTFL-AT (Agile Tester)?",
+            "opcoes": {
+              "A": "Fornecer diretrizes para o desenvolvimento ágil de software.",
+              "B": "Definir objetivos de aprendizagem examináveis para testadores ágeis.",
+              "C": "Descrever métodos de integração contínua em projetos ágeis.",
+              "D": "Padronizar o layout dos documentos do ISTQB."
+            },
+            "resposta": "B",
+            "justificativa": "O objetivo do syllabus é definir objetivos de aprendizagem examináveis para testadores ágeis, conforme destacado no índice e na introdução do documento.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14543102,
+            "k_level": "K2",
+            "pergunta": "O que caracteriza a abordagem de equipe inteira em desenvolvimento ágil de software?",
+            "opcoes": {
+              "A": "A equipe de testes trabalha separadamente dos desenvolvedores.",
+              "B": "Testadores e desenvolvedores colaboram ativamente em todas as fases.",
+              "C": "A liderança do projeto é exclusiva dos gerentes de projeto.",
+              "D": "O feedback do cliente é considerado apenas no final do projeto."
+            },
+            "resposta": "B",
+            "justificativa": "A abordagem de equipe inteira enfatiza a colaboração ativa entre testadores e desenvolvedores durante todo o processo de desenvolvimento ágil.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14543103,
+            "k_level": "K2",
+            "pergunta": "Segundo o índice do syllabus, qual é um dos tópicos abordados na seção de Fundamentos do Desenvolvimento Ágil de Software?",
+            "opcoes": {
+              "A": "Planejamento de Testes Automatizados",
+              "B": "Manifesto Ágil",
+              "C": "Testes de Regressão",
+              "D": "Gerenciamento de Incidentes"
+            },
+            "resposta": "B",
+            "justificativa": "O Manifesto Ágil é explicitamente citado como um dos fundamentos do desenvolvimento ágil de software no índice do syllabus.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14543104,
+            "k_level": "K2",
+            "pergunta": "Qual das opções abaixo está relacionada à obtenção de feedback em projetos ágeis, conforme o syllabus?",
+            "opcoes": {
+              "A": "Feedback inicial e frequente",
+              "B": "Feedback anual e formal",
+              "C": "Feedback apenas após o lançamento",
+              "D": "Feedback exclusivo da equipe de testes"
+            },
+            "resposta": "A",
+            "justificativa": "O conceito de feedback inicial e frequente é um dos pilares do desenvolvimento ágil, conforme destacado no índice do syllabus.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14543105,
+            "k_level": "K2",
+            "pergunta": "O que as retrospectivas promovem em equipes ágeis, de acordo com o syllabus?",
+            "opcoes": {
+              "A": "Avaliação de desempenho individual",
+              "B": "Revisão e melhoria contínua dos processos da equipe",
+              "C": "Planejamento de lançamentos futuros",
+              "D": "Criação de documentação detalhada"
+            },
+            "resposta": "B",
+            "justificativa": "Retrospectivas são usadas para revisão e melhoria contínua dos processos da equipe, conforme práticas ágeis.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14543106,
+            "k_level": "K2",
+            "pergunta": "Qual prática ágil é destacada no syllabus por facilitar a integração frequente de código?",
+            "opcoes": {
+              "A": "Planejamento de Iteração",
+              "B": "Integração Contínua",
+              "C": "Testes de Aceitação",
+              "D": "Reunião de Kickoff"
+            },
+            "resposta": "B",
+            "justificativa": "A integração contínua é uma prática ágil que facilita a integração frequente de código, conforme mencionado no índice do syllabus.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14543107,
+            "k_level": "K2",
+            "pergunta": "No contexto do syllabus, qual é uma diferença entre teste em abordagens tradicionais e ágeis?",
+            "opcoes": {
+              "A": "Testes são realizados apenas ao final do projeto em ambas as abordagens.",
+              "B": "Em ágil, as atividades de teste e desenvolvimento são realizadas de forma integrada.",
+              "C": "A documentação é mais detalhada em ágil do que em abordagens tradicionais.",
+              "D": "Os níveis de teste não existem em projetos ágeis."
+            },
+            "resposta": "B",
+            "justificativa": "No contexto ágil, teste e desenvolvimento são realizados de forma integrada, diferentemente das abordagens tradicionais.",
+            "fonte": "llm"
+          },
+          {
+            "id": 14543108,
+            "k_level": "K2",
+            "pergunta": "Qual das opções abaixo representa um produto de trabalho do projeto citado no syllabus?",
+            "opcoes": {
+              "A": "História do Usuário",
+              "B": "Plano de Negócios",
+              "C": "Contrato de Fornecimento",
+              "D": "Manual do Usuário"
+            },
+            "resposta": "A",
+            "justificativa": "A criação colaborativa da história do usuário é mencionada como um produto de trabalho do projeto em abordagens ágeis no syllabus.",
+            "fonte": "llm"
+          }
+        ]
+      },
+      {
+        "id": "20260303_151121_63",
+        "arquivo_id": 3,
+        "arquivo_nome": "syllabus_ctfl-at_1.0br.pdf",
+        "provider": "ollama",
+        "num_questoes": 2,
+        "capitulo_id": "cap3",
+        "capitulo_nome": "Cap 3 - Quality Characteristics",
+        "status": "erro",
+        "erro_msg": "Ollama timeout após 90s",
+        "criado_em": "2026-03-03 15:11:21",
+        "atualizado_em": "2026-03-03 15:12:58",
+        "questoes": []
       }
     ]
   },
   "metadata": {
-    "versao": 1,
-    "ultima_atualizacao": "2026-03-03T12:46:58.299340",
-    "total_questoes": 36,
-    "total_geracoes": 44,
-    "descricao": "Arquivo consolidado: questoes de banco + jobs de geracao",
-    "notas": "Estrutura unica para questoes e historico de jobs. Questoes crescem com novas geracoes salvas."
+    "versao": 2,
+    "ultima_reorganizacao": "2026-03-03T14:14:22.928385",
+    "total_questoes": 137,
+    "descricao": "Banco reorganizado automaticamente por capítulos do CTAL-TA",
+    "estrutura": {
+      "cap1": "Risk-Based Testing",
+      "cap2": "Test Techniques",
+      "cap3": "Quality Characteristics",
+      "cap4": "Reviews",
+      "cap5": "Test Tools",
+      "importados": "Questões não classificadas (para revisão manual)"
+    },
+    "ultima_atualizacao": "2026-03-03T15:12:58.312154",
+    "ultima_limpeza_importados": "2026-03-03T14:24:51.048305",
+    "ultima_limpeza_duplicatas": "2026-03-03T14:40:39.968456"
   }
 }

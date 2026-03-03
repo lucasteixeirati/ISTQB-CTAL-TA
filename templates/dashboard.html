@@ -55,6 +55,16 @@
         </div>
     </div>
 
+    <div id="modal-revisao-simulado" class="modal" style="display: none;" aria-hidden="true">
+        <div class="modal-content modal-revisao">
+            <div class="modal-header">
+                <h3 id="modal-revisao-titulo">Revisão do Simulado</h3>
+                <button id="btn-fechar-revisao" class="btn-fechar-modal" type="button">Fechar</button>
+            </div>
+            <div id="modal-revisao-corpo" class="modal-body-scroll"></div>
+        </div>
+    </div>
+
     <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
 </body>
 </html>

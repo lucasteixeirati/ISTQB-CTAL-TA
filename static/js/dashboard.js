@@ -1,6 +1,89 @@
 document.addEventListener('DOMContentLoaded', () => {
+    inicializarModalRevisao();
     carregarEstatisticas();
 });
+
+function inicializarModalRevisao() {
+    const modal = document.getElementById('modal-revisao-simulado');
+    const btnFechar = document.getElementById('btn-fechar-revisao');
+
+    if (!modal || !btnFechar) {
+        return;
+    }
+
+    btnFechar.addEventListener('click', fecharModalRevisao);
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            fecharModalRevisao();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && modal.style.display !== 'none') {
+            fecharModalRevisao();
+        }
+    });
+}
+
+function escapeHtml(texto) {
+    return String(texto ?? '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+}
+
+function abrirModalRevisao(simulado, resultados) {
+    const modal = document.getElementById('modal-revisao-simulado');
+    const titulo = document.getElementById('modal-revisao-titulo');
+    const corpo = document.getElementById('modal-revisao-corpo');
+
+    if (!modal || !titulo || !corpo) {
+        return;
+    }
+
+    const capitulo = escapeHtml(simulado.capitulo_nome || simulado.capitulo || 'N/A');
+    titulo.textContent = `Revisão do Simulado - ${capitulo}`;
+
+    const linhas = resultados.map((item, idx) => {
+        const correto = item.correto;
+        const statusIcon = correto ? '✅' : '❌';
+        const statusTexto = correto ? 'Acertou' : 'Errou';
+        const statusClasse = correto ? 'correta' : 'errada';
+        const pergunta = escapeHtml(item.pergunta || `Questão ${idx + 1}`);
+        const respostaUsuario = escapeHtml(item.resposta_usuario || '—');
+        const respostaCorreta = escapeHtml(item.resposta_correta || '—');
+        const justificativa = escapeHtml(item.justificativa || '');
+
+        return `
+            <div class="questao-revisao ${statusClasse}">
+                <p style="margin-bottom: 10px;"><strong>${idx + 1}. ${pergunta}</strong></p>
+                <p style="margin: 8px 0;"><strong>${statusIcon} ${statusTexto}</strong></p>
+                <p style="margin: 8px 0;"><strong>Sua resposta:</strong> ${respostaUsuario}</p>
+                <p style="margin: 8px 0;"><strong>Resposta correta:</strong> ${respostaCorreta}</p>
+                ${justificativa ? `<p style="margin: 8px 0; margin-top: 12px;"><strong>Justificativa:</strong> ${justificativa}</p>` : ''}
+            </div>
+        `;
+    }).join('');
+
+    corpo.innerHTML = linhas;
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden', 'false');
+}
+
+function fecharModalRevisao() {
+    const modal = document.getElementById('modal-revisao-simulado');
+    const corpo = document.getElementById('modal-revisao-corpo');
+
+    if (!modal || !corpo) {
+        return;
+    }
+
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+    corpo.innerHTML = '';
+}
 
 async function carregarEstatisticas() {
     try {
@@ -95,6 +178,7 @@ function renderizarHistorico(simulados) {
                     <th>Resultado</th>
                     <th>%</th>
                     <th>Status</th>
+                    <th>Revisão</th>
                 </tr>
             </thead>
             <tbody>
@@ -111,12 +195,50 @@ function renderizarHistorico(simulados) {
                 <td>${sim.acertos}/${sim.total_questoes}</td>
                 <td>${sim.percentual}%</td>
                 <td style="color: ${statusColor}; font-weight: bold;">${statusText}</td>
+                <td>
+                    ${sim.tem_revisao && sim.id
+                        ? `<button class="btn-secondary" onclick="abrirRevisaoSimulado('${sim.id}')">Ver revisão</button>`
+                        : '<span>-</span>'}
+                </td>
             </tr>
         `;
     });
     
     html += '</tbody></table>';
     tabelaDiv.innerHTML = html;
+}
+
+async function abrirRevisaoSimulado(simuladoId) {
+    try {
+        const response = await fetch(`/api/simulados/historico/${simuladoId}`);
+        const data = await response.json();
+
+        if (!data.success || !data.simulado) {
+            throw new Error(data.error || 'Não foi possível carregar a revisão');
+        }
+
+        const simulado = data.simulado;
+        const resultados = Array.isArray(simulado.resultados) ? simulado.resultados : [];
+
+        if (resultados.length === 0) {
+            const modal = document.getElementById('modal-revisao-simulado');
+            const titulo = document.getElementById('modal-revisao-titulo');
+            const corpo = document.getElementById('modal-revisao-corpo');
+            
+            if (modal && titulo && corpo) {
+                titulo.textContent = 'Revisão do Simulado';
+                corpo.innerHTML = '<div style="padding: 40px; text-align: center; color: #b8c1ec;"><p>Este simulado não possui revisão detalhada.</p><p style="margin-top: 10px; font-size: 0.9em;">Simulados antigos podem não conter o histórico completo de respostas.</p></div>';
+                modal.style.display = 'flex';
+                modal.setAttribute('aria-hidden', 'false');
+            }
+            return;
+        }
+
+        abrirModalRevisao(simulado, resultados);
+    } catch (error) {
+        console.error('Erro ao abrir revisão:', error);
+        alert('Erro ao carregar revisão detalhada.');
+    }
 }
 
 function renderizarRecomendacoes(media, totalSimulados) {

@@ -20,6 +20,7 @@ from app.services.simulado_service import salvar_no_tracking
 from app.services.geracoes_service import GeracoesService
 
 from app.services.simulado_service import gerar_perguntas_llm_escolha
+from app.utils.validacao import verificar_duplicatas_banco
 
 # Registrar blueprints (rotas modularizadas em app/routes)
 from app.routes import register_routes
@@ -228,7 +229,16 @@ def _worker_geracao_loop(intervalo=3):
                         )
                     filepath = os.path.join(app.config['UPLOAD_FOLDER'], arquivo['nome_arquivo'])
                     texto = extrair_texto_para_ia(filepath, arquivo.get('tipo', ''))
-                    questoes_ia = gerar_perguntas_llm_escolha(texto, job['num_questoes'], provider=job['provider'])
+                    # Passar capitulo_id para que a IA gere questões relevantes ao capítulo
+                    capitulo_id = job.get('capitulo_id', 'cap2')
+                    capitulo_nome = job.get('capitulo_nome', '')
+                    questoes_ia = gerar_perguntas_llm_escolha(
+                        texto, 
+                        job['num_questoes'], 
+                        provider=job['provider'],
+                        capitulo_id=capitulo_id,
+                        capitulo_nome=capitulo_nome
+                    )
 
                     # mesma normalização usada na rota síncrona
                     questoes = []
@@ -402,7 +412,9 @@ def iniciar_simulado():
         session['simulado_atual'] = {
             'questoes_completas': questoes_selecionadas,
             'inicio': datetime.now().isoformat(),
-            'num_questoes': quantidade
+            'num_questoes': quantidade,
+            'capitulo_id': capitulo_id,
+            'capitulo_nome': (data.get('capitulo_nome') or capitulo_id or 'Todos'),
         }
 
         return jsonify({
@@ -448,9 +460,20 @@ def finalizar_simulado():
     total = len(questoes_completas)
     percentual = (acertos / total) * 100
     
-    # Usar a funcao centralizada de tracking
+    capitulo_id = simulado.get('capitulo_id') or 'todos'
+    capitulo_nome = simulado.get('capitulo_nome') or capitulo_id
+
+    # Usar a funcao centralizada de tracking com histórico detalhado
     tempo_gasto = data.get('tempo_gasto', 0)
-    salvar_no_tracking("web_completo", total, acertos, tempo_gasto)
+    salvar_no_tracking(
+        capitulo_nome,
+        total,
+        acertos,
+        tempo_gasto,
+        capitulo_id=capitulo_id,
+        capitulo_nome=capitulo_nome,
+        resultados=resultados,
+    )
     
     return jsonify({
         'success': True,
@@ -696,14 +719,27 @@ def salvar_questoes_geradas(arquivo_id):
     if capitulo_key not in banco['questoes']:
         banco['questoes'][capitulo_key] = []
 
+    # Prepara questões completas com metadata
+    questoes_preparadas = []
     for q in completas:
-        banco['questoes'][capitulo_key].append({
+        questoes_preparadas.append({
             'pergunta': q['pergunta'],
             'alternativas': q['alternativas'][:4],
             'resposta': q['resposta'],
             'capitulo_id': capitulo_id,
             'capitulo_nome': capitulo_nome,
         })
+    
+    # Verifica duplicatas antes de salvar
+    questoes_unicas, questoes_duplicadas, estatisticas = verificar_duplicatas_banco(
+        questoes_novas=questoes_preparadas,
+        banco_atual=banco,
+        threshold_similaridade=0.95
+    )
+    
+    # Salva apenas questões únicas
+    for q in questoes_unicas:
+        banco['questoes'][capitulo_key].append(q)
 
     # Atualiza metadados
     if 'metadata' not in banco:
@@ -715,18 +751,36 @@ def salvar_questoes_geradas(arquivo_id):
     salvar_questoes_banco(banco)
 
     logger.info(
-        "Questoes salvas: arquivo_id=%s salvas=%s capitulo=%s descartadas=%s",
+        "Questoes salvas: arquivo_id=%s salvas=%s duplicadas=%s capitulo=%s descartadas_invalidas=%s",
         arquivo_id,
-        len(completas),
+        len(questoes_unicas),
+        len(questoes_duplicadas),
         capitulo_key,
         len(invalidas),
     )
+    
+    # Mensagem de retorno com informações de duplicatas
+    msg_parts = []
+    if len(questoes_unicas) > 0:
+        msg_parts.append(f'{len(questoes_unicas)} questões salvas no capítulo {capitulo_nome}')
+    if len(questoes_duplicadas) > 0:
+        msg_parts.append(f'{len(questoes_duplicadas)} questões duplicadas foram ignoradas')
+    if len(invalidas) > 0:
+        msg_parts.append(f'{len(invalidas)} questões inválidas foram descartadas')
+    
+    msg = '. '.join(msg_parts) + '.'
+    
     return jsonify({
         'success': True,
-        'msg': f'{len(completas)} questões salvas no capítulo {capitulo_nome}.',
+        'msg': msg,
         'capitulo_id': capitulo_id,
         'capitulo_nome': capitulo_nome,
-        'descartadas': len(invalidas)
+        'estatisticas': {
+            'salvas': len(questoes_unicas),
+            'duplicadas': len(questoes_duplicadas),
+            'invalidas': len(invalidas),
+            'total_analisadas': len(questoes)
+        }
     })
 
 @app.route('/dashboard')
@@ -819,12 +873,44 @@ def estatisticas():
     total_acertos = sum(s['acertos'] for s in simulados)
     media_geral = (total_acertos / total_questoes) * 100 if total_questoes > 0 else 0
     
+    historico_resumo = []
+    for sim in simulados[-10:]:
+        historico_resumo.append({
+            'id': sim.get('id'),
+            'data': sim.get('data'),
+            'capitulo': sim.get('capitulo_nome') or sim.get('capitulo') or 'N/A',
+            'capitulo_id': sim.get('capitulo_id') or 'todos',
+            'total_questoes': sim.get('total_questoes', 0),
+            'acertos': sim.get('acertos', 0),
+            'percentual': sim.get('percentual', 0),
+            'tempo_minutos': sim.get('tempo_minutos', 0),
+            'aprovado': bool(sim.get('aprovado', False)),
+            'tem_revisao': bool(sim.get('resultados')),
+        })
+
     return jsonify({
         'success': True,
         'total_simulados': len(simulados),
         'media_geral': round(media_geral, 1),
-        'simulados': simulados[-10:]
+        'simulados': historico_resumo
     })
+
+
+@app.route('/api/simulados/historico/<simulado_id>', methods=['GET'])
+def obter_historico_simulado(simulado_id):
+    tracking_file = "progresso_simulados.json"
+    if not os.path.exists(tracking_file):
+        return jsonify({'success': False, 'error': 'Histórico não encontrado'}), 404
+
+    with open(tracking_file, 'r', encoding='utf-8') as f:
+        dados = json.load(f)
+
+    simulados = dados.get('simulados', [])
+    simulado = next((s for s in simulados if str(s.get('id')) == str(simulado_id)), None)
+    if not simulado:
+        return jsonify({'success': False, 'error': 'Simulado não encontrado'}), 404
+
+    return jsonify({'success': True, 'simulado': simulado})
 
 @app.route('/api/llm-opcoes', methods=['GET'])
 def api_llm_opcoes():

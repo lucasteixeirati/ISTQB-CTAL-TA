@@ -54,5 +54,14 @@
     "tipo": "pdf",
     "data_upload": "2026-03-02 15:43:49",
     "questoes_geradas": 0
+  },
+  {
+    "id": 8,
+    "nome": "Simulado_Preparatorio_ISTQB_CTAL-TA_-NotebookLM-v1.md",
+    "nome_arquivo": "20260303_125759_Simulado_Preparatorio_ISTQB_CTAL-TA_-NotebookLM-v1.md",
+    "tipo": "md",
+    "pode_gerar_ia": true,
+    "data_upload": "2026-03-03 12:57:59",
+    "questoes_geradas": 0
   }
 ]

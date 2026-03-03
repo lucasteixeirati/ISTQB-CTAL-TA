@@ -156,6 +156,13 @@ async function salvarQuestoesJob() {
         return;
     }
 
+    // Exibe mensagem de carregamento
+    const btnSalvar = document.querySelector('#modal-job button[onclick="salvarQuestoesJob()"]');
+    if (btnSalvar) {
+        btnSalvar.disabled = true;
+        btnSalvar.textContent = 'Analisando duplicidade...';
+    }
+
     try {
         const resp = await fetch(`/api/geracoes/${jobSelecionado}/salvar`, {
             method: 'POST',
@@ -163,8 +170,25 @@ async function salvarQuestoesJob() {
             body: JSON.stringify({ questoes })
         });
         const data = await resp.json();
+        
         if (data.success) {
-            alert('Questões salvas com sucesso!');
+            let mensagem = data.msg || 'Questões salvas com sucesso!';
+            
+            // Adiciona detalhes de estatísticas se disponível
+            if (data.estatisticas) {
+                const stats = data.estatisticas;
+                mensagem += `\n\n📊 Estatísticas:`;
+                mensagem += `\n✅ Salvas: ${stats.salvas}`;
+                if (stats.duplicadas > 0) {
+                    mensagem += `\n⚠️ Duplicadas (ignoradas): ${stats.duplicadas}`;
+                }
+                if (stats.invalidas > 0) {
+                    mensagem += `\n❌ Inválidas (descartadas): ${stats.invalidas}`;
+                }
+                mensagem += `\n📝 Total analisadas: ${stats.total_analisadas}`;
+            }
+            
+            alert(mensagem);
             fecharModalJob();
             carregarGeracoes();
         } else {
@@ -172,5 +196,11 @@ async function salvarQuestoesJob() {
         }
     } catch (e) {
         alert('Erro ao salvar questões: ' + e);
+    } finally {
+        // Restaura o botão
+        if (btnSalvar) {
+            btnSalvar.disabled = false;
+            btnSalvar.textContent = 'Salvar Questões';
+        }
     }
 }

@@ -318,6 +318,13 @@ async function salvarQuestoesGeradas() {
     const capitulo_id = capSelect?.value || 'importados';
     const capitulo_nome = capSelect?.selectedOptions?.[0]?.getAttribute('data-label') || capSelect?.selectedOptions?.[0]?.textContent || 'Importados / Outros';
 
+    // Exibe mensagem de carregamento
+    const btnSalvar = document.querySelector('#modal-revisar-questoes button[onclick="salvarQuestoesGeradas()"]');
+    if (btnSalvar) {
+        btnSalvar.disabled = true;
+        btnSalvar.textContent = 'Analisando duplicidade...';
+    }
+
     try {
         const response = await fetch(`/api/arquivos/salvar-questoes/${arquivoSelecionado}`, {
             method: 'POST',
@@ -325,8 +332,30 @@ async function salvarQuestoesGeradas() {
             body: JSON.stringify({ questoes, capitulo_id, capitulo_nome })
         });
         const data = await response.json();
+        
         if (data.success) {
-            alert('Questões salvas com sucesso!');
+            let mensagem = data.msg || 'Questões salvas com sucesso!';
+            
+            // Adiciona detalhes de duplicatas se houver
+            if (data.estatisticas) {
+                const stats = data.estatisticas;
+                mensagem += `\n\n📊 Estatísticas:`;
+                mensagem += `\n✅ Salvas: ${stats.salvas}`;
+                if (stats.duplicadas > 0) {
+                    mensagem += `\n⚠️ Duplicadas (ignoradas): ${stats.duplicadas}`;
+                }
+                mensagem += `\n📝 Total analisadas: ${stats.total_analisadas}`;
+                
+                // Mostra exemplos de duplicatas se houver
+                if (data.questoes_duplicadas && data.questoes_duplicadas.length > 0) {
+                    mensagem += `\n\n🔍 Exemplos de questões duplicadas:`;
+                    data.questoes_duplicadas.slice(0, 3).forEach((dup, i) => {
+                        mensagem += `\n  ${i+1}. ${dup.pergunta} (${(dup.similaridade * 100).toFixed(1)}% similar)`;
+                    });
+                }
+            }
+            
+            alert(mensagem);
             fecharModalRevisao();
             carregarArquivos();
         } else {
@@ -335,6 +364,12 @@ async function salvarQuestoesGeradas() {
         }
     } catch (error) {
         alert('Erro ao salvar questões: ' + error);
+    } finally {
+        // Restaura o botão
+        if (btnSalvar) {
+            btnSalvar.disabled = false;
+            btnSalvar.textContent = 'Salvar Questões';
+        }
     }
 }
 

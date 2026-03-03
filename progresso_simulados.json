@@ -74,6 +74,1065 @@
       "percentual": 75.0,
       "tempo_minutos": 3,
       "aprovado": true
+    },
+    {
+      "data": "2026-03-03 13:46:24",
+      "capitulo": "web_completo",
+      "total_questoes": 10,
+      "acertos": 8,
+      "percentual": 80.0,
+      "tempo_minutos": 4,
+      "aprovado": true
+    },
+    {
+      "id": "20260303_135724_631513",
+      "data": "2026-03-03 13:57:24",
+      "capitulo": "Cap 2 - Test Techniques",
+      "capitulo_id": "cap2",
+      "capitulo_nome": "Cap 2 - Test Techniques",
+      "total_questoes": 5,
+      "acertos": 4,
+      "percentual": 80.0,
+      "tempo_minutos": 1,
+      "aprovado": true,
+      "resultados": [
+        {
+          "id": 135553005,
+          "pergunta": "Qual das opções abaixo representa um desafio comum na gestão de dados de teste quando se utiliza dados de produção anonimizados?",
+          "opcoes": {
+            "A": "Os dados perdem a sua utilidade para testes de performance.",
+            "B": "A anonimização pode remover a variabilidade necessária para testar cenários negativos complexos.",
+            "C": "Dados anonimizados são sempre maiores em volume do que os originais.",
+            "D": "O uso de dados anonimizados dispensa a necessidade de um oráculo de teste."
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 135553003,
+          "pergunta": "Por que o Analista de Teste deve ser envolvido precocemente no ciclo de vida de desenvolvimento, especialmente na revisão de requisitos?",
+          "opcoes": {
+            "A": "Para começar a codificar os scripts de automação antes que o design termine.",
+            "B": "Para identificar defeitos nos requisitos e aumentar a testabilidade do sistema desde o início.",
+            "C": "Para garantir que o Gerente de Projeto não reduza o tempo de execução de teste.",
+            "D": "Porque o Analista de Teste é o único responsável pela aprovação final dos requisitos de negócio."
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 135553007,
+          "pergunta": "Você está priorizando testes de regressão. O Teste X cobre um requisito de alto risco mas não foi alterado. O Teste Y cobre um requisito de médio risco mas está em uma área que sofreu mudanças recentes no código. Como você deve proceder?",
+          "opcoes": {
+            "A": "Executar apenas o Teste X, pois o risco do requisito é sempre mais importante.",
+            "B": "Priorizar o Teste Y, pois o risco de regressão em áreas alteradas indica maior probabilidade de defeitos novos.",
+            "C": "Ignorar ambos e executar apenas testes novos de funcionalidades inéditas.",
+            "D": "Executar o Teste X apenas se o Teste Y falhar."
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 135553002,
+          "pergunta": "De acordo com o Syllabus, o critério de qualidade 'Necessidade' para um caso de teste implica que:",
+          "opcoes": {
+            "A": "O caso de teste deve cobrir obrigatoriamente um valor de limite.",
+            "B": "O caso de teste é essencial porque valida um requisito ou condição que realmente precisa ser testada.",
+            "C": "O caso de teste deve ser automatizado para garantir a rapidez da regressão.",
+            "D": "O caso de teste deve ser um pré-requisito técnico para outros testes mais complexos."
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 135553004,
+          "pergunta": "Ao especificar requisitos para uma ferramenta de simulação (como um simulador de hardware), qual informação é vital para o Analista de Teste garantir a execução sem bloqueios?",
+          "opcoes": {
+            "A": "O custo total de aquisição da ferramenta.",
+            "B": "A unidade organizacional responsável por manter e disponibilizar o simulador.",
+            "C": "A linguagem de programação utilizada para construir o simulador.",
+            "D": "A lista de todos os defeitos encontrados no simulador em versões de 5 anos atrás."
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "C",
+          "correto": false,
+          "justificativa": ""
+        }
+      ]
+    },
+    {
+      "id": "20260303_140241_990290",
+      "data": "2026-03-03 14:02:41",
+      "capitulo": "Cap 3 - Quality Characteristics",
+      "capitulo_id": "cap3",
+      "capitulo_nome": "Cap 3 - Quality Characteristics",
+      "total_questoes": 5,
+      "acertos": 4,
+      "percentual": 80.0,
+      "tempo_minutos": 1,
+      "aprovado": true,
+      "resultados": [
+        {
+          "id": 140141010,
+          "pergunta": "Em um ambiente de Integração Contínua (CI), se um teste de regressão automatizado que passava anteriormente falha após um novo build, a primeira ação do Analista de Teste deve ser:",
+          "opcoes": {
+            "A": "Deletar o teste da suíte de regressão.",
+            "B": "Investigar se a falha é um defeito real ou se o teste ficou obsoleto devido a uma mudança legítima.",
+            "C": "Reiniciar o servidor de build e ignorar a falha se o teste passar na segunda vez.",
+            "D": "Solicitar que o desenvolvedor reverta todas as mudanças do dia anterior sem analisar."
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 140141003,
+          "pergunta": "Por que o Analista de Teste deve ser envolvido precocemente no ciclo de vida de desenvolvimento, especialmente na revisão de requisitos?",
+          "opcoes": {
+            "A": "Para começar a codificar os scripts de automação antes que o design termine.",
+            "B": "Para identificar defeitos nos requisitos e aumentar a testabilidade do sistema desde o início.",
+            "C": "Para garantir que o Gerente de Projeto não reduza o tempo de execução de teste.",
+            "D": "Porque o Analista de Teste é o único responsável pela aprovação final dos requisitos de negócio."
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 140141008,
+          "pergunta": "Qual das alternativas abaixo descreve corretamente um risco de qualidade funcional voltado para a acurácia?",
+          "opcoes": {
+            "A": "O sistema não carrega a página em menos de 2 segundos.",
+            "B": "O cálculo do imposto de renda no fechamento da folha está retornando valores incorretos.",
+            "C": "A interface do usuário possui cores que dificultam a leitura por daltônicos.",
+            "D": "O software para de funcionar quando 1000 usuários acessam simultaneamente."
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 140141001,
+          "pergunta": "No contexto do processo de teste, em qual atividade o Analista de Teste é especificamente responsável por identificar e priorizar as condições de teste com base na análise da base de teste?",
+          "opcoes": {
+            "A": "Modelagem de Teste.",
+            "B": "Análise de Teste.",
+            "C": "Implementação de Teste.",
+            "D": "Execução de Teste."
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "C",
+          "correto": false,
+          "justificativa": ""
+        },
+        {
+          "id": 140141002,
+          "pergunta": "De acordo com o Syllabus, o critério de qualidade 'Necessidade' para um caso de teste implica que:",
+          "opcoes": {
+            "A": "O caso de teste deve cobrir obrigatoriamente um valor de limite.",
+            "B": "O caso de teste é essencial porque valida um requisito ou condição que realmente precisa ser testada.",
+            "C": "O caso de teste deve ser automatizado para garantir a rapidez da regressão.",
+            "D": "O caso de teste deve ser um pré-requisito técnico para outros testes mais complexos."
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        }
+      ]
+    },
+    {
+      "id": "20260303_141625_874348",
+      "data": "2026-03-03 14:16:25",
+      "capitulo": "Cap 5 - Test Tools",
+      "capitulo_id": "cap5",
+      "capitulo_nome": "Cap 5 - Test Tools",
+      "total_questoes": 3,
+      "acertos": 1,
+      "percentual": 33.3,
+      "tempo_minutos": 0,
+      "aprovado": false,
+      "resultados": [
+        {
+          "id": 141539006,
+          "pergunta": "Qual ferramenta pode ser usada para automatizar testes de cauda?",
+          "opcoes": {
+            "A": "Selenium WebDriver.",
+            "B": "Pingdom ou UptimeRobot.",
+            "C": "JUnit.",
+            "D": "TestRigor"
+          },
+          "resposta_correta": "C",
+          "resposta_usuario": "B",
+          "correto": false,
+          "justificativa": ""
+        },
+        {
+          "id": 141539007,
+          "pergunta": "Qual dos seguintes valores é enfatizado pelo Manifesto Ágil como tendo maior valor em relação ao seu oposto?",
+          "opcoes": {
+            "A": "Processos e ferramentas sobre indivíduos e interações",
+            "B": "Documentação abrangente sobre software funcionando",
+            "C": "Negociação de contratos sobre colaboração com o cliente",
+            "D": "Indivíduos e interações sobre processos e ferramentas"
+          },
+          "resposta_correta": "D",
+          "resposta_usuario": "D",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 141539012,
+          "pergunta": "Ao especificar requisitos para uma ferramenta de simulação (como um simulador de hardware), qual informação é vital para o Analista de Teste garantir a execução sem bloqueios?",
+          "opcoes": {
+            "A": "O custo total de aquisição da ferramenta.",
+            "B": "A unidade organizacional responsável por manter e disponibilizar o simulador.",
+            "C": "A linguagem de programação utilizada para construir o simulador.",
+            "D": "A lista de todos os defeitos encontrados no simulador em versões de 5 anos atrás."
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "C",
+          "correto": false,
+          "justificativa": ""
+        }
+      ]
+    },
+    {
+      "id": "20260303_141727_561573",
+      "data": "2026-03-03 14:17:27",
+      "capitulo": "Cap 1 - Risk-based Testing",
+      "capitulo_id": "cap1",
+      "capitulo_nome": "Cap 1 - Risk-based Testing",
+      "total_questoes": 3,
+      "acertos": 3,
+      "percentual": 100.0,
+      "tempo_minutos": 0,
+      "aprovado": true,
+      "resultados": [
+        {
+          "id": 141659006,
+          "pergunta": "Na análise de risco baseada em qualidade, qual é o papel típico do Analista de Teste (TA) durante a avaliação?",
+          "opcoes": {
+            "A": "Atribuir a probabilidade técnica de uma falha ocorrer no código-fonte.",
+            "B": "Avaliar o impacto das falhas sob a perspectiva do negócio e do uso do software.",
+            "C": "Decidir sozinho se o risco é aceitável ou não para o lançamento.",
+            "D": "Codificar correções de bugs para mitigar riscos de segurança."
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 141659004,
+          "pergunta": "Na análise de risco baseada em qualidade, qual é o papel típico do Analista de Teste (TA) durante a avaliação?",
+          "opcoes": {
+            "A": "Atribuir a probabilidade técnica de uma falha ocorrer no código-fonte.",
+            "B": "Avaliar o impacto das falhas sob a perspectiva do negócio e do uso do software.",
+            "C": "Decidir sozinho se o risco é aceitável ou não para o lançamento.",
+            "D": "Codificar correções de bugs para mitigar riscos de segurança."
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 141659007,
+          "pergunta": "Você está priorizando testes de regressão. O Teste X cobre um requisito de alto risco mas não foi alterado. O Teste Y cobre um requisito de médio risco mas está em uma área que sofreu mudanças recentes no código. Como você deve proceder?",
+          "opcoes": {
+            "A": "Executar apenas o Teste X, pois o risco do requisito é sempre mais importante.",
+            "B": "Priorizar o Teste Y, pois o risco de regressão em áreas alteradas indica maior probabilidade de defeitos novos.",
+            "C": "Ignorar ambos e executar apenas testes novos de funcionalidades inéditas.",
+            "D": "Executar o Teste X apenas se o Teste Y falhar."
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        }
+      ]
+    },
+    {
+      "id": "20260303_143117_487120",
+      "data": "2026-03-03 14:31:17",
+      "capitulo": "Cap 5 - Test Tools",
+      "capitulo_id": "cap5",
+      "capitulo_nome": "Cap 5 - Test Tools",
+      "total_questoes": 5,
+      "acertos": 2,
+      "percentual": 40.0,
+      "tempo_minutos": 0,
+      "aprovado": false,
+      "resultados": [
+        {
+          "id": 143020014,
+          "pergunta": "Ao especificar requisitos para uma ferramenta de simulação (como um simulador de hardware), qual informação é vital para o Analista de Teste garantir a execução sem bloqueios?",
+          "opcoes": {
+            "A": "O custo total de aquisição da ferramenta.",
+            "B": "A unidade organizacional responsável por manter e disponibilizar o simulador.",
+            "C": "A linguagem de programação utilizada para construir o simulador.",
+            "D": "A lista de todos os defeitos encontrados no simulador em versões de 5 anos atrás."
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 143020006,
+          "pergunta": "Qual ferramenta pode ser usada para automatizar testes de cauda?",
+          "opcoes": {
+            "A": "Selenium WebDriver.",
+            "B": "Pingdom ou UptimeRobot.",
+            "C": "JUnit.",
+            "D": "TestRigor"
+          },
+          "resposta_correta": "C",
+          "resposta_usuario": "B",
+          "correto": false,
+          "justificativa": ""
+        },
+        {
+          "id": 143020015,
+          "pergunta": "Em um ambiente de Integração Contínua (CI), se um teste de regressão automatizado que passava anteriormente falha após um novo build, a primeira ação do Analista de Teste deve ser:",
+          "opcoes": {
+            "A": "Deletar o teste da suíte de regressão.",
+            "B": "Investigar se a falha é um defeito real ou se o teste ficou obsoleto devido a uma mudança legítima.",
+            "C": "Reiniciar o servidor de build e ignorar a falha se o teste passar na segunda vez.",
+            "D": "Solicitar que o desenvolvedor reverta todas as mudanças do dia anterior sem analisar."
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 143020012,
+          "pergunta": "Ao especificar requisitos para uma ferramenta de simulação (como um simulador de hardware), qual informação é vital para o Analista de Teste garantir a execução sem bloqueios?",
+          "opcoes": {
+            "A": "O custo total de aquisição da ferramenta.",
+            "B": "A unidade organizacional responsável por manter e disponibilizar o simulador.",
+            "C": "A linguagem de programação utilizada para construir o simulador.",
+            "D": "A lista de todos os defeitos encontrados no simulador em versões de 5 anos atrás."
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "C",
+          "correto": false,
+          "justificativa": ""
+        },
+        {
+          "id": 143020005,
+          "pergunta": "Qual tipo de ferramenta é usada para gerenciar a matriz de rastreabilidade?",
+          "opcoes": {
+            "A": "Gerenciamento de defeitos",
+            "B": "Gerenciamento de testes",
+            "C": "Gerenciamento de dados de teste",
+            "D": "Gerenciamento de configuração"
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "C",
+          "correto": false,
+          "justificativa": ""
+        }
+      ]
+    },
+    {
+      "id": "20260303_143454_864951",
+      "data": "2026-03-03 14:34:54",
+      "capitulo": "Cap 1 - Risk-based Testing",
+      "capitulo_id": "cap1",
+      "capitulo_nome": "Cap 1 - Risk-based Testing",
+      "total_questoes": 5,
+      "acertos": 4,
+      "percentual": 80.0,
+      "tempo_minutos": 2,
+      "aprovado": true,
+      "resultados": [
+        {
+          "id": 143202010,
+          "pergunta": "Um sistema bancário tem as seguintes funcionalidades:",
+          "opcoes": {
+            "A": "Transferência > Login > Relatórios > Consulta saldo",
+            "B": "Login > Transferência > Consulta saldo > Relatórios",
+            "C": "Transferência > Relatórios > Login > Consulta saldo",
+            "D": "Relatórios > Transferência > Login > Consulta saldo"
+          },
+          "resposta_correta": "A",
+          "resposta_usuario": "B",
+          "correto": false,
+          "justificativa": "Cálculo de risco (P×I):"
+        },
+        {
+          "id": 143202013,
+          "pergunta": "Durante um sprint, novos requisitos são adicionados ao backlog. O que você deve fazer em relação à análise de risco?",
+          "opcoes": {
+            "A": "Manter a análise de risco original sem alterações",
+            "B": "Re-avaliar riscos considerando as mudanças",
+            "C": "Ignorar os novos requisitos até o próximo sprint",
+            "D": "Aumentar automaticamente o risco de todos os itens"
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": "Mudanças nos requisitos exigem re-avaliação de riscos, pois podem introduzir novos riscos ou alterar os existentes."
+        },
+        {
+          "id": 143202017,
+          "pergunta": "Um risco identificado tem probabilidade 5 (muito alta) e impacto 5 (muito alto). Qual ação é MAIS apropriada?",
+          "opcoes": {
+            "A": "Aceitar o risco e documentar",
+            "B": "Transferir o risco para terceiros",
+            "C": "Mitigar com testes rigorosos e revisões",
+            "D": "Ignorar pois é muito complexo de resolver"
+          },
+          "resposta_correta": "C",
+          "resposta_usuario": "C",
+          "correto": true,
+          "justificativa": "Risco 25 (5×5) é CRÍTICO e exige mitigação ativa através de testes extensivos, revisões de código, pair programming, etc. Não pode ser aceito (A) ou ignorado (D)."
+        },
+        {
+          "id": 143202014,
+          "pergunta": "O que é uma Risk Matrix?",
+          "opcoes": {
+            "A": "Documento que lista todos os bugs encontrados",
+            "B": "Ferramenta visual que cruza probabilidade e impacto",
+            "C": "Planilha de casos de teste priorizados",
+            "D": "Relatório de cobertura de código"
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": "Risk Matrix é uma tabela (geralmente 5×5) que visualiza riscos cruzando probabilidade (eixo Y) com impacto (eixo X)."
+        },
+        {
+          "id": 143202001,
+          "pergunta": "Considerando um modelo iterativo e uma matriz de rastreabilidade com riscos de regressão, qual a ordem recomendada para execução dos casos de teste para mitigar riscos?",
+          "opcoes": {
+            "A": "1, 2, 3, 4, 5",
+            "B": "1, 3, 4 e 2, 5 se houver tempo",
+            "C": "5, 4, 3, 1 e não executar 2",
+            "D": "1, 5, 4, 3 e 2 se houver tempo"
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        }
+      ]
+    },
+    {
+      "id": "20260303_144940_590682",
+      "data": "2026-03-03 14:49:40",
+      "capitulo": "Cap 1 - Risk-based Testing",
+      "capitulo_id": "cap1",
+      "capitulo_nome": "Cap 1 - Risk-based Testing",
+      "total_questoes": 5,
+      "acertos": 5,
+      "percentual": 100.0,
+      "tempo_minutos": 2,
+      "aprovado": true,
+      "resultados": [
+        {
+          "id": 144731009,
+          "pergunta": "Você é Test Analyst em um projeto e-commerce. Durante a análise de risco, identifica que o módulo de pagamento tem alta complexidade técnica (nova API de terceiros) e processa transações financeiras críticas. Como você classificaria este risco?",
+          "opcoes": {
+            "A": "Baixa probabilidade, baixo impacto",
+            "B": "Alta probabilidade, baixo impacto",
+            "C": "Baixa probabilidade, alto impacto",
+            "D": "Alta probabilidade, alto impacto"
+          },
+          "resposta_correta": "D",
+          "resposta_usuario": "D",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 144731010,
+          "pergunta": "Qual das seguintes NÃO é uma atividade típica do Test Analyst em Risk-Based Testing?",
+          "opcoes": {
+            "A": "Identificar riscos de produto",
+            "B": "Avaliar probabilidade e impacto de riscos",
+            "C": "Definir o orçamento do projeto",
+            "D": "Priorizar casos de teste baseados em risco"
+          },
+          "resposta_correta": "C",
+          "resposta_usuario": "C",
+          "correto": true,
+          "justificativa": "Definir orçamento é responsabilidade do gerente de projeto, não do Test Analyst."
+        },
+        {
+          "id": 144731001,
+          "pergunta": "Considerando um modelo iterativo e uma matriz de rastreabilidade com riscos de regressão, qual a ordem recomendada para execução dos casos de teste para mitigar riscos?",
+          "opcoes": {
+            "A": "1, 2, 3, 4, 5",
+            "B": "1, 3, 4 e 2, 5 se houver tempo",
+            "C": "5, 4, 3, 1 e não executar 2",
+            "D": "1, 5, 4, 3 e 2 se houver tempo"
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 144731003,
+          "pergunta": "Na abordagem de equipe inteira em projetos ágeis, qual das opções a seguir é correta?",
+          "opcoes": {
+            "A": "A equipe deve ser composta apenas por desenvolvedores",
+            "B": "A equipe inclui representantes do cliente e outros stakeholders de negócios",
+            "C": "A equipe deve ter mais de 15 pessoas para garantir diversidade",
+            "D": "A equipe deve trabalhar de forma isolada dos clientes"
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 144731015,
+          "pergunta": "Um risco identificado tem probabilidade 5 (muito alta) e impacto 5 (muito alto). Qual ação é MAIS apropriada?",
+          "opcoes": {
+            "A": "Aceitar o risco e documentar",
+            "B": "Transferir o risco para terceiros",
+            "C": "Mitigar com testes rigorosos e revisões",
+            "D": "Ignorar pois é muito complexo de resolver"
+          },
+          "resposta_correta": "C",
+          "resposta_usuario": "C",
+          "correto": true,
+          "justificativa": "Risco 25 (5×5) é CRÍTICO e exige mitigação ativa através de testes extensivos, revisões de código, pair programming, etc. Não pode ser aceito (A) ou ignorado (D)."
+        }
+      ]
+    },
+    {
+      "id": "20260303_145110_529345",
+      "data": "2026-03-03 14:51:10",
+      "capitulo": "Cap 2 - Test Techniques",
+      "capitulo_id": "cap2",
+      "capitulo_nome": "Cap 2 - Test Techniques",
+      "total_questoes": 4,
+      "acertos": 3,
+      "percentual": 75.0,
+      "tempo_minutos": 1,
+      "aprovado": true,
+      "resultados": [
+        {
+          "id": 145000058,
+          "pergunta": "Melhor custo-benefício em seleção de combinações?",
+          "opcoes": {
+            "A": "All combinations",
+            "B": "Each choice",
+            "C": "Pairwise",
+            "D": "Random"
+          },
+          "resposta_correta": "C",
+          "resposta_usuario": "C",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 145000019,
+          "pergunta": "Qual das opções abaixo é um dos tópicos listados no índice do syllabus ISTQB CTFL-AT?",
+          "opcoes": {
+            "A": "Testes de Segurança em Ágil",
+            "B": "Planejamento da Iteração e Lançamento",
+            "C": "Gestão de Configuração Tradicional",
+            "D": "Testes de Interface de Usuário"
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "A",
+          "correto": false,
+          "justificativa": ""
+        },
+        {
+          "id": 145000047,
+          "pergunta": "Quando re-avaliar riscos?",
+          "opcoes": {
+            "A": "Apenas no início do projeto",
+            "B": "Quando há mudanças nos requisitos ou novos defeitos",
+            "C": "Apenas no final do projeto",
+            "D": "Nunca, análise inicial é suficiente"
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 145000056,
+          "pergunta": "Qual afirmação está CORRETA?",
+          "opcoes": {
+            "A": "Use Case é mais adequado para ágil",
+            "B": "User Story é mais detalhada",
+            "C": "Use Case inclui fluxos alternativos e de exceção",
+            "D": "User Story substitui Use Case"
+          },
+          "resposta_correta": "C",
+          "resposta_usuario": "C",
+          "correto": true,
+          "justificativa": ""
+        }
+      ]
+    },
+    {
+      "id": "20260303_145234_732917",
+      "data": "2026-03-03 14:52:34",
+      "capitulo": "Cap 5 - Test Tools",
+      "capitulo_id": "cap5",
+      "capitulo_nome": "Cap 5 - Test Tools",
+      "total_questoes": 4,
+      "acertos": 3,
+      "percentual": 75.0,
+      "tempo_minutos": 1,
+      "aprovado": true,
+      "resultados": [
+        {
+          "id": 145128003,
+          "pergunta": "Qual dos seguintes valores do Manifesto Ágil enfatiza a importância da colaboração contínua entre as pessoas da equipe de desenvolvimento?",
+          "opcoes": {
+            "A": "Indivíduos e interações sobre processos e ferramentas.",
+            "B": "Software funcionando sobre documentação mais abrangente.",
+            "C": "Colaboração com o cliente sobre negociação de contratos.",
+            "D": "Resposta às mudanças sobre o seguimento de um plano."
+          },
+          "resposta_correta": "A",
+          "resposta_usuario": "A",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 145128009,
+          "pergunta": "Qual é a sequência correta do processo no Test Driven Development (TDD)?",
+          "opcoes": {
+            "A": "Executar o teste, criar o código, escrever o teste, melhorar o código",
+            "B": "Criar um teste automatizado, executar o teste que falha, escrever o código até passar o teste, melhorar o código",
+            "C": "Escrever o código, criar o teste, executar o teste, melhorar o código",
+            "D": "Executar o teste, melhorar o código, criar o teste, escrever o código"
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 145128002,
+          "pergunta": "O que representa um valor maior, segundo o Manifesto Ágil?",
+          "opcoes": {
+            "A": "Indivíduos e interações sobre processos e ferramentas",
+            "B": "Software funcionando em detrimento da documentação",
+            "C": "Colaboração com a equipe interna sem envolver o cliente",
+            "D": "Resposta às mudanças por meio de negociações contratuais"
+          },
+          "resposta_correta": "A",
+          "resposta_usuario": "B",
+          "correto": false,
+          "justificativa": ""
+        },
+        {
+          "id": 145128001,
+          "pergunta": "Qual é o foco principal do Manifesto Ágil para Desenvolvimento de Software?",
+          "opcoes": {
+            "A": "Indivíduos e interações sobre processos e ferramentas",
+            "B": "Software funcionando em detrimento da documentação",
+            "C": "Colaboração com a equipe interna sem envolver o cliente",
+            "D": "Resposta às mudanças por meio de negociações contratuais"
+          },
+          "resposta_correta": "A",
+          "resposta_usuario": "A",
+          "correto": true,
+          "justificativa": ""
+        }
+      ]
+    },
+    {
+      "id": "20260303_150424_280792",
+      "data": "2026-03-03 15:04:24",
+      "capitulo": "Cap 2 - Test Techniques",
+      "capitulo_id": "cap2",
+      "capitulo_nome": "Cap 2 - Test Techniques",
+      "total_questoes": 5,
+      "acertos": 3,
+      "percentual": 60.0,
+      "tempo_minutos": 1,
+      "aprovado": false,
+      "resultados": [
+        {
+          "id": 150316047,
+          "pergunta": "Quando re-avaliar riscos?",
+          "opcoes": {
+            "A": "Apenas no início do projeto",
+            "B": "Quando há mudanças nos requisitos ou novos defeitos",
+            "C": "Apenas no final do projeto",
+            "D": "Nunca, análise inicial é suficiente"
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 150316018,
+          "pergunta": "De acordo com o histórico de revisão do syllabus, o que representa a versão 2014-09-30?",
+          "opcoes": {
+            "A": "A primeira versão beta do syllabus.",
+            "B": "A versão com pequenas correções após o lançamento GA.",
+            "C": "A versão inicial do grupo de trabalho.",
+            "D": "A versão padronizada com o ISTQB."
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 150316012,
+          "pergunta": "O que caracteriza a abordagem de equipe inteira em ambientes ágeis, segundo o syllabus?",
+          "opcoes": {
+            "A": "A responsabilidade pelo teste é exclusiva do testador.",
+            "B": "A equipe de desenvolvimento não participa dos testes.",
+            "C": "Todos os membros da equipe são responsáveis pela qualidade e testes.",
+            "D": "O gerente de projeto define todos os testes."
+          },
+          "resposta_correta": "C",
+          "resposta_usuario": "C",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 150316077,
+          "pergunta": "Sequência CORRETA?",
+          "opcoes": {
+            "A": "Planning → Preparation → Meeting → Rework → Follow-up",
+            "B": "Preparation → Planning → Meeting → Follow-up → Rework",
+            "C": "Planning → Meeting → Preparation → Rework → Follow-up",
+            "D": "Meeting → Planning → Preparation → Rework → Follow-up"
+          },
+          "resposta_correta": "A",
+          "resposta_usuario": "B",
+          "correto": false,
+          "justificativa": ""
+        },
+        {
+          "id": 150316049,
+          "pergunta": "Campo aceita 18-65 anos. Quantas partições?",
+          "opcoes": {
+            "A": "2",
+            "B": "3",
+            "C": "4",
+            "D": "5"
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "C",
+          "correto": false,
+          "justificativa": "1 válida [18-65], 2 inválidas [<18][>65]"
+        }
+      ]
+    },
+    {
+      "id": "20260303_151014_652686",
+      "data": "2026-03-03 15:10:14",
+      "capitulo": "Todos",
+      "capitulo_id": "todos",
+      "capitulo_nome": "Todos",
+      "total_questoes": 20,
+      "acertos": 15,
+      "percentual": 75.0,
+      "tempo_minutos": 5,
+      "aprovado": true,
+      "resultados": [
+        {
+          "id": 150453120,
+          "pergunta": "Qual afirmação está CORRETA sobre Technical Review?",
+          "opcoes": {
+            "A": "É conduzida apenas pelo autor",
+            "B": "Não requer documentação de defeitos",
+            "C": "É conduzida por peers técnicos e documenta defeitos",
+            "D": "É menos formal que Walkthrough"
+          },
+          "resposta_correta": "C",
+          "resposta_usuario": "C",
+          "correto": true,
+          "justificativa": "Technical Review é conduzida por especialistas técnicos (peers) e documenta defeitos encontrados. É mais formal que Walkthrough."
+        },
+        {
+          "id": 150453084,
+          "pergunta": "Responder <2s com 500 usuários usando max 70% CPU. Quais sub-características?",
+          "opcoes": {
+            "A": "Apenas Time Behaviour",
+            "B": "Time Behaviour e Capacity",
+            "C": "Time Behaviour, Resource Utilization e Capacity",
+            "D": "Apenas Resource Utilization"
+          },
+          "resposta_correta": "C",
+          "resposta_usuario": "C",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 150453021,
+          "pergunta": "Qual princípio ágil destaca a importância da equipe refletir e ajustar seu comportamento regularmente?",
+          "opcoes": {
+            "A": "Satisfazer o cliente",
+            "B": "Simplicidade",
+            "C": "Refletir e ajustar",
+            "D": "Excelência técnica"
+          },
+          "resposta_correta": "C",
+          "resposta_usuario": "C",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 150453001,
+          "pergunta": "Considerando um modelo iterativo e uma matriz de rastreabilidade com riscos de regressão, qual a ordem recomendada para execução dos casos de teste para mitigar riscos?",
+          "opcoes": {
+            "A": "1, 2, 3, 4, 5",
+            "B": "1, 3, 4 e 2, 5 se houver tempo",
+            "C": "5, 4, 3, 1 e não executar 2",
+            "D": "1, 5, 4, 3 e 2 se houver tempo"
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 150453098,
+          "pergunta": "Qual das seguintes afirmações melhor descreve o papel do Acceptance Test Driven Development (ATDD) em projetos ágeis?",
+          "opcoes": {
+            "A": "Foca em testes unitários automatizados para garantir a qualidade do código",
+            "B": "Define critérios e testes de aceite durante a criação das histórias para garantir o comportamento esperado da funcionalidade",
+            "C": "Utiliza o padrão Gherkin para escrever testes baseados no comportamento esperado",
+            "D": "Realiza testes manuais de sistema para validar a interface do usuário"
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 150453121,
+          "pergunta": "Qual é a sequência CORRETA das fases de uma Inspection formal?",
+          "opcoes": {
+            "A": "Planning → Preparation → Meeting → Rework → Follow-up",
+            "B": "Preparation → Planning → Meeting → Follow-up → Rework",
+            "C": "Planning → Meeting → Preparation → Rework → Follow-up",
+            "D": "Meeting → Planning → Preparation → Rework → Follow-up"
+          },
+          "resposta_correta": "A",
+          "resposta_usuario": "B",
+          "correto": false,
+          "justificativa": "Fases corretas: Planning (planejamento) → Overview (opcional) → Preparation (revisão individual) → Inspection Meeting (reunião) → Rework (correções) → Follow-up (verificação)."
+        },
+        {
+          "id": 150453078,
+          "pergunta": "Principal LIMITAÇÃO?",
+          "opcoes": {
+            "A": "Muito caro",
+            "B": "Requer ferramentas especializadas",
+            "C": "Pode ficar desatualizado e criar \"checkbox mentality\"",
+            "D": "Não pode ser usado em ágil"
+          },
+          "resposta_correta": "C",
+          "resposta_usuario": "B",
+          "correto": false,
+          "justificativa": ""
+        },
+        {
+          "id": 150453130,
+          "pergunta": "Qual dos seguintes valores do Manifesto Ágil enfatiza a importância da colaboração contínua entre as pessoas da equipe de desenvolvimento?",
+          "opcoes": {
+            "A": "Indivíduos e interações sobre processos e ferramentas.",
+            "B": "Software funcionando sobre documentação mais abrangente.",
+            "C": "Colaboração com o cliente sobre negociação de contratos.",
+            "D": "Resposta às mudanças sobre o seguimento de um plano."
+          },
+          "resposta_correta": "A",
+          "resposta_usuario": "A",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 150453014,
+          "pergunta": "Qual fator NÃO aumenta a probabilidade de risco?",
+          "opcoes": {
+            "A": "Equipe inexperiente na tecnologia",
+            "B": "Código legado sem documentação",
+            "C": "Funcionalidade crítica de negócio",
+            "D": "Mudanças frequentes nos requisitos"
+          },
+          "resposta_correta": "C",
+          "resposta_usuario": "B",
+          "correto": false,
+          "justificativa": "\"Funcionalidade crítica de negócio\" aumenta o IMPACTO, não a probabilidade. Os demais aumentam a chance de falha (probabilidade)."
+        },
+        {
+          "id": 150453007,
+          "pergunta": "Qual é a diferença entre Product Risk e Project Risk?",
+          "opcoes": {
+            "A": "Product Risk afeta o cronograma; Project Risk afeta a qualidade",
+            "B": "Product Risk é técnico; Project Risk é gerencial",
+            "C": "Product Risk são falhas no software; Project Risk são problemas no processo",
+            "D": "Não há diferença, são sinônimos"
+          },
+          "resposta_correta": "C",
+          "resposta_usuario": "C",
+          "correto": true,
+          "justificativa": "Product Risk = falhas no produto (bugs, performance). Project Risk = problemas no projeto (atrasos, falta de recursos)."
+        },
+        {
+          "id": 150453062,
+          "pergunta": "Quando re-avaliar riscos?",
+          "opcoes": {
+            "A": "Apenas no início do projeto",
+            "B": "Quando há mudanças nos requisitos ou novos defeitos",
+            "C": "Apenas no final do projeto",
+            "D": "Nunca, análise inicial é suficiente"
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 150453117,
+          "pergunta": "Ao especificar requisitos para uma ferramenta de simulação (como um simulador de hardware), qual informação é vital para o Analista de Teste garantir a execução sem bloqueios?",
+          "opcoes": {
+            "A": "O custo total de aquisição da ferramenta.",
+            "B": "A unidade organizacional responsável por manter e disponibilizar o simulador.",
+            "C": "A linguagem de programação utilizada para construir o simulador.",
+            "D": "A lista de todos os defeitos encontrados no simulador em versões de 5 anos atrás."
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 150453107,
+          "pergunta": "Sistema deve ser acessível para pessoas com deficiência visual. Qual sub-característica de Usability é MAIS relevante?",
+          "opcoes": {
+            "A": "Learnability",
+            "B": "Operability",
+            "C": "Accessibility",
+            "D": "User Interface Aesthetics"
+          },
+          "resposta_correta": "C",
+          "resposta_usuario": "C",
+          "correto": true,
+          "justificativa": "Accessibility trata especificamente de tornar o sistema utilizável por pessoas com deficiências (visual, auditiva, motora)."
+        },
+        {
+          "id": 150453022,
+          "pergunta": "No contexto do processo de teste, em qual atividade o Analista de Teste é especificamente responsável por identificar e priorizar as condições de teste com base na análise da base de teste?",
+          "opcoes": {
+            "A": "Modelagem de Teste.",
+            "B": "Análise de Teste.",
+            "C": "Implementação de Teste.",
+            "D": "Execução de Teste."
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 150453137,
+          "pergunta": "Qual dos seguintes valores é enfatizado pelo Manifesto Ágil em relação ao desenvolvimento de software?",
+          "opcoes": {
+            "A": "Processos e ferramentas sobre indivíduos e interações",
+            "B": "Documentação abrangente sobre software funcionando",
+            "C": "Indivíduos e interações sobre processos e ferramentas",
+            "D": "Negociação de contratos sobre colaboração com o cliente"
+          },
+          "resposta_correta": "C",
+          "resposta_usuario": "C",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 150453110,
+          "pergunta": "Código deve ser fácil de modificar e testar. Quais sub-características de Maintainability são MAIS relevantes?",
+          "opcoes": {
+            "A": "Modularity e Reusability",
+            "B": "Modifiability e Testability",
+            "C": "Analysability apenas",
+            "D": "Todas igualmente"
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "A",
+          "correto": false,
+          "justificativa": ""
+        },
+        {
+          "id": 150453095,
+          "pergunta": "Situação onde automação NÃO é recomendada?",
+          "opcoes": {
+            "A": "Regressão executada frequentemente",
+            "B": "Funcionalidade estável",
+            "C": "Testes raros em funcionalidade instável",
+            "D": "Testes de API"
+          },
+          "resposta_correta": "C",
+          "resposta_usuario": "C",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 150453020,
+          "pergunta": "Qual é uma das principais vantagens da abordagem de equipe inteira em projetos ágeis?",
+          "opcoes": {
+            "A": "Permite que apenas desenvolvedores tomem decisões técnicas",
+            "B": "Reduz a comunicação entre os membros da equipe",
+            "C": "Garante que todos com conhecimento necessário estejam envolvidos no sucesso do projeto",
+            "D": "Aumenta a dependência de ferramentas automatizadas"
+          },
+          "resposta_correta": "C",
+          "resposta_usuario": "C",
+          "correto": true,
+          "justificativa": ""
+        },
+        {
+          "id": 150453074,
+          "pergunta": "5 IFs (10 branches), 8 cobertos. Qual a cobertura?",
+          "opcoes": {
+            "A": "50%",
+            "B": "60%",
+            "C": "80%",
+            "D": "100%"
+          },
+          "resposta_correta": "C",
+          "resposta_usuario": "B",
+          "correto": false,
+          "justificativa": "8/10×100=80%"
+        },
+        {
+          "id": 150453111,
+          "pergunta": "Aplicação deve ser facilmente instalada em Windows, Linux e Mac. Qual sub-característica?",
+          "opcoes": {
+            "A": "Adaptability",
+            "B": "Installability",
+            "C": "Replaceability",
+            "D": "Todas as três"
+          },
+          "resposta_correta": "B",
+          "resposta_usuario": "B",
+          "correto": true,
+          "justificativa": "Installability trata da facilidade de instalar/desinstalar em diferentes ambientes."
+        }
+      ]
     }
   ]
 }
