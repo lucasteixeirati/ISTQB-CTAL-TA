@@ -236,17 +236,3 @@ O worker processará automaticamente jobs pendentes em background.
 ## Licença
 
 Licença MIT — Veja [LICENSE](LICENSE) para detalhes.
-
----
-
-## Contribuindo
-
-Contribuições são bem-vindas! Você pode:
-- Reportar bugs e sugerir melhorias
-- Enviar pull requests com enhancements
-- Ajudar na tradução da documentação
-- Expandir a base de questões e materiais de estudo
-
----
-
-**Construído para Excelência na Certificação ISTQB CTAL-TA** 🚀
