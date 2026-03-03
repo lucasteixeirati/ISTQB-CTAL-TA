@@ -1,93 +1,252 @@
 # ISTQB CTAL-TA - Sistema de Estudos
 
-Aplicação web em Flask para preparação da certificação **ISTQB CTAL-TA**, com:
-- simulados por capítulo e completo
-- flashcards por deck
-- dashboard de progresso
-- upload de PDF/TXT
-- geração de questões com IA
-- pipeline de **gerações assíncronas** (jobs + worker)
+Uma aplicação web completa em Flask para preparação e domínio da certificação **ISTQB CTAL-TA** com ferramentas de aprendizado interativo, geração inteligente de questões com IA e acompanhamento de progresso em tempo real.
 
-> Este repositório **não inclui materiais anexados** da pasta `uploads/`.
+## Funcionalidades Principais
 
-## Instalação rápida
+### 📝 Simulados Interativos
+- **Exames por capítulo**: Pratique tópicos específicos da certificação com conjuntos curados de questões
+- **Testes completos**: Simulações de exame completo simulando as condições reais da certificação
+- **Feedback instantâneo**: Análise detalhada das respostas com explicações e alternativas corretas
+- **Análise de desempenho**: Acompanhe sua evolução ao longo do tempo com métricas detalhadas
 
-1. Clone o projeto e entre na pasta.
+### 🎯 Flashcards Digitais
+- **Decks organizados**: Coleções de flashcards pré-construídos organizados por capítulos da certificação
+- **Aprendizado ativo**: Sistema de repetição espaçada para retenção ótima de conhecimento
+- **Revisão diária**: Interface dedicada para prática diária e sessões rápidas de revisão
+- **Filtros personalizáveis**: Estude por tópico, dificuldade ou seu próprio caminho de aprendizado
+
+### 📊 Dashboard Personalizado
+- **Acompanhamento de progresso**: Monitoramento em tempo real de sua prontidão para a certificação
+- **Métricas de desempenho**: Visualize resultados de simulados, pontuação média e taxa de sucesso
+- **Estatísticas de estudo**: Tempo investido, questões respondidas, áreas fracas identificadas
+- **Recomendações personalizadas**: Sugestões baseadas no seu histórico de desempenho
+
+### 🤖 Geração de Questões com IA
+- **Criação inteligente**: Gere questões personalizadas a partir de seus próprios materiais de estudo (PDF/TXT)
+- **Múltiplos provedores de LLM**: Escolha entre Ollama (local), HuggingFace ou OpenAI
+- **Processamento em lote**: Sistema assíncrono de jobs para gerar grandes volumes sem bloquear
+- **Revisão de qualidade**: Edite e valide questões geradas pela IA antes de salvar no banco
+- **Tópicos flexíveis**: Atribua questões geradas a qualquer capítulo da certificação dinamicamente
+
+### 📚 Biblioteca Unificada de Materiais
+- **Biblioteca unificada**: Acesse materiais anexados e materiais carregados em um único lugar
+- **Múltiplos formatos**: Suporte para documentos PDF e arquivos de texto
+- **Gerenciamento eficiente**: Carregue, organize e gerencie seus materiais de estudo facilmente
+- **Visualização rápida**: Acesso direto para visualizar ou abrir materiais do aplicativo
+
+### 🔄 Pipeline Assíncrono de Geração
+- **Processamento em background**: Crie questões sem aguardar respostas da IA
+- **Rastreamento de jobs**: Monitore status em tempo real (pendente → processando → concluído)
+- **Tratamento de erros**: Lógica automática de retry com mensagens de erro detalhadas
+- **Arquitetura escalável**: Suporte para múltiplos jobs de geração simultâneos
+
+---
+
+## Instalação Rápida
+
+### Requisitos
+- Python 3.8+
+- pip (gestor de pacotes Python)
+
+### Passo a Passo
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/lucasteixeirati/ISTQB-CTAL-TA.git
+   cd ISTQB-CTAL-TA
+   ```
+
 2. Instale as dependências:
    ```bash
    pip install -r requirements.txt
    ```
-3. (Opcional) Crie o arquivo `.env` a partir de `.env.example`.
-4. Execute:
+
+3. (Opcional) Crie um arquivo `.env` a partir de `.env.example` para configuração personalizada.
+
+4. Inicie a aplicação:
    ```bash
    python app.py
    ```
-5. Acesse: http://localhost:5000
 
-## Estrutura do projeto
+5. Acesse a interface web:
+   ```
+   http://localhost:5000
+   ```
 
-- **Frontend:** `templates/` e `static/`
-- **Backend:** `app.py`, `app/routes/` e `app/services/`
-- **Flashcards:** `flashcards/`
-- **Simulados:** `simulados/`
-- **Resumos:** `resumos/`
+---
 
-## Principais funcionalidades
+## Estrutura do Projeto
 
-- Simulados interativos por capítulo ou completo
-- Flashcards digitais para revisão rápida
-- Dashboard com estatísticas de desempenho
-- Upload de PDF/TXT e geração de questões com IA
-- Revisão/edição e salvamento de questões no banco
+```
+├── app.py                          # Inicialização Flask & rotas principais
+├── app/
+│   ├── routes/                     # Blueprints de rotas da API
+│   │   ├── geracoes.py            # Endpoints de jobs assíncronos
+│   │   └── __init__.py            # Registro de blueprints
+│   └── services/                   # Lógica de negócio & integrações
+│       ├── simulado_service.py    # Integração LLM & geração de questões
+│       ├── geracoes_service.py    # Persistência e gerenciamento de jobs
+│       └── flashcards_service.py  # Operações de flashcards (placeholder)
+├── templates/                      # Templates Jinja2 das páginas
+├── static/
+│   ├── css/                        # Folhas de estilo
+│   └── js/                         # Scripts frontend por funcionalidade
+├── flashcards/                     # Decks de flashcards pré-construídos
+├── simulados/                      # Conjuntos de questões de prova
+├── resumos/                        # Resumos de estudo
+├── uploads/                        # Materiais carregados pelo usuário
+├── banco_questoes.json             # Base de dados de questões
+├── arquivos_anexados.json          # Metadados de arquivos
+├── geracoes_questoes.json          # Estado de jobs assíncronos
+├── progresso_simulados.json        # Rastreamento de progresso
+└── requirements.txt                # Dependências Python
+```
 
-## Capturas de tela
+---
 
-**[Ver fotos do sistema em funcionamento](https://lucasteixeirati.github.io/ISTQB-CTAL-TA/screenshots.html)**
+## Visão Geral das Funcionalidades por Página
 
-## Endpoints (resumo)
+### 1. Simulados (`/simulado`)
+- **Modo exame**: Simulações de corpo inteiro com 40+ questões do syllabus completo
+- **Focado por capítulo**: Pratique tópicos específicos isoladamente
+- **Feedback em tempo real**: Resultados imediatos com respostas corretas e justificativas
+- **Rastreamento de tempo**: Limites de tempo opcionais para simular condições de exame
 
-- **Upload/arquivos**
-  - `GET /arquivos`
-  - `GET /api/arquivos`
-  - `POST /api/upload`
-  - `DELETE /api/deletar-arquivo/<arquivo_id>`
+### 2. Arquivos & Geração com IA (`/arquivos`)
+- **Interface de upload**: Carregamento via arrastar-soltar para arquivos PDF e TXT
+- **Biblioteca de materiais**: Visualização unificada de todos os materiais de estudo
+- **Geração com IA**: Selecione arquivos e gere questões personalizadas:
+  - Número de questões a gerar
+  - Seleção de provedor LLM (Ollama local / HuggingFace / OpenAI)
+  - Atribuição de capítulo da certificação
+- **Revisão de questões**: Edite e valide antes de salvar no banco
 
-- **Geração síncrona por arquivo**
-  - `POST /api/gerar-questoes/<arquivo_id>`
+### 3. Gerações Assíncronas (`/geracoes`)
+- **Dashboard de jobs**: Monitore o status de todos os jobs de geração
+- **Atualizações em tempo real**: Acompanhe o progresso das tarefas de IA de longa duração
+- **Processamento em lote**: Crie múltiplos jobs e gerencie simultaneamente
+- **Salvar no banco**: Finalize questões revisadas e adicione à sua coleção
 
-- **Salvar questões no banco**
-  - `POST /api/arquivos/salvar-questoes/<arquivo_id>`
-  - Aceita `alternativas: [..4]` ou `opcoes: {A,B,C,D}`
+### 4. Flashcards (`/flashcards`)
+- **Explorador de decks**: Navegue por coleções pré-construídas de flashcards
+- **Modo de estudo**: Interface interativa de inversão de cartões com revelação instantânea
+- **Opções de filtro**: Estude por tópico, dificuldade ou seleções personalizadas
+- **Rastreamento de progresso**: Veja quais cartões você dominou e quais precisam de prática
 
-- **Gerações assíncronas (jobs)**
-  - `POST /api/geracoes`
-  - `GET /api/geracoes`
-  - `GET /api/geracoes/<job_id>`
-  - `POST /api/geracoes/<job_id>/salvar`
+### 5. Dashboard (`/dashboard`)
+- **Estatísticas**: Taxa geral de acurácia, total de questões, tempo investido
+- **Gráfico de progresso**: Representação visual das tendências de desempenho ao longo do tempo
+- **Resultados recentes**: Visualize detalhes de seus últimas 10 tentativas
+- **Áreas fracas**: Identifique tópicos que precisam de mais estudo
 
-- **Simulado**
-  - `POST /api/iniciar-simulado`
-  - `POST /api/finalizar-simulado`
+---
 
-- **Flashcards**
-  - `GET /flashcards`
-  - `GET /api/flashcards`
-  - `GET /api/flashcards/decks`
+## Endpoints da API (Resumo)
 
-- **Dashboard**
-  - `GET /dashboard`
-  - `GET /api/estatisticas`
+### Simulados
+- `POST /api/iniciar-simulado` — Inicia uma nova sessão de simulado
+- `POST /api/finalizar-simulado` — Envia respostas e obtém resultados
 
-## Worker de gerações (jobs)
+### Gerenciamento de Arquivos
+- `GET /api/arquivos` — Lista materiais de estudo carregados
+- `POST /api/upload` — Carrega um novo arquivo PDF ou TXT
+- `DELETE /api/deletar-arquivo/<id>` — Remove um arquivo carregado
+- `POST /api/gerar-questoes/<id>` — Gera questões de um arquivo (síncrono)
+- `POST /api/arquivos/salvar-questoes/<id>` — Salva questões revisadas no banco
 
-Para habilitar o worker assíncrono, defina a variável antes de iniciar o Flask:
+### Jobs de Geração Assíncrona
+- `POST /api/geracoes` — Cria um novo job assíncrono
+- `GET /api/geracoes` — Lista todos os jobs com resumo
+- `GET /api/geracoes/<job_id>` — Obtém detalhes de um job específico
+- `POST /api/geracoes/<job_id>/salvar` — Salva questões do job no banco
+
+### Flashcards
+- `GET /api/flashcards` — Recupera flashcards com filtros opcionais
+- `GET /api/flashcards/decks` — Lista todos os decks disponíveis
+
+### Estatísticas & Configuração
+- `GET /api/estatisticas` — Obtém dados do dashboard e progresso
+- `GET /api/llm-opcoes` — Lista opções de provedores LLM
+- `GET /api/materiais` — Lista materiais de estudo da pasta uploads
+
+---
+
+## Configuração
+
+Configure a aplicação via variáveis de ambiente em `.env`:
+
+```bash
+# Configuração Flask
+SECRET_KEY=sua-chave-secreta-aqui
+FLASK_ENV=development
+FLASK_DEBUG=1
+PORT=5000
+
+# Armazenamento de Arquivos
+UPLOAD_FOLDER=uploads
+MAX_CONTENT_LENGTH=16777216  # 16MB
+
+# Geração de Questões
+GERACOES_FILE=geracoes_questoes.json
+ARQUIVOS_FILE=arquivos_anexados.json
+ENABLE_GERACOES_WORKER=1
+
+# Configuração de LLM
+OLLAMA_MODEL=phi3
+HUGGINGFACE_API_KEY=sua-chave-hf-aqui
+OPENAI_API_KEY=sua-chave-openai-aqui
+
+# Logging
+LOG_LEVEL=INFO
+```
+
+---
+
+## Executando com Worker Assíncrono
+
+Para habilitar processamento de geração em background:
 
 ```powershell
 $env:ENABLE_GERACOES_WORKER="1"; python app.py
 ```
 
-> Em `FLASK_DEBUG=1`, o worker evita iniciar no processo duplicado do reloader.
+O worker processará automaticamente jobs pendentes em background.
+
+---
+
+## Capturas de Tela
+
+**[Ver capturas de tela e demonstrações do sistema](https://lucasteixeirati.github.io/ISTQB-CTAL-TA/screenshots.html)**
+
+---
+
+## Documentação Técnica
+
+- [**Documento de Arquitetura**](ARQUITETURA.md) — Design do sistema, fluxos de dados e componentes
+- [**Guia de Uso Rápido**](GUIA_USO_RAPIDO.md) — Implantação rápida e solução de problemas
+
+**English Documentation:**
+- [**Architecture Document**](ARCHITECTURE.md)
+- [**Quick Start Guide**](QUICK_START_GUIDE.md)
+- [**README (English)**](README_EN.md)
+
+---
 
 ## Licença
 
-MIT. Veja `LICENSE`.
+Licença MIT — Veja [LICENSE](LICENSE) para detalhes.
+
+---
+
+## Contribuindo
+
+Contribuições são bem-vindas! Você pode:
+- Reportar bugs e sugerir melhorias
+- Enviar pull requests com enhancements
+- Ajudar na tradução da documentação
+- Expandir a base de questões e materiais de estudo
+
+---
+
+**Construído para Excelência na Certificação ISTQB CTAL-TA** 🚀
