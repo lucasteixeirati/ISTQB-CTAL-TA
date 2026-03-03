@@ -51,7 +51,7 @@ app.config['SESSION_COOKIE_SAMESITE'] = os.getenv('SESSION_COOKIE_SAMESITE', 'La
 app.config['SESSION_COOKIE_SECURE'] = os.getenv('SESSION_COOKIE_SECURE', '0') == '1'
 
 # Extensões suportadas para geração de questões com IA (não limita upload)
-AI_GENERATION_EXTENSIONS = {'txt', 'pdf'}
+AI_GENERATION_EXTENSIONS = {'txt', 'pdf', 'json', 'md', 'markdown'}
 ARQUIVOS_FILE = os.getenv('ARQUIVOS_FILE', 'arquivos_anexados.json')
 app.config['ARQUIVOS_FILE'] = ARQUIVOS_FILE
 
@@ -79,6 +79,11 @@ if _is_production and not _secret_from_env:
 def can_generate_questions(filename):
     """Verifica se o arquivo pode ser usado para gerar questões com IA."""
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in AI_GENERATION_EXTENSIONS
+
+
+def can_generate_questions_by_type(file_type: str | None) -> bool:
+    """Verifica se o tipo/extensão de arquivo pode gerar questões com IA."""
+    return (file_type or '').strip().lower() in AI_GENERATION_EXTENSIONS
 
 
 def carregar_questoes_banco():
@@ -149,6 +154,16 @@ def extrair_texto_txt(filepath):
         return f.read()
 
 
+def extrair_texto_para_ia(filepath: str, file_type: str) -> str:
+    """Extrai texto para geração IA conforme tipo de arquivo suportado."""
+    tipo = (file_type or '').lower()
+    if tipo == 'pdf':
+        return extrair_texto_pdf(filepath)
+    if tipo in {'txt', 'json', 'md', 'markdown'}:
+        return extrair_texto_txt(filepath)
+    raise ValueError(f"Tipo de arquivo não suportado para geração IA: {tipo}")
+
+
 def carregar_flashcards():
     """Load flashcards from markdown decks under flashcards/deck_*.md."""
     flashcards = []
@@ -206,8 +221,13 @@ def _worker_geracao_loop(intervalo=3):
                     arquivo = next((a for a in arquivos if a['id'] == job['arquivo_id']), None)
                     if not arquivo:
                         raise RuntimeError(f"Arquivo id={job['arquivo_id']} não encontrado para job {job['id']}")
+                    if not can_generate_questions_by_type(arquivo.get('tipo')):
+                        raise RuntimeError(
+                            f"Apenas arquivos PDF, TXT, JSON e Markdown podem gerar questões. "
+                            f"Tipo do arquivo: {(arquivo.get('tipo') or '').upper()}"
+                        )
                     filepath = os.path.join(app.config['UPLOAD_FOLDER'], arquivo['nome_arquivo'])
-                    texto = extrair_texto_pdf(filepath) if arquivo['tipo'] == 'pdf' else extrair_texto_txt(filepath)
+                    texto = extrair_texto_para_ia(filepath, arquivo.get('tipo', ''))
                     questoes_ia = gerar_perguntas_llm_escolha(texto, job['num_questoes'], provider=job['provider'])
 
                     # mesma normalização usada na rota síncrona
@@ -285,35 +305,114 @@ def simulado():
 
 @app.route('/api/iniciar-simulado', methods=['POST'])
 def iniciar_simulado():
-    data = request.get_json(silent=True) or {}
-    num_questoes = data.get('num_questoes', 40)
-    
-    banco = carregar_questoes_banco()
-    todas_questoes = []
-    for cap_questoes in banco.get('questoes', {}).values():
-        if isinstance(cap_questoes, list):
-            todas_questoes.extend(cap_questoes)
-    
-    questoes_selecionadas = random.sample(todas_questoes, min(num_questoes, len(todas_questoes)))
-    
-    questoes_sem_resposta = [{
-        'id': q['id'],
-        'k_level': q['k_level'],
-        'pergunta': q['pergunta'],
-        'opcoes': q['opcoes']
-    } for q in questoes_selecionadas]
-    
-    session['simulado_atual'] = {
-        'questoes_completas': questoes_selecionadas,
-        'inicio': datetime.now().isoformat(),
-        'num_questoes': num_questoes
-    }
-    
-    return jsonify({
-        'success': True,
-        'questoes': questoes_sem_resposta,
-        'tempo_total': num_questoes * 2
-    })
+    try:
+        data = request.get_json(silent=True) or {}
+        num_questoes = int(data.get('num_questoes', 40) or 40)
+        capitulo_id = (data.get('capitulo_id') or 'todos').strip().lower()
+
+        banco = carregar_questoes_banco()
+        questoes_por_capitulo = banco.get('questoes', {}) if isinstance(banco.get('questoes', {}), dict) else {}
+
+        def _normalizar_questao(q: dict, idx_seed: int) -> dict | None:
+            if not isinstance(q, dict):
+                return None
+
+            pergunta = (q.get('pergunta') or '').strip()
+            if not pergunta:
+                return None
+
+            opcoes = q.get('opcoes') if isinstance(q.get('opcoes'), dict) else None
+            if not opcoes and isinstance(q.get('alternativas'), list):
+                alternativas = [str(a).strip() for a in q.get('alternativas', []) if str(a).strip()]
+                if len(alternativas) >= 4:
+                    opcoes = {
+                        'A': alternativas[0],
+                        'B': alternativas[1],
+                        'C': alternativas[2],
+                        'D': alternativas[3],
+                    }
+
+            if not opcoes:
+                return None
+
+            for letra in ('A', 'B', 'C', 'D'):
+                if not opcoes.get(letra):
+                    return None
+
+            q_id = q.get('id') or int(datetime.now().strftime('%H%M%S')) * 1000 + idx_seed
+            resposta = (q.get('resposta') or 'A').strip().upper()
+            if resposta not in ('A', 'B', 'C', 'D'):
+                resposta = 'A'
+
+            return {
+                'id': q_id,
+                'k_level': (q.get('k_level') or 'K2').strip() or 'K2',
+                'pergunta': pergunta,
+                'opcoes': {
+                    'A': str(opcoes.get('A', '')).strip(),
+                    'B': str(opcoes.get('B', '')).strip(),
+                    'C': str(opcoes.get('C', '')).strip(),
+                    'D': str(opcoes.get('D', '')).strip(),
+                },
+                'resposta': resposta,
+                'justificativa': (q.get('justificativa') or '').strip(),
+            }
+
+        capitulo_alias = {
+            'cap1': ['cap1', 'cap1_risk'],
+            'cap2': ['cap2', 'cap2_techniques'],
+            'cap3': ['cap3', 'cap3_quality'],
+            'cap4': ['cap4', 'cap4_reviews'],
+            'cap5': ['cap5', 'cap5_tools'],
+            'importados': ['importados'],
+            'todos': [],
+        }
+
+        todas_questoes_raw = []
+        if capitulo_id != 'todos':
+            chaves = capitulo_alias.get(capitulo_id, [capitulo_id])
+            for chave in chaves:
+                cap_questoes = questoes_por_capitulo.get(chave, [])
+                if isinstance(cap_questoes, list):
+                    todas_questoes_raw.extend(cap_questoes)
+        else:
+            for cap_questoes in questoes_por_capitulo.values():
+                if isinstance(cap_questoes, list):
+                    todas_questoes_raw.extend(cap_questoes)
+
+        todas_questoes = []
+        for i, q in enumerate(todas_questoes_raw, 1):
+            normalizada = _normalizar_questao(q, i)
+            if normalizada:
+                todas_questoes.append(normalizada)
+
+        if not todas_questoes:
+            return jsonify({'success': False, 'error': 'Nenhuma questão válida encontrada para iniciar o simulado.'}), 400
+
+        quantidade = min(max(1, num_questoes), len(todas_questoes))
+        questoes_selecionadas = random.sample(todas_questoes, quantidade)
+
+        questoes_sem_resposta = [{
+            'id': q['id'],
+            'k_level': q['k_level'],
+            'pergunta': q['pergunta'],
+            'opcoes': q['opcoes']
+        } for q in questoes_selecionadas]
+
+        session['simulado_atual'] = {
+            'questoes_completas': questoes_selecionadas,
+            'inicio': datetime.now().isoformat(),
+            'num_questoes': quantidade
+        }
+
+        return jsonify({
+            'success': True,
+            'questoes': questoes_sem_resposta,
+            'tempo_total': quantidade * 2
+        })
+    except Exception as e:
+        logger.exception('Erro ao iniciar simulado')
+        return jsonify({'success': False, 'error': f'Erro ao iniciar simulado: {e}'}), 500
 
 @app.route('/api/finalizar-simulado', methods=['POST'])
 def finalizar_simulado():
@@ -329,19 +428,21 @@ def finalizar_simulado():
     resultados = []
     
     for q in questoes_completas:
-        resposta_user = respostas_usuario.get(str(q['id']))
-        correto = resposta_user == q['resposta']
+        q_id = q.get('id')
+        resposta_correta = (q.get('resposta') or '').strip().upper()
+        resposta_user = respostas_usuario.get(str(q_id))
+        correto = resposta_user == resposta_correta
         if correto:
             acertos += 1
         
         resultados.append({
-            'id': q['id'],
-            'pergunta': q['pergunta'],
-            'opcoes': q['opcoes'],
-            'resposta_correta': q['resposta'],
+            'id': q_id,
+            'pergunta': q.get('pergunta', ''),
+            'opcoes': q.get('opcoes', {}),
+            'resposta_correta': resposta_correta,
             'resposta_usuario': resposta_user,
             'correto': correto,
-            'justificativa': q['justificativa']
+            'justificativa': q.get('justificativa', '')
         })
     
     total = len(questoes_completas)
@@ -447,9 +548,16 @@ def api_gerar_questoes(arquivo_id):
         logger.warning("Gerar questoes: arquivo_id=%s nao encontrado", arquivo_id)
         return jsonify({'success': False, 'error': 'Arquivo nao encontrado'})
 
+    if not can_generate_questions_by_type(arquivo.get('tipo')):
+        tipo = (arquivo.get('tipo') or '').upper()
+        return jsonify({
+            'success': False,
+            'error': f'Apenas arquivos PDF, TXT, JSON e Markdown podem gerar questões. Tipo do arquivo: {tipo}'
+        }), 400
+
     filepath = os.path.join(app.config['UPLOAD_FOLDER'], arquivo['nome_arquivo'])
     try:
-        texto = extrair_texto_pdf(filepath) if arquivo['tipo'] == 'pdf' else extrair_texto_txt(filepath)
+        texto = extrair_texto_para_ia(filepath, arquivo.get('tipo', ''))
     except Exception:
         logger.exception("Falha ao extrair texto: arquivo_id=%s path=%s", arquivo_id, filepath)
         return jsonify({'success': False, 'error': 'Erro ao extrair texto do arquivo'}), 500

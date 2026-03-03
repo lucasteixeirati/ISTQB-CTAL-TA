@@ -50,12 +50,12 @@ def criar_geracao():
     if not arquivo:
         return jsonify({"success": False, "error": "Arquivo não encontrado"}), 404
     
-    # Valida se o arquivo pode gerar questões (apenas PDF e TXT)
+    # Valida se o arquivo pode gerar questões (PDF, TXT, JSON e Markdown)
     tipo = (arquivo.get("tipo") or "").lower()
-    if tipo not in {"pdf", "txt"}:
+    if tipo not in {"pdf", "txt", "json", "md", "markdown"}:
         return jsonify({
             "success": False, 
-            "error": f"Apenas arquivos PDF e TXT podem gerar questões. Tipo do arquivo: {tipo.upper()}"
+            "error": f"Apenas arquivos PDF, TXT, JSON e Markdown podem gerar questões. Tipo do arquivo: {tipo.upper()}"
         }), 400
 
     job = _service().criar_job(
