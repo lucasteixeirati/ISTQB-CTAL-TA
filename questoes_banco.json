@@ -494,8 +494,6 @@
         "capitulo_nome": "Cap 2 - Test Techniques"
       },
       {
-        "id": null,
-        "k_level": "K2",
         "pergunta": "Em quais modelos de desenvolvimento o teste de regressão é mais importante?",
         "capitulo_id": "cap2",
         "capitulo_nome": "Test Techniques",
